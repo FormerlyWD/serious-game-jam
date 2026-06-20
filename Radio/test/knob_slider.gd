@@ -13,7 +13,7 @@ func _on_value_changed(value: float) -> void:
 	match current_dial_direction:
 		DialDirection.TOMIN:
 			var exponential_increase_ratio:float = 1-(1/pow(exponential_curviture,distance_ratio))
-			%ChannelNode.volume_db = maximum_value*exponential_increase_ratio
+			%CentralAndStaticNoiseChannels.volume_db = (maximum_value*exponential_increase_ratio)-10
 		DialDirection.TOMAX:
 			var exponential_increase_ratio:float = (1/pow(exponential_curviture,distance_ratio))
-			%ChannelNode.volume_db = maximum_value*exponential_increase_ratio
+			%CentralAndStaticNoiseChannels.volume_db = (maximum_value*exponential_increase_ratio)-10

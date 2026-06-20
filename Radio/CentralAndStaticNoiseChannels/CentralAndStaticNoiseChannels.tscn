@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://b8ll7g4yo3t4d"]
+
+[ext_resource type="AudioStream" uid="uid://edf4l8nlh2i" path="res://Audio/freesound_community-static-radio-noise-and-searching-for-stations-48537.mp3" id="1_b7is0"]
+[ext_resource type="Script" uid="uid://d2rx0uduripb" path="res://Radio/CentralAndStaticNoiseChannels/CentralAndStaticNoiseChannels.gd" id="2_v2703"]
+
+[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_c4e5o"]
+stream_count = 2
+stream_0 = ExtResource("1_b7is0")
+stream_1 = ExtResource("1_b7is0")
+
+[node name="CentralAndStaticNoiseChannels" type="AudioStreamPlayer" unique_id=873207912]
+stream = SubResource("AudioStreamPlaylist_c4e5o")
+autoplay = true
+script = ExtResource("2_v2703")
