@@ -24,6 +24,7 @@ func update_stream_count():
 		amount_of_streams = stream_playlist.get_stream_count()
 	if clip_manager:
 		clip_manager.fill_clip_insertion_sorted()
+		
 func switch_channel(new_channel:int):
 	currently_chosen_channel = new_channel
 	stream = playlist_array[currently_chosen_channel]

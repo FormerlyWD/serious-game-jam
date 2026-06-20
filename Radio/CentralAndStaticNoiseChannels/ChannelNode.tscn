@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://b0pex8myd8rvo"]
+
+[ext_resource type="AudioStream" uid="uid://gnmo84rj1yws" path="res://Audio/freesound_community-crispy-static-56963.mp3" id="1_fm2kx"]
+[ext_resource type="Script" path="res://Radio/CentralAndStaticNoiseChannels/channel_node.gd" id="2_c4e5o"]
+
+[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_c4e5o"]
+stream_count = 1
+stream_0 = ExtResource("1_fm2kx")
+
+[node name="CentralAndStaticNoiseChannels" type="AudioStreamPlayer" unique_id=873207912]
+stream = SubResource("AudioStreamPlaylist_c4e5o")
+autoplay = true
+script = ExtResource("2_c4e5o")

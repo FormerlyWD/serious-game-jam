@@ -2,22 +2,24 @@ extends AudioStreamPlayer
 class_name ClipManagerAudioStream
 
 enum PlayState {
-	BUSY, FREE
+	BUSY, FREE, NONREADY
 }
-var current_play_state:PlayState = PlayState.FREE
+var current_play_state:PlayState = PlayState.NONREADY
 var all_clips_insertions_sorted:Array[Array]
 @export var all_clips_insertions:Array[ClipInsertion]
 @export var central_noise_audio_stream:CentralAndStaticNoiseChannels
 @export var timer_node:CustomTimer
 var current_clip_parsed:ClipInsertion
 func _ready() -> void:
-	auto_evaluate_clips()
+	pass
 
 func _process(delta: float) -> void:
 	check_clip_state()
 	
 func check_clip_state():
 	match current_play_state:
+		PlayState.NONREADY:
+			pass
 		PlayState.FREE:
 			
 			var reparse_condition:bool = true
@@ -61,6 +63,8 @@ func fill_clip_insertion_sorted()-> void:
 	var channel_count = central_noise_audio_stream.amount_of_streams
 	for i in range(channel_count):
 		all_clips_insertions_sorted.append([]) 
+	
+	current_play_state = PlayState.NONREADY
 func auto_evaluate_clips()-> void:
 	
 	for clip in all_clips_insertions:
