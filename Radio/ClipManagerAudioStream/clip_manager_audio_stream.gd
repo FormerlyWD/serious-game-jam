@@ -37,6 +37,10 @@ func check_clip_state():
 						print("pop_front")
 						continue
 					elif the_first_clip.end_time >= timer_node.current_timer:
+<<<<<<< HEAD
+=======
+
+>>>>>>> 52267e2571b1c43615eb3f188a0a341eea885dfe
 						add_clip_to_play(the_first_clip)
 						reparse_condition = false
 		PlayState.BUSY:
