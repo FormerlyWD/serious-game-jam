@@ -37,8 +37,7 @@ func check_clip_state():
 						print("pop_front")
 						continue
 					elif the_first_clip.end_time >= timer_node.current_timer:
-						all_clips_insertions_sorted[central_noise_audio_stream.currently_chosen_channel].pop_front()
-						print("pop_front_to_play")
+
 						add_clip_to_play(the_first_clip)
 						reparse_condition = false
 		PlayState.BUSY:
