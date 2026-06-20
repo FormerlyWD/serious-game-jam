@@ -6,19 +6,25 @@
 [ext_resource type="Script" uid="uid://cdwotjgvtyhjm" path="res://Radio/ClipInsertion/clip_insertion.gd" id="4_ilola"]
 [ext_resource type="Resource" uid="uid://dpag8ljha4aqy" path="res://Radio/ClipInsertion/sample_clip.tres" id="5_aw04w"]
 [ext_resource type="Script" uid="uid://bfeujwd5vplb" path="res://Radio/custom_timer.gd" id="6_aw04w"]
+[ext_resource type="Script" uid="uid://bfjxllnddc11q" path="res://Radio/dial_2.gd" id="7_f8qu0"]
 
-[node name="RadioNode" type="Node2D" unique_id=170821821]
+[node name="RadioNode" type="Control" unique_id=155327058]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 320.0
+offset_bottom = 153.0
 
 [node name="knob slider" type="HSlider" parent="." unique_id=1946158888]
+layout_mode = 0
 offset_right = 313.0
 offset_bottom = 16.0
 max_value = 360.0
 script = ExtResource("1_f218l")
 
-[node name="CentralAndStaticNoiseChannels" parent="." unique_id=873207912 node_paths=PackedStringArray("clip_manager") instance=ExtResource("2_f218l")]
+[node name="CentralAndStaticNoiseChannels" parent="." unique_id=873207912 node_paths=PackedStringArray("clip_manager", "timer_node") instance=ExtResource("2_f218l")]
 unique_name_in_owner = true
 clip_manager = NodePath("../ClipManagerAudioStream")
-currently_chosen_channel = 1
+timer_node = NodePath("../CustomTimer")
 
 [node name="ClipManagerAudioStream" parent="." unique_id=1715325066 node_paths=PackedStringArray("central_noise_audio_stream", "timer_node") instance=ExtResource("3_s7opi")]
 all_clips_insertions = Array[ExtResource("4_ilola")]([ExtResource("5_aw04w")])
@@ -28,4 +34,31 @@ timer_node = NodePath("../CustomTimer")
 [node name="CustomTimer" type="Node" parent="." unique_id=945941770]
 script = ExtResource("6_aw04w")
 
+[node name="DIAL2" type="Control" parent="." unique_id=1905388804 node_paths=PackedStringArray("central_noise_channel")]
+anchors_preset = 0
+offset_left = 2.0
+offset_top = 115.0
+offset_right = 99.0
+offset_bottom = 155.0
+script = ExtResource("7_f8qu0")
+central_noise_channel = NodePath("../CentralAndStaticNoiseChannels")
+
+[node name="Button" type="Button" parent="DIAL2" unique_id=1824766153]
+layout_mode = 0
+offset_left = 51.0
+offset_top = 5.0
+offset_right = 88.0
+offset_bottom = 36.0
+text = "+1"
+
+[node name="Button2" type="Button" parent="DIAL2" unique_id=1387189679]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 5.0
+offset_right = 41.0
+offset_bottom = 36.0
+text = "-1"
+
 [connection signal="value_changed" from="knob slider" to="knob slider" method="_on_value_changed"]
+[connection signal="button_up" from="DIAL2/Button" to="DIAL2" method="_on_button_button_up"]
+[connection signal="button_up" from="DIAL2/Button2" to="DIAL2" method="_on_button_2_button_up"]

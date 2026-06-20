@@ -10,7 +10,8 @@ var all_clips_insertions_sorted:Array[Array]
 @export var central_noise_audio_stream:CentralAndStaticNoiseChannels
 @export var timer_node:CustomTimer
 var current_clip_parsed:ClipInsertion
-
+func _ready() -> void:
+	auto_evaluate_clips()
 
 func _process(delta: float) -> void:
 	check_clip_state()
@@ -31,9 +32,11 @@ func check_clip_state():
 				elif  the_first_clip.start_time <= timer_node.current_timer :
 					if the_first_clip.end_time < timer_node.current_timer:
 						all_clips_insertions_sorted[central_noise_audio_stream.currently_chosen_channel].pop_front()
+						print("pop_front")
 						continue
-					if the_first_clip.end_time >= timer_node.current_timer:
+					elif the_first_clip.end_time >= timer_node.current_timer:
 						all_clips_insertions_sorted[central_noise_audio_stream.currently_chosen_channel].pop_front()
+						print("pop_front_to_play")
 						add_clip_to_play(the_first_clip)
 						reparse_condition = false
 		PlayState.BUSY:
@@ -59,7 +62,7 @@ func fill_clip_insertion_sorted()-> void:
 	for i in range(channel_count):
 		all_clips_insertions_sorted.append([]) 
 func auto_evaluate_clips()-> void:
-	fill_clip_insertion_sorted()
+	
 	for clip in all_clips_insertions:
 		fill_end_time(clip)
 		all_clips_insertions_sorted[clip.designated_channel].append(clip)
@@ -70,7 +73,9 @@ func auto_evaluate_clips()-> void:
 func fill_end_time(clip:ClipInsertion) -> void:
 	if clip.audio_clip:
 		
-		if clip.start_time == -1.0:
+
+		if not clip.start_time == -1.0:
 			if clip.duration == -1.0:
 				clip.duration = clip.audio_clip.get_length()
-		clip.end_time = clip.start_time+ clip.duration
+				print("clip.audio_clip.get_length()" + str(clip.audio_clip.get_length()))
+	clip.end_time = clip.start_time+ clip.duration
