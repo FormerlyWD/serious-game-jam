@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="ClipInsertion" format=3 uid="uid://dpag8ljha4aqy"]
+
+[ext_resource type="Script" uid="uid://cdwotjgvtyhjm" path="res://Radio/ClipInsertion/clip_insertion.gd" id="1_h5u4n"]
+
+[resource]
+script = ExtResource("1_h5u4n")
+start_time = 25.0
+metadata/_custom_type_script = "uid://cdwotjgvtyhjm"

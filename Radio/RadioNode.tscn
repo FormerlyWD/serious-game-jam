@@ -1,7 +1,11 @@
 [gd_scene format=3 uid="uid://bqbn0wnsg1ful"]
 
 [ext_resource type="Script" uid="uid://yac3cb6gaepn" path="res://Radio/test/knob_slider.gd" id="1_f218l"]
-[ext_resource type="PackedScene" uid="uid://b8ll7g4yo3t4d" path="res://Radio/CentralAndStaticNoiseChannels/ChannelNode.tscn" id="2_f218l"]
+[ext_resource type="PackedScene" uid="uid://b8ll7g4yo3t4d" path="res://Radio/CentralAndStaticNoiseChannels/CentralAndStaticNoiseChannels.tscn" id="2_f218l"]
+[ext_resource type="PackedScene" uid="uid://d3sf7u516x306" path="res://Radio/ClipManagerAudioStream/ClipManagerAudioStream.tscn" id="3_s7opi"]
+[ext_resource type="Script" uid="uid://cdwotjgvtyhjm" path="res://Radio/ClipInsertion/clip_insertion.gd" id="4_ilola"]
+[ext_resource type="Resource" uid="uid://dpag8ljha4aqy" path="res://Radio/ClipInsertion/sample_clip.tres" id="5_aw04w"]
+[ext_resource type="Script" uid="uid://bfeujwd5vplb" path="res://Radio/custom_timer.gd" id="6_aw04w"]
 
 [node name="RadioNode" type="Node2D" unique_id=170821821]
 
@@ -11,7 +15,17 @@ offset_bottom = 16.0
 max_value = 360.0
 script = ExtResource("1_f218l")
 
-[node name="CentralAndStaticNoiseChannels" parent="." unique_id=873207912 instance=ExtResource("2_f218l")]
+[node name="CentralAndStaticNoiseChannels" parent="." unique_id=873207912 node_paths=PackedStringArray("clip_manager") instance=ExtResource("2_f218l")]
 unique_name_in_owner = true
+clip_manager = NodePath("../ClipManagerAudioStream")
+currently_chosen_channel = 1
+
+[node name="ClipManagerAudioStream" parent="." unique_id=1715325066 node_paths=PackedStringArray("central_noise_audio_stream", "timer_node") instance=ExtResource("3_s7opi")]
+all_clips_insertions = Array[ExtResource("4_ilola")]([ExtResource("5_aw04w")])
+central_noise_audio_stream = NodePath("../CentralAndStaticNoiseChannels")
+timer_node = NodePath("../CustomTimer")
+
+[node name="CustomTimer" type="Node" parent="." unique_id=945941770]
+script = ExtResource("6_aw04w")
 
 [connection signal="value_changed" from="knob slider" to="knob slider" method="_on_value_changed"]

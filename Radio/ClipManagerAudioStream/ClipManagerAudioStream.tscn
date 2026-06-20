@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://d3sf7u516x306"]
+
+[ext_resource type="Script" uid="uid://btnate7wdr17e" path="res://Radio/ClipManagerAudioStream/clip_manager_audio_stream.gd" id="1_cilkr"]
+
+[node name="ClipManagerAudioStream" type="AudioStreamPlayer" unique_id=1715325066]
+script = ExtResource("1_cilkr")
