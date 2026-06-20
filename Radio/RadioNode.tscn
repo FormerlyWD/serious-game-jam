@@ -6,7 +6,7 @@
 [ext_resource type="Resource" uid="uid://dpag8ljha4aqy" path="res://Radio/ClipInsertion/sample_clip.tres" id="5_aw04w"]
 [ext_resource type="Script" path="res://Radio/custom_timer.gd" id="6_aw04w"]
 [ext_resource type="PackedScene" path="res://Radio/CentralAndStaticNoiseChannels/CentralAndStaticNoiseChannels.tscn" id="7_2hs0g"]
-[ext_resource type="Script" path="res://Radio/dial_2.gd" id="7_f8qu0"]
+[ext_resource type="Script" uid="uid://bfjxllnddc11q" path="res://Radio/dial_2.gd" id="7_f8qu0"]
 
 [node name="RadioNode" type="Control" unique_id=155327058]
 layout_mode = 3
