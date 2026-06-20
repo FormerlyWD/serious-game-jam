@@ -42,8 +42,11 @@ func check_clip_state():
 						reparse_condition = false
 		PlayState.BUSY:
 			if current_clip_parsed.end_time <= timer_node.current_timer:
+				all_clips_insertions_sorted[central_noise_audio_stream.currently_chosen_channel].pop_front()
+				print("removed")
 				discard_clip_from_play()
 func discard_clip_from_play():
+
 	current_play_state = PlayState.FREE
 	stop()
 	current_clip_parsed= null
@@ -68,7 +71,9 @@ func auto_evaluate_clips()-> void:
 	
 	for clip in all_clips_insertions:
 		fill_end_time(clip)
+		
 		all_clips_insertions_sorted[clip.designated_channel].append(clip)
+		print("all_clips_insertions" + str(all_clips_insertions.size()))
 	for channel_array in all_clips_insertions_sorted:
 		channel_array.sort_custom(
 			func(a:ClipInsertion, b:ClipInsertion): return a.start_time < b.start_time)
