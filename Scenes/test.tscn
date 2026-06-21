@@ -7,10 +7,10 @@
 script = ExtResource("1_lc1oi")
 
 [node name="RadioNode" parent="." unique_id=170821821 instance=ExtResource("2_8od7v")]
-offset_left = -498.0
-offset_top = -178.0
-offset_right = -178.0
-offset_bottom = -25.0
+offset_left = -426.0
+offset_top = -177.0
+offset_right = -106.0
+offset_bottom = -24.0
 metadata/_edit_use_anchors_ = true
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=514651589]

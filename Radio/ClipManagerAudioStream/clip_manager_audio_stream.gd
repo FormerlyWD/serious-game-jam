@@ -1,17 +1,21 @@
 extends AudioStreamPlayer
 class_name ClipManagerAudioStream
 
+signal new_clip_inserted
+
 enum PlayState {
 	BUSY, FREE, NONREADY
 }
 var current_play_state:PlayState = PlayState.NONREADY
 var all_clips_insertions_sorted:Array[Array]
 @export var all_clips_insertions:Array[ClipInsertion]
+@export var button_tracker:ClipTrackButton
 @export var central_noise_audio_stream:CentralAndStaticNoiseChannels
 @export var timer_node:CustomTimer
 var current_clip_parsed:ClipInsertion
-func _ready() -> void:
-	pass
+
+var clip_history_registry:Dictionary
+
 
 func _process(delta: float) -> void:
 	check_clip_state()
@@ -45,24 +49,37 @@ func check_clip_state():
 				all_clips_insertions_sorted[central_noise_audio_stream.currently_chosen_channel].pop_front()
 				print("removed")
 				discard_clip_from_play()
-func discard_clip_from_play():
-
+func discard_clip_from_play(from_channel_switch:bool = false):
+	var saved_clip_id:int
+	if current_clip_parsed:
+		saved_clip_id = current_clip_parsed.id
 	current_play_state = PlayState.FREE
 	stop()
-	current_clip_parsed= null
 	stream = null
+	if from_channel_switch:
+		pass
+		
+	elif current_clip_parsed:
+		current_clip_parsed= null
+		await get_tree().create_timer(button_tracker.delay_intervals).timeout
+		button_tracker.remove_element(saved_clip_id)
+	else:
+		current_clip_parsed= null
 func add_clip_to_play(clip:ClipInsertion):
+	
+	
 	current_play_state = PlayState.BUSY
+	
 	var play_at:float = max(timer_node.current_timer-clip.start_time,0)
 	current_clip_parsed= clip
 	if clip.audio_clip:
 		stream = clip.audio_clip
 		play(play_at)
-	
+	new_clip_inserted.emit()
 func fill_clip_insertion_sorted()-> void:
 	all_clips_insertions_sorted.clear() 
 	
-	var channel_count = central_noise_audio_stream.amount_of_streams
+	var channel_count = central_noise_audio_stream.channel_array.size()
 	for i in range(channel_count):
 		all_clips_insertions_sorted.append([]) 
 	
@@ -73,7 +90,9 @@ func auto_evaluate_clips()-> void:
 		fill_end_time(clip)
 		
 		all_clips_insertions_sorted[clip.designated_channel].append(clip)
-		print("all_clips_insertions" + str(all_clips_insertions.size()))
+		clip.create_id()
+		clip_history_registry[clip.id] = clip
+		
 	for channel_array in all_clips_insertions_sorted:
 		channel_array.sort_custom(
 			func(a:ClipInsertion, b:ClipInsertion): return a.start_time < b.start_time)

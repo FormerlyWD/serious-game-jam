@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://o2fsnkbaqlsv"]
+
+[ext_resource type="Script" uid="uid://ud3sclsgw8vf" path="res://Radio/ClipTrackButton/clip_track_button.gd" id="1_10vmi"]
+
+[node name="ClipTrackButton" type="Control" unique_id=2116075426]
+layout_mode = 3
+anchor_right = 0.33200002
+anchor_bottom = 0.25
+offset_right = -0.46401978
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_10vmi")
+
+[node name="Button" type="Button" parent="." unique_id=715674673]
+layout_mode = 0
+offset_right = 382.0
+offset_bottom = 161.0
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

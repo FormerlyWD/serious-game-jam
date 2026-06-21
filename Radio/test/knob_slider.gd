@@ -1,21 +1,47 @@
 extends HSlider
+class_name FrequencyKnob
+
+
+signal frequency_cleared
 var is_dragging: bool = false
 enum DialDirection {TOMIN, TOMAX}
 @export var chosen_target_deg:float = 180
+
+@export var signal_clear_flag_requirement:float = 0.1
+@export var clip_volume_outside_curve:float = 0
+@export var clip_volume_inside_curve:float = 10
+@export var noise_default_volume:float = -10
 @export var exponential_curviture:float = 2
 @export var maximum_value:float = 20
 @export var current_dial_direction:DialDirection = DialDirection.TOMIN
 @export var central_static_noise:CentralAndStaticNoiseChannels
+@export var clip_manager_audio_stream: ClipManagerAudioStream
+var is_frequency_cleared:bool
+
+
+func reset():
+	clip_manager_audio_stream.volume_db =clip_volume_outside_curve
+	central_static_noise.volume_db = noise_default_volume
+	value = 0 #subject to change
 func find_dist(new_value:float):
 	return 180-abs(180-abs(new_value-chosen_target_deg))
-func _on_value_changed(value: float) -> void:
-	var distance:float = find_dist(value)
+func _on_value_changed(cur_value:float) -> void:
+	var distance:float = find_dist(cur_value)
 	var distance_ratio:float = distance/180
 	
 	match current_dial_direction:
 		DialDirection.TOMIN:
 			var exponential_increase_ratio:float = 1-(1/pow(exponential_curviture,distance_ratio))
-			central_static_noise.volume_db = (maximum_value*exponential_increase_ratio)-10
-		DialDirection.TOMAX:
-			var exponential_increase_ratio:float = (1/pow(exponential_curviture,distance_ratio))
-			central_static_noise.volume_db = (maximum_value*exponential_increase_ratio)-10
+			if exponential_increase_ratio < signal_clear_flag_requirement:
+				if not is_frequency_cleared:
+					
+					is_frequency_cleared = true
+					clip_manager_audio_stream.volume_db =clip_volume_inside_curve
+					frequency_cleared.emit()
+					get_child(0).visible = true
+			else:
+				if is_frequency_cleared:
+					get_child(0).visible = false
+					clip_manager_audio_stream.volume_db =clip_volume_outside_curve
+					is_frequency_cleared = false
+			central_static_noise.volume_db = (maximum_value*exponential_increase_ratio)+noise_default_volume
