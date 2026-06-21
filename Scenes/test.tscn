@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cqprmlotrxfsx"]
 
 [ext_resource type="Script" uid="uid://cwfa0vwadh6a4" path="res://Scenes/deskScene/DeskScene.gd" id="1_8od7v"]
+[ext_resource type="Script" uid="uid://dkftuq0swcdld" path="res://ShiftManager/ShiftBlanks/shift_blank.gd" id="2_2cgwh"]
 [ext_resource type="PackedScene" uid="uid://bqbn0wnsg1ful" path="res://Radio/RadioNode.tscn" id="2_8od7v"]
 [ext_resource type="Script" uid="uid://cdwotjgvtyhjm" path="res://Radio/ClipInsertion/clip_insertion.gd" id="2_35xla"]
 [ext_resource type="Resource" uid="uid://dpag8ljha4aqy" path="res://Radio/ClipInsertion/sample_clip.tres" id="3_5wyu1"]
@@ -19,7 +20,6 @@ script = ExtResource("4_5wyu1")
 duration = 10.0
 all_clip_insertions = Array[ExtResource("2_35xla")]([ExtResource("3_5wyu1")])
 channel_array = Array[ExtResource("3_i3aeo")]([ExtResource("5_0c07c"), ExtResource("5_0c07c"), ExtResource("5_0c07c")])
-is_clip_insertion_scatter_enabled = true
 clip_insertion_scatter_count = 4
 clip_insertion_scatter_pool = Array[ExtResource("2_35xla")]([SubResource("Resource_2cgwh")])
 metadata/_custom_type_script = "uid://4yh70i0yfekf"
@@ -30,10 +30,10 @@ current_shift_object = SubResource("Resource_0c07c")
 
 [node name="RadioNode" parent="." unique_id=170821821 instance=ExtResource("2_8od7v")]
 unique_name_in_owner = true
-offset_left = -345.0
-offset_top = -164.0
-offset_right = -25.0
-offset_bottom = -11.0
+offset_left = -543.0
+offset_top = -302.0
+offset_right = -223.0
+offset_bottom = -149.0
 metadata/_edit_use_anchors_ = true
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=514651589]
