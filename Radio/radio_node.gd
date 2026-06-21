@@ -1,0 +1,28 @@
+extends Control
+class_name Radio
+signal request_top
+
+@export var clip_manager_audio_stream: ClipManagerAudioStream
+@export var central_and_static_noise_channels: CentralAndStaticNoiseChannels
+@export var knob_slider: FrequencyKnob
+@export var timer:CustomTimer
+
+
+func reset_radio():
+	pass
+	timer.reset_timer()
+	knob_slider.reset()
+	central_and_static_noise_channels.update_stream_count()
+	
+	clip_manager_audio_stream.fill_clip_insertion_sorted()
+	clip_manager_audio_stream.auto_evaluate_clips()
+	central_and_static_noise_channels.switch_channel(0)
+	
+func apply_shift_radio_data(shift_data:Shift):
+	if central_and_static_noise_channels:
+		central_and_static_noise_channels.channel_array = shift_data.channel_array
+		central_and_static_noise_channels.update_stream_count()
+	if clip_manager_audio_stream:
+		clip_manager_audio_stream.fill_end_time_for_shift(shift_data)
+		$ShiftClipScatterProcessing.scatter_clips(shift_data)
+		clip_manager_audio_stream.all_clips_insertions = shift_data.all_clip_insertions
