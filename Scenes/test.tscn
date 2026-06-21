@@ -16,6 +16,7 @@ metadata/_custom_type_script = "uid://cdwotjgvtyhjm"
 
 [sub_resource type="Resource" id="Resource_0c07c"]
 script = ExtResource("4_5wyu1")
+duration = 10.0
 all_clip_insertions = Array[ExtResource("2_35xla")]([ExtResource("3_5wyu1")])
 channel_array = Array[ExtResource("3_i3aeo")]([ExtResource("5_0c07c"), ExtResource("5_0c07c"), ExtResource("5_0c07c")])
 is_clip_insertion_scatter_enabled = true

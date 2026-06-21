@@ -41,10 +41,7 @@ func check_clip_state():
 						print("pop_front")
 						continue
 					elif the_first_clip.end_time >= timer_node.current_timer:
-<<<<<<< HEAD
-=======
 
->>>>>>> 52267e2571b1c43615eb3f188a0a341eea885dfe
 						add_clip_to_play(the_first_clip)
 						reparse_condition = false
 		PlayState.BUSY:
@@ -102,8 +99,8 @@ func auto_evaluate_clips()-> void:
 		
 func fill_end_time(clip:ClipInsertion, duration_only:bool = false	) -> void:
 	if clip.audio_clip:
+		clip.duration = clip.audio_clip.get_length()
 		if duration_only:
-			clip.duration = clip.audio_clip.get_length()
 			return
 
 		if not clip.start_time == -1.0:
@@ -115,4 +112,4 @@ func fill_end_time_for_shift(shift_data:Shift):
 	for predetermined_clip in shift_data.all_clip_insertions:
 		fill_end_time(predetermined_clip)
 	for scatter_clip in shift_data.clip_insertion_scatter_pool:
-		fill_end_time(scatter_clip)
+		fill_end_time(scatter_clip,true)
