@@ -87,7 +87,7 @@ func fill_clip_insertion_sorted()-> void:
 func auto_evaluate_clips()-> void:
 	
 	for clip in all_clips_insertions:
-		fill_end_time(clip)
+		
 		
 		all_clips_insertions_sorted[clip.designated_channel].append(clip)
 		clip.create_id()
@@ -97,12 +97,19 @@ func auto_evaluate_clips()-> void:
 		channel_array.sort_custom(
 			func(a:ClipInsertion, b:ClipInsertion): return a.start_time < b.start_time)
 		
-func fill_end_time(clip:ClipInsertion) -> void:
+func fill_end_time(clip:ClipInsertion, duration_only:bool = false	) -> void:
 	if clip.audio_clip:
-		
+		if duration_only:
+			clip.duration = clip.audio_clip.get_length()
+			return
 
 		if not clip.start_time == -1.0:
 			if clip.duration == -1.0:
 				clip.duration = clip.audio_clip.get_length()
 				print("clip.audio_clip.get_length()" + str(clip.audio_clip.get_length()))
 	clip.end_time = clip.start_time+ clip.duration
+func fill_end_time_for_shift(shift_data:Shift):
+	for predetermined_clip in shift_data.all_clip_insertions:
+		fill_end_time(predetermined_clip)
+	for scatter_clip in shift_data.clip_insertion_scatter_pool:
+		fill_end_time(scatter_clip, true)

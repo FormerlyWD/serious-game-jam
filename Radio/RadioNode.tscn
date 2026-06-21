@@ -13,6 +13,7 @@
 [ext_resource type="Script" uid="uid://cn5762sv6ibx3" path="res://Radio/CentralAndStaticNoiseChannels/ChannelClass/channel_class.gd" id="10_atd8r"]
 [ext_resource type="AudioStream" uid="uid://edf4l8nlh2i" path="res://Audio/freesound_community-static-radio-noise-and-searching-for-stations-48537.mp3" id="11_5gbna"]
 [ext_resource type="PackedScene" uid="uid://o2fsnkbaqlsv" path="res://Radio/ClipTrackButton/ClipTrackButton.tscn" id="12_1y8mp"]
+[ext_resource type="PackedScene" uid="uid://dnp2iabu36s75" path="res://ShiftManager/ShiftClipScatterProcessing/ShiftClipScatterProcessing.tscn" id="14_kcuwd"]
 
 [sub_resource type="Resource" id="Resource_kcuwd"]
 script = ExtResource("4_ilola")
@@ -127,6 +128,10 @@ offset_left = 331.0
 offset_top = 26.0
 offset_right = 435.0
 offset_bottom = 164.0
+
+[node name="ShiftClipScatterProcessing" parent="." unique_id=1051648214 node_paths=PackedStringArray("clip_manager_audio_stream", "central_and_static_noise_channels") instance=ExtResource("14_kcuwd")]
+clip_manager_audio_stream = NodePath("../ClipManagerAudioStream")
+central_and_static_noise_channels = NodePath("../CentralAndStaticNoiseChannels")
 
 [connection signal="value_changed" from="knob slider" to="knob slider" method="_on_value_changed"]
 [connection signal="button_up" from="DIAL2/Button" to="DIAL2" method="_on_button_button_up"]

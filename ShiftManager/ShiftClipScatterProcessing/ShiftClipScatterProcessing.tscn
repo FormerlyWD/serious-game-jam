@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dnp2iabu36s75"]
+
+[ext_resource type="Script" uid="uid://ppmx5d1ts2ld" path="res://ShiftManager/ShiftClipScatterProcessing/shift_clip_scatter_processing.gd" id="1_67j0u"]
+
+[node name="ShiftClipScatterProcessing" type="Node" unique_id=1051648214]
+script = ExtResource("1_67j0u")
