@@ -7,7 +7,10 @@ signal request_top
 @export var knob_slider: FrequencyKnob
 @export var timer:CustomTimer
 
-
+func _ready() -> void:
+	timer.radio_finished.connect(radio_finished)
+func radio_finished():
+	GlobalShiftManager.finish_shift()
 func reset_radio():
 	pass
 	timer.reset_timer()
@@ -19,6 +22,7 @@ func reset_radio():
 	central_and_static_noise_channels.switch_channel(0)
 	
 func apply_shift_radio_data(shift_data:Shift):
+	timer.maximum_radio_time = shift_data.duration
 	if central_and_static_noise_channels:
 		central_and_static_noise_channels.channel_array = shift_data.channel_array
 		central_and_static_noise_channels.update_stream_count()

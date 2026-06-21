@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://qcljh1h3if7p"]
+
+[ext_resource type="Script" uid="uid://dp2bjpv2ue7q7" path="res://ShiftManager/shift_manager.gd" id="1_38p0g"]
+[ext_resource type="Script" uid="uid://4yh70i0yfekf" path="res://ShiftManager/ShiftClass/shift_class.gd" id="2_ip1fe"]
+[ext_resource type="Resource" uid="uid://d10ynls4fdc32" path="res://ShiftManager/NewShift.tres" id="3_bo2tm"]
+
+[node name="ShiftManager" type="Node" unique_id=848978670]
+script = ExtResource("1_38p0g")
+all_shifts = Array[ExtResource("2_ip1fe")]([ExtResource("3_bo2tm")])
+metadata/_custom_type_script = "uid://dp2bjpv2ue7q7"
