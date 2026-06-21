@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://bqbn0wnsg1ful"]
 
+[ext_resource type="Script" uid="uid://c14ntjurw5n0y" path="res://Radio/radio_node.gd" id="1_2hs0g"]
 [ext_resource type="Script" uid="uid://yac3cb6gaepn" path="res://Radio/test/knob_slider.gd" id="1_f218l"]
+[ext_resource type="Texture2D" uid="uid://bcbar8y8eil7j" path="res://icon.svg" id="2_h2ysq"]
 [ext_resource type="PackedScene" uid="uid://d3sf7u516x306" path="res://Radio/ClipManagerAudioStream/ClipManagerAudioStream.tscn" id="3_s7opi"]
 [ext_resource type="Script" uid="uid://cdwotjgvtyhjm" path="res://Radio/ClipInsertion/clip_insertion.gd" id="4_ilola"]
 [ext_resource type="Resource" uid="uid://dpag8ljha4aqy" path="res://Radio/ClipInsertion/sample_clip.tres" id="5_aw04w"]
@@ -13,6 +15,12 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 320.0
 offset_bottom = 153.0
+script = ExtResource("1_2hs0g")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=825756485]
+position = Vector2(157, 76)
+scale = Vector2(2.484375, 1.25)
+texture = ExtResource("2_h2ysq")
 
 [node name="knob slider" type="HSlider" parent="." unique_id=1946158888 node_paths=PackedStringArray("central_static_noise")]
 layout_mode = 0

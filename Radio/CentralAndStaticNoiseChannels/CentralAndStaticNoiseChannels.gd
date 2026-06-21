@@ -3,6 +3,7 @@ class_name CentralAndStaticNoiseChannels
 
 var amount_of_streams:int
 var playlist_array :Array[AudioStream]
+
 @export var clip_manager:ClipManagerAudioStream
 @export var currently_chosen_channel:int = 0
 @export var timer_node:CustomTimer
