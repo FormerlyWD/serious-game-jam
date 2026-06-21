@@ -7,6 +7,12 @@
 [ext_resource type="Script" uid="uid://cn5762sv6ibx3" path="res://Radio/CentralAndStaticNoiseChannels/ChannelClass/channel_class.gd" id="3_i3aeo"]
 [ext_resource type="Script" uid="uid://4yh70i0yfekf" path="res://ShiftManager/ShiftClass/shift_class.gd" id="4_5wyu1"]
 [ext_resource type="Resource" uid="uid://caeu0uab0mc42" path="res://Radio/CentralAndStaticNoiseChannels/ChannelClass/default_channel.tres" id="5_0c07c"]
+[ext_resource type="AudioStream" uid="uid://bhd3m1vgonjqw" path="res://Audio/Recording (22).mp3" id="6_0c07c"]
+
+[sub_resource type="Resource" id="Resource_2cgwh"]
+script = ExtResource("2_35xla")
+audio_clip = ExtResource("6_0c07c")
+metadata/_custom_type_script = "uid://cdwotjgvtyhjm"
 
 [sub_resource type="Resource" id="Resource_0c07c"]
 script = ExtResource("4_5wyu1")
@@ -14,7 +20,7 @@ all_clip_insertions = Array[ExtResource("2_35xla")]([ExtResource("3_5wyu1")])
 channel_array = Array[ExtResource("3_i3aeo")]([ExtResource("5_0c07c"), ExtResource("5_0c07c"), ExtResource("5_0c07c")])
 is_clip_insertion_scatter_enabled = true
 clip_insertion_scatter_count = 4
-clip_insertion_scatter_pool = Array[ExtResource("2_35xla")]([ExtResource("3_5wyu1")])
+clip_insertion_scatter_pool = Array[ExtResource("2_35xla")]([SubResource("Resource_2cgwh")])
 metadata/_custom_type_script = "uid://4yh70i0yfekf"
 
 [node name="DeskScene" type="Node2D" unique_id=522105481]

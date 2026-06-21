@@ -26,7 +26,7 @@ func scatter_clips(shift_data:Shift) -> void:
 		end_time_intervals.append(clip.end_time)
 	
 	for clip_loop in range(shift_data.clip_insertion_scatter_count):
-		var clip:ClipInsertion= shift_data.clip_insertion_scatter_pool.pick_random()
+		var clip:ClipInsertion= shift_data.clip_insertion_scatter_pool.pick_random().duplicate()
 		
 		var interval =generate_non_overlapping_duration(
 			clip.duration,

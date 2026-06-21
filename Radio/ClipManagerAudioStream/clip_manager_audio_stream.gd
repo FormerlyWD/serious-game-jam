@@ -112,4 +112,4 @@ func fill_end_time_for_shift(shift_data:Shift):
 	for predetermined_clip in shift_data.all_clip_insertions:
 		fill_end_time(predetermined_clip)
 	for scatter_clip in shift_data.clip_insertion_scatter_pool:
-		fill_end_time(scatter_clip, true)
+		fill_end_time(scatter_clip)
