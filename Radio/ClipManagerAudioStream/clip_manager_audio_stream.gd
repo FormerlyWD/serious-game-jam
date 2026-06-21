@@ -6,7 +6,11 @@ signal new_clip_inserted
 enum PlayState {
 	BUSY, FREE, NONREADY
 }
+enum AvailabilityState {
+	LOCKED, AVAILABLE
+}
 var current_play_state:PlayState = PlayState.NONREADY
+var current_availability_state:AvailabilityState = AvailabilityState.AVAILABLE
 var all_clips_insertions_sorted:Array[Array]
 @export var all_clips_insertions:Array[ClipInsertion]
 @export var button_tracker:ClipTrackButton
@@ -18,8 +22,12 @@ var clip_history_registry:Dictionary
 
 
 func _process(delta: float) -> void:
+	if current_availability_state == AvailabilityState.LOCKED:
+		return
 	check_clip_state()
-	
+func lock_clips():
+	current_availability_state = AvailabilityState.LOCKED
+	discard_clip_from_play(true)
 func check_clip_state():
 	match current_play_state:
 		PlayState.NONREADY:
@@ -57,7 +65,8 @@ func discard_clip_from_play(from_channel_switch:bool = false):
 	stop()
 	stream = null
 	if from_channel_switch:
-		pass
+		current_clip_parsed= null
+		button_tracker.remove_element(saved_clip_id)
 		
 	elif current_clip_parsed:
 		current_clip_parsed= null

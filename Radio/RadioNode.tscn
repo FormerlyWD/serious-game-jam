@@ -13,6 +13,7 @@
 [ext_resource type="Script" uid="uid://cn5762sv6ibx3" path="res://Radio/CentralAndStaticNoiseChannels/ChannelClass/channel_class.gd" id="10_atd8r"]
 [ext_resource type="AudioStream" uid="uid://edf4l8nlh2i" path="res://Audio/freesound_community-static-radio-noise-and-searching-for-stations-48537.mp3" id="11_5gbna"]
 [ext_resource type="PackedScene" uid="uid://o2fsnkbaqlsv" path="res://Radio/ClipTrackButton/ClipTrackButton.tscn" id="12_1y8mp"]
+[ext_resource type="AudioStream" uid="uid://gnmo84rj1yws" path="res://Audio/freesound_community-crispy-static-56963.mp3" id="13_rxmdp"]
 [ext_resource type="PackedScene" uid="uid://dnp2iabu36s75" path="res://ShiftManager/ShiftClipScatterProcessing/ShiftClipScatterProcessing.tscn" id="14_kcuwd"]
 
 [sub_resource type="Resource" id="Resource_kcuwd"]
@@ -31,6 +32,13 @@ metadata/_custom_type_script = "uid://cn5762sv6ibx3"
 script = ExtResource("10_atd8r")
 lowest_frequency_point = 2.0
 radio_noise = ExtResource("11_5gbna")
+metadata/_custom_type_script = "uid://cn5762sv6ibx3"
+
+[sub_resource type="Resource" id="Resource_260hf"]
+script = ExtResource("10_atd8r")
+lowest_frequency_point = 360.0
+radio_noise = ExtResource("13_rxmdp")
+channel_locked = true
 metadata/_custom_type_script = "uid://cn5762sv6ibx3"
 
 [node name="RadioNode" type="Control" unique_id=155327058 node_paths=PackedStringArray("clip_manager_audio_stream", "central_and_static_noise_channels", "knob_slider", "timer")]
@@ -55,6 +63,7 @@ offset_right = 313.0
 offset_bottom = 16.0
 max_value = 360.0
 script = ExtResource("1_f218l")
+signal_clear_flag_requirement = 0.2
 clip_volume_outside_curve = -10.0
 central_static_noise = NodePath("../CentralAndStaticNoiseChannels")
 clip_manager_audio_stream = NodePath("../ClipManagerAudioStream")
@@ -107,6 +116,7 @@ channel_array = Array[ExtResource("10_atd8r")]([SubResource("Resource_5gbna"), S
 frequency_knob = NodePath("../knob slider")
 clip_manager = NodePath("../ClipManagerAudioStream")
 timer_node = NodePath("../CustomTimer")
+idle_channel = SubResource("Resource_260hf")
 
 [node name="ClipTrackButton" parent="." unique_id=2116075426 node_paths=PackedStringArray("knob_slider", "clip_manager") instance=ExtResource("12_1y8mp")]
 layout_mode = 1

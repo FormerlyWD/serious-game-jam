@@ -21,6 +21,7 @@ var is_frequency_cleared:bool
 
 func reset():
 	clip_manager_audio_stream.volume_db =clip_volume_outside_curve
+	
 	central_static_noise.volume_db = noise_default_volume
 	value = 0 #subject to change
 func find_dist(new_value:float):

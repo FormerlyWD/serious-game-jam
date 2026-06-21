@@ -14,6 +14,7 @@ enum ScatterMode {
 @export var max_overlap_attempts:int = 100
 
 
+	
 func scatter_clips(shift_data:Shift) -> void:
 	if not shift_data.is_clip_insertion_scatter_enabled:
 		return
@@ -96,6 +97,7 @@ func scatter_clips(shift_data:Shift) -> void:
 				start_time_intervals[clip.designated_channel].append(interval.start)
 				end_time_intervals[clip.designated_channel].append(interval.end)
 				clip_packed_array.append(clip)
+				
 				
 	
 	

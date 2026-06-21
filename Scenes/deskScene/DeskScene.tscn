@@ -10,10 +10,10 @@ current_shift_object = ExtResource("2_u83au")
 
 [node name="RadioNode" parent="." unique_id=170821821 instance=ExtResource("3_0rdti")]
 unique_name_in_owner = true
-offset_left = -429.0
-offset_top = -250.0
-offset_right = -109.0
-offset_bottom = -97.0
+offset_left = -471.0
+offset_top = -202.0
+offset_right = -151.0
+offset_bottom = -49.0
 metadata/_edit_use_anchors_ = true
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=514651589]
