@@ -10,11 +10,18 @@
 [ext_resource type="PackedScene" uid="uid://b8ll7g4yo3t4d" path="res://Radio/CentralAndStaticNoiseChannels/CentralAndStaticNoiseChannels.tscn" id="7_2hs0g"]
 [ext_resource type="AudioStream" uid="uid://bhd3m1vgonjqw" path="res://Audio/Recording (22).mp3" id="7_2odom"]
 [ext_resource type="Script" uid="uid://bfjxllnddc11q" path="res://Radio/dial_2.gd" id="7_f8qu0"]
+[ext_resource type="Texture2D" uid="uid://dv41ni77odm32" path="res://Art/Radio/Dial.png" id="10_7esas"]
 [ext_resource type="Script" uid="uid://cn5762sv6ibx3" path="res://Radio/CentralAndStaticNoiseChannels/ChannelClass/channel_class.gd" id="10_atd8r"]
 [ext_resource type="AudioStream" uid="uid://edf4l8nlh2i" path="res://Audio/freesound_community-static-radio-noise-and-searching-for-stations-48537.mp3" id="11_5gbna"]
 [ext_resource type="PackedScene" uid="uid://o2fsnkbaqlsv" path="res://Radio/ClipTrackButton/ClipTrackButton.tscn" id="12_1y8mp"]
 [ext_resource type="AudioStream" uid="uid://gnmo84rj1yws" path="res://Audio/freesound_community-crispy-static-56963.mp3" id="13_rxmdp"]
 [ext_resource type="PackedScene" uid="uid://dnp2iabu36s75" path="res://ShiftManager/ShiftClipScatterProcessing/ShiftClipScatterProcessing.tscn" id="14_kcuwd"]
+[ext_resource type="Texture2D" uid="uid://cff855uplo2uv" path="res://Art/Radio/Button/Button_Press-1.png" id="16_n2i0h"]
+[ext_resource type="Texture2D" uid="uid://bn3tu7skctliy" path="res://Art/Radio/Button/Button_Press-2.png" id="17_xmpfd"]
+[ext_resource type="Texture2D" uid="uid://5vjn5ppg0w4l" path="res://Art/Radio/Button/Button_Press-3.png" id="18_q2h2e"]
+[ext_resource type="Texture2D" uid="uid://lfa4mledm2ds" path="res://Art/Radio/Button/Button_Press-4.png" id="19_e7ng2"]
+[ext_resource type="Texture2D" uid="uid://psgkxbfrxcx3" path="res://Art/Radio/Lights.png" id="21_n2i0h"]
+[ext_resource type="Texture2D" uid="uid://cfy0ed4voo032" path="res://Art/Radio/Lights additive.png" id="22_xmpfd"]
 
 [sub_resource type="Resource" id="Resource_kcuwd"]
 script = ExtResource("4_ilola")
@@ -40,6 +47,29 @@ lowest_frequency_point = 360.0
 radio_noise = ExtResource("13_rxmdp")
 channel_locked = true
 metadata/_custom_type_script = "uid://cn5762sv6ibx3"
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_me8kd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_n2i0h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_xmpfd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_q2h2e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_e7ng2")
+}],
+"loop": false,
+"name": &"press",
+"speed": 15.0
+}]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_q2h2e"]
+blend_mode = 1
 
 [node name="RadioNode" type="Control" unique_id=155327058 node_paths=PackedStringArray("clip_manager_audio_stream", "central_and_static_noise_channels", "knob_slider", "timer")]
 layout_mode = 3
@@ -104,6 +134,18 @@ offset_right = 41.0
 offset_bottom = 36.0
 text = "-1"
 
+[node name="Dial2" type="Sprite2D" parent="DIAL2" unique_id=780884027]
+position = Vector2(106.00001, 23)
+scale = Vector2(0.389, 0.389)
+texture = ExtResource("10_7esas")
+metadata/_edit_lock_ = true
+
+[node name="Dial" type="Sprite2D" parent="DIAL2" unique_id=1406639911]
+position = Vector2(22, 23)
+scale = Vector2(0.389, 0.389)
+texture = ExtResource("10_7esas")
+metadata/_edit_lock_ = true
+
 [node name="CentralAndStaticNoiseChannels" parent="." unique_id=873207912 node_paths=PackedStringArray("frequency_knob", "clip_manager", "timer_node") instance=ExtResource("7_2hs0g")]
 unique_name_in_owner = true
 stream = null
@@ -127,6 +169,13 @@ clip_manager = NodePath("../ClipManagerAudioStream")
 offset_right = 96.0
 offset_bottom = 48.0
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ClipTrackButton" unique_id=253074337]
+position = Vector2(145, -1)
+scale = Vector2(0.389, 0.389)
+sprite_frames = SubResource("SpriteFrames_me8kd")
+animation = &"press"
+metadata/_edit_lock_ = true
+
 [node name="Label" type="Label" parent="." unique_id=135424010]
 layout_mode = 0
 offset_left = 331.0
@@ -137,6 +186,17 @@ offset_bottom = 164.0
 [node name="ShiftClipScatterProcessing" parent="." unique_id=1051648214 node_paths=PackedStringArray("clip_manager_audio_stream", "central_and_static_noise_channels") instance=ExtResource("14_kcuwd")]
 clip_manager_audio_stream = NodePath("../ClipManagerAudioStream")
 central_and_static_noise_channels = NodePath("../CentralAndStaticNoiseChannels")
+
+[node name="Lights" type="Sprite2D" parent="." unique_id=1080992565]
+z_index = 3
+z_as_relative = false
+position = Vector2(343, 69)
+scale = Vector2(0.389, 0.389)
+texture = ExtResource("21_n2i0h")
+
+[node name="LightsAdditive" type="Sprite2D" parent="Lights" unique_id=1852410918]
+material = SubResource("CanvasItemMaterial_q2h2e")
+texture = ExtResource("22_xmpfd")
 
 [connection signal="value_changed" from="knob slider" to="knob slider" method="_on_value_changed"]
 [connection signal="button_up" from="DIAL2/Button" to="DIAL2" method="_on_button_button_up"]
