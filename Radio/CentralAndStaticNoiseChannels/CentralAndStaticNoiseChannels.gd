@@ -11,9 +11,13 @@ signal new_channel_switched
 @export var idle_channel:Channel
 @export var idle_time:float = 1.0
 var all_locked_channel_nums:Array[int]
-var is_ready:bool = true
-	
-	
+
+
+var switching_timer: SceneTreeTimer = null
+var switching := false
+var cancel_switch := false
+var queued_channel_num:int
+var is_queued_channel_valid : bool
 func update_stream_count():
 	
 	if channel_array:
@@ -21,21 +25,50 @@ func update_stream_count():
 	for base_channel in channel_array:
 		if base_channel.channel_locked:
 			all_locked_channel_nums.append(channel_array.find(base_channel))
+			
+			
+			
+			
+
 func switch_channel(new_channel:int):
-	if is_ready:
-		is_ready = false
-	else:
+	
+	if switching:
+		cancel_switch = true
+		queued_channel_num = new_channel
+		is_queued_channel_valid = true
+		switch_start(new_channel)
 		return
 	
 	
+	switch_start(new_channel)
+func switch_start(new_channel:int):
+	switching = true
+	cancel_switch = false
+	is_queued_channel_valid = false
+	switch_process(new_channel)
+
+@warning_ignore("redundant_await")
+func switch_process(new_channel:int):
 	clip_manager.lock_clips()
-	
 	stop()
 	stream = idle_channel.radio_noise
 	play(timer_node.current_timer)
+	switching_timer = get_tree().create_timer(idle_time)
 	
-	await get_tree().create_timer(idle_time).timeout
+	await switching_timer.timeout
+	if cancel_switch:
+		
+		if is_queued_channel_valid:
+			var next:int = queued_channel_num
+			is_queued_channel_valid = false
+			queued_channel_num = -1
+			switch_start(next)
+		return
+
+	
+	
 	new_channel_switched.emit()
+	
 	currently_chosen_channel = new_channel
 	frequency_knob.chosen_target_deg = channel_array[currently_chosen_channel].lowest_frequency_point
 	frequency_knob._on_value_changed(frequency_knob.value)
@@ -47,7 +80,10 @@ func switch_channel(new_channel:int):
 	
 
 	clip_manager.check_clip_state()
-	is_ready = true
+	switching = false
+
+	
+
 func get_random_channel_num() -> int:
 	var random_channel_num:int = randi_range(0,amount_of_streams-1)
 	while random_channel_num in all_locked_channel_nums:

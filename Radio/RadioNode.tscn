@@ -24,6 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://s0m83o07lgug" path="res://Knob/Knob.tscn" id="23_q2h2e"]
 [ext_resource type="Script" uid="uid://dp0imyw1pnfep" path="res://Radio/KnobToSliderPuppet/knob_puppet_slider.gd" id="24_e7ng2"]
 [ext_resource type="Script" uid="uid://csgd60avu0ydm" path="res://Radio/KnobToChannelIdPuppet/knob_channel.gd" id="24_me8kd"]
+[ext_resource type="Script" uid="uid://bbcyh2bi4e4om" path="res://Radio/test/channel_id.gd" id="25_me8kd"]
 
 [sub_resource type="Resource" id="Resource_kcuwd"]
 script = ExtResource("4_ilola")
@@ -207,6 +208,16 @@ knob_puppet = NodePath("KnobPuppet")
 script = ExtResource("24_me8kd")
 central_and_static_noise_channels = NodePath("../../CentralAndStaticNoiseChannels")
 metadata/_custom_type_script = "uid://hcgfljpao81u"
+
+[node name="Label" type="Label" parent="Knob2" unique_id=1793153064 node_paths=PackedStringArray("central_and_static_noise_channels")]
+layout_mode = 0
+offset_left = -123.393326
+offset_top = 41.131126
+offset_right = -35.989723
+offset_bottom = 120.82263
+scale = Vector2(3.685, 3.685)
+script = ExtResource("25_me8kd")
+central_and_static_noise_channels = NodePath("../../CentralAndStaticNoiseChannels")
 
 [connection signal="value_changed" from="Knob/knob slider" to="Knob/knob slider" method="_on_value_changed"]
 
