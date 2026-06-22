@@ -10,7 +10,6 @@
 [ext_resource type="PackedScene" uid="uid://b8ll7g4yo3t4d" path="res://Radio/CentralAndStaticNoiseChannels/CentralAndStaticNoiseChannels.tscn" id="7_2hs0g"]
 [ext_resource type="AudioStream" uid="uid://bhd3m1vgonjqw" path="res://Audio/Recording (22).mp3" id="7_2odom"]
 [ext_resource type="Script" uid="uid://bfjxllnddc11q" path="res://Radio/dial_2.gd" id="7_f8qu0"]
-[ext_resource type="Texture2D" uid="uid://dv41ni77odm32" path="res://Art/Radio/Dial.png" id="10_7esas"]
 [ext_resource type="Script" uid="uid://cn5762sv6ibx3" path="res://Radio/CentralAndStaticNoiseChannels/ChannelClass/channel_class.gd" id="10_atd8r"]
 [ext_resource type="AudioStream" uid="uid://edf4l8nlh2i" path="res://Audio/freesound_community-static-radio-noise-and-searching-for-stations-48537.mp3" id="11_5gbna"]
 [ext_resource type="PackedScene" uid="uid://o2fsnkbaqlsv" path="res://Radio/ClipTrackButton/ClipTrackButton.tscn" id="12_1y8mp"]
@@ -22,6 +21,9 @@
 [ext_resource type="Texture2D" uid="uid://lfa4mledm2ds" path="res://Art/Radio/Button/Button_Press-4.png" id="19_e7ng2"]
 [ext_resource type="Texture2D" uid="uid://psgkxbfrxcx3" path="res://Art/Radio/Lights.png" id="21_n2i0h"]
 [ext_resource type="Texture2D" uid="uid://cfy0ed4voo032" path="res://Art/Radio/Lights additive.png" id="22_xmpfd"]
+[ext_resource type="PackedScene" uid="uid://s0m83o07lgug" path="res://Knob/Knob.tscn" id="23_q2h2e"]
+[ext_resource type="Script" uid="uid://dp0imyw1pnfep" path="res://Radio/KnobToSliderPuppet/knob_puppet_slider.gd" id="24_e7ng2"]
+[ext_resource type="Script" uid="uid://csgd60avu0ydm" path="res://Radio/KnobToChannelIdPuppet/knob_channel.gd" id="24_me8kd"]
 
 [sub_resource type="Resource" id="Resource_kcuwd"]
 script = ExtResource("4_ilola")
@@ -79,26 +81,8 @@ offset_bottom = 153.0
 script = ExtResource("1_2hs0g")
 clip_manager_audio_stream = NodePath("ClipManagerAudioStream")
 central_and_static_noise_channels = NodePath("CentralAndStaticNoiseChannels")
-knob_slider = NodePath("knob slider")
+knob_slider = NodePath("Knob/knob slider")
 timer = NodePath("CustomTimer")
-
-[node name="knob slider" type="HSlider" parent="." unique_id=1946158888 node_paths=PackedStringArray("central_static_noise", "clip_manager_audio_stream")]
-layout_mode = 0
-offset_right = 313.0
-offset_bottom = 16.0
-max_value = 360.0
-script = ExtResource("1_f218l")
-signal_clear_flag_requirement = 0.2
-clip_volume_outside_curve = -10.0
-central_static_noise = NodePath("../CentralAndStaticNoiseChannels")
-clip_manager_audio_stream = NodePath("../ClipManagerAudioStream")
-
-[node name="indicator" type="Sprite2D" parent="knob slider" unique_id=1117832813]
-visible = false
-modulate = Color(0, 0, 0, 1)
-position = Vector2(342.25, 8.500002)
-scale = Vector2(0.24609336, 0.19531247)
-texture = ExtResource("2_h2ysq")
 
 [node name="ClipManagerAudioStream" parent="." unique_id=1715325066 node_paths=PackedStringArray("button_tracker", "central_noise_audio_stream", "timer_node") instance=ExtResource("3_s7opi")]
 all_clips_insertions = Array[ExtResource("4_ilola")]([ExtResource("5_aw04w"), SubResource("Resource_kcuwd")])
@@ -118,39 +102,11 @@ offset_bottom = 155.0
 script = ExtResource("7_f8qu0")
 central_noise_channel = NodePath("../CentralAndStaticNoiseChannels")
 
-[node name="Button" type="Button" parent="DIAL2" unique_id=1824766153]
-layout_mode = 0
-offset_left = 51.0
-offset_top = 5.0
-offset_right = 88.0
-offset_bottom = 36.0
-text = "+1"
-
-[node name="Button2" type="Button" parent="DIAL2" unique_id=1387189679]
-layout_mode = 0
-offset_left = 4.0
-offset_top = 5.0
-offset_right = 41.0
-offset_bottom = 36.0
-text = "-1"
-
-[node name="Dial2" type="Sprite2D" parent="DIAL2" unique_id=780884027]
-position = Vector2(106.00001, 23)
-scale = Vector2(0.389, 0.389)
-texture = ExtResource("10_7esas")
-metadata/_edit_lock_ = true
-
-[node name="Dial" type="Sprite2D" parent="DIAL2" unique_id=1406639911]
-position = Vector2(22, 23)
-scale = Vector2(0.389, 0.389)
-texture = ExtResource("10_7esas")
-metadata/_edit_lock_ = true
-
 [node name="CentralAndStaticNoiseChannels" parent="." unique_id=873207912 node_paths=PackedStringArray("frequency_knob", "clip_manager", "timer_node") instance=ExtResource("7_2hs0g")]
 unique_name_in_owner = true
 stream = null
 channel_array = Array[ExtResource("10_atd8r")]([SubResource("Resource_5gbna"), SubResource("Resource_1y8mp")])
-frequency_knob = NodePath("../knob slider")
+frequency_knob = NodePath("../Knob/knob slider")
 clip_manager = NodePath("../ClipManagerAudioStream")
 timer_node = NodePath("../CustomTimer")
 idle_channel = SubResource("Resource_260hf")
@@ -162,7 +118,7 @@ offset_top = 107.0
 offset_right = 220.536
 offset_bottom = 107.0
 delay_intervals = 20.0
-knob_slider = NodePath("../knob slider")
+knob_slider = NodePath("../Knob/knob slider")
 clip_manager = NodePath("../ClipManagerAudioStream")
 
 [node name="Button" parent="ClipTrackButton" index="0" unique_id=715674673]
@@ -198,8 +154,60 @@ texture = ExtResource("21_n2i0h")
 material = SubResource("CanvasItemMaterial_q2h2e")
 texture = ExtResource("22_xmpfd")
 
-[connection signal="value_changed" from="knob slider" to="knob slider" method="_on_value_changed"]
-[connection signal="button_up" from="DIAL2/Button" to="DIAL2" method="_on_button_button_up"]
-[connection signal="button_up" from="DIAL2/Button2" to="DIAL2" method="_on_button_2_button_up"]
+[node name="Knob" parent="." unique_id=140393109 node_paths=PackedStringArray("knob_puppet") instance=ExtResource("23_q2h2e")]
+z_index = -1
+layout_mode = 1
+offset_left = 62.519997
+offset_top = 94.476006
+offset_right = 209.52
+offset_bottom = 234.476
+grow_horizontal = 1
+grow_vertical = 1
+scale = Vector2(0.389, 0.389)
+knob_puppet = NodePath("KnobPuppet")
+
+[node name="knob slider" type="HSlider" parent="Knob" unique_id=1946158888 node_paths=PackedStringArray("central_static_noise", "clip_manager_audio_stream")]
+layout_mode = 0
+offset_left = -600.0001
+offset_top = -72.941216
+offset_right = -287.00012
+offset_bottom = -56.941216
+scale = Vector2(2.665, 2.665)
+max_value = 360.0
+script = ExtResource("1_f218l")
+signal_clear_flag_requirement = 0.05
+clip_volume_outside_curve = -10.0
+central_static_noise = NodePath("../../CentralAndStaticNoiseChannels")
+clip_manager_audio_stream = NodePath("../../ClipManagerAudioStream")
+
+[node name="indicator" type="Sprite2D" parent="Knob/knob slider" unique_id=1117832813]
+visible = false
+modulate = Color(0, 0, 0, 1)
+position = Vector2(342.25, 8.500002)
+scale = Vector2(0.24609336, 0.19531247)
+texture = ExtResource("2_h2ysq")
+
+[node name="KnobPuppet" type="Node" parent="Knob" unique_id=348484461 node_paths=PackedStringArray("knob_slider")]
+script = ExtResource("24_e7ng2")
+knob_slider = NodePath("../knob slider")
+metadata/_custom_type_script = "uid://hcgfljpao81u"
+
+[node name="Knob2" parent="." unique_id=879884178 node_paths=PackedStringArray("knob_puppet") instance=ExtResource("23_q2h2e")]
+layout_mode = 1
+offset_left = -14.480001
+offset_top = 96.47599
+offset_right = 132.52
+offset_bottom = 236.476
+grow_horizontal = 1
+grow_vertical = 1
+scale = Vector2(0.389, 0.389)
+knob_puppet = NodePath("KnobPuppet")
+
+[node name="KnobPuppet" type="Node" parent="Knob2" unique_id=1322766055 node_paths=PackedStringArray("central_and_static_noise_channels")]
+script = ExtResource("24_me8kd")
+central_and_static_noise_channels = NodePath("../../CentralAndStaticNoiseChannels")
+metadata/_custom_type_script = "uid://hcgfljpao81u"
+
+[connection signal="value_changed" from="Knob/knob slider" to="Knob/knob slider" method="_on_value_changed"]
 
 [editable path="ClipTrackButton"]

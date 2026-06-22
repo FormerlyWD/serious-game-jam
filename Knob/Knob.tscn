@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://s0m83o07lgug"]
+
+[ext_resource type="Texture2D" uid="uid://dv41ni77odm32" path="res://Art/Radio/Dial.png" id="1_hxjfc"]
+[ext_resource type="Script" uid="uid://cb8i6286v0yfx" path="res://Knob/knob.gd" id="1_lvm67"]
+
+[node name="Knob" type="TextureRect" unique_id=140393109]
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.108
+anchor_right = 0.064
+anchor_bottom = 0.108
+offset_left = -73.728004
+offset_top = -69.984
+offset_right = 73.271996
+offset_bottom = 70.016
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lvm67")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1080041671]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 3.0
+offset_right = 149.0
+offset_bottom = 143.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("1_hxjfc")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
