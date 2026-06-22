@@ -52,11 +52,6 @@ central_and_static_noise_channels = NodePath("CentralAndStaticNoiseChannels")
 knob_slider = NodePath("knob slider")
 timer = NodePath("CustomTimer")
 
-[node name="radio_interior" type="Sprite2D" parent="." unique_id=825756485]
-position = Vector2(157, 76)
-scale = Vector2(2.484375, 1.25)
-texture = ExtResource("2_h2ysq")
-
 [node name="knob slider" type="HSlider" parent="." unique_id=1946158888 node_paths=PackedStringArray("central_static_noise", "clip_manager_audio_stream")]
 layout_mode = 0
 offset_right = 313.0
