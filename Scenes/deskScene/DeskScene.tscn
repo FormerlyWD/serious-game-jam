@@ -4,6 +4,7 @@
 [ext_resource type="Resource" uid="uid://d10ynls4fdc32" path="res://ShiftManager/NewShift.tres" id="2_u83au"]
 [ext_resource type="PackedScene" uid="uid://bqbn0wnsg1ful" path="res://Radio/RadioNode.tscn" id="3_0rdti"]
 [ext_resource type="PackedScene" uid="uid://d2o2i0y6w1uy8" path="res://Handbook/Handbook.tscn" id="3_u83au"]
+[ext_resource type="Texture2D" uid="uid://co7srhkhk33k4" path="res://Sprites/desk.PNG" id="4_u83au"]
 
 [node name="DeskScene" type="Node2D" unique_id=522105481]
 script = ExtResource("1_uf8a2")
@@ -17,10 +18,17 @@ offset_bottom = 114.0
 
 [node name="RadioNode" parent="." unique_id=170821821 instance=ExtResource("3_0rdti")]
 unique_name_in_owner = true
-offset_left = -471.0
-offset_top = -202.0
-offset_right = -151.0
-offset_bottom = -49.0
+offset_left = -332.0
+offset_top = -69.0
+offset_right = -12.0
+offset_bottom = 84.0
 metadata/_edit_use_anchors_ = true
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=514651589]
+
+[node name="Desk" type="Sprite2D" parent="." unique_id=1107693811]
+z_index = -2
+position = Vector2(11, 0.23451233)
+scale = Vector2(0.38877037, 0.3887704)
+texture = ExtResource("4_u83au")
+metadata/_edit_lock_ = true
