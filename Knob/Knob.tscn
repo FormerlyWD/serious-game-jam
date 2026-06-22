@@ -26,5 +26,8 @@ offset_bottom = 143.0
 pivot_offset_ratio = Vector2(0.5, 0.5)
 texture = ExtResource("1_hxjfc")
 
+[node name="MiddlePosition" type="Marker2D" parent="." unique_id=2105686795]
+position = Vector2(76, 72)
+
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

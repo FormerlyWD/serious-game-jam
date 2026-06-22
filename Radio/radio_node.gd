@@ -6,6 +6,8 @@ signal request_top
 @export var central_and_static_noise_channels: CentralAndStaticNoiseChannels
 @export var knob_slider: FrequencyKnob
 @export var timer:CustomTimer
+@export var radio_disabler: RadioDisabler
+
 
 func _ready() -> void:
 	timer.radio_finished.connect(radio_finished)

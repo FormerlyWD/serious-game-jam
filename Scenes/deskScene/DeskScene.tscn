@@ -11,10 +11,10 @@ script = ExtResource("1_uf8a2")
 current_shift_object = ExtResource("2_u83au")
 
 [node name="Handbook" parent="." unique_id=2007939756 instance=ExtResource("3_u83au")]
-offset_left = 161.0
-offset_top = -316.0
-offset_right = 630.0
-offset_bottom = 72.0
+offset_left = -198.0
+offset_top = 202.0
+offset_right = 271.0
+offset_bottom = 590.0
 
 [node name="RadioNode" parent="." unique_id=170821821 instance=ExtResource("3_0rdti")]
 unique_name_in_owner = true
@@ -32,3 +32,9 @@ position = Vector2(11, 0.23451233)
 scale = Vector2(0.38877037, 0.3887704)
 texture = ExtResource("4_u83au")
 metadata/_edit_lock_ = true
+
+[node name="Button" type="Button" parent="." unique_id=209868724]
+offset_left = 390.0
+offset_top = 15.0
+offset_right = 398.0
+offset_bottom = 23.0

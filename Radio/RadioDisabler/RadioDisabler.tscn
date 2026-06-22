@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cdiix473sr3b3"]
+
+[ext_resource type="Script" uid="uid://c7q664i0g5c4s" path="res://Radio/RadioDisabler/radio_disabler.gd" id="1_jok8w"]
+
+[node name="RadioDisabler" type="Node" unique_id=1426527273]
+script = ExtResource("1_jok8w")

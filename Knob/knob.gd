@@ -12,10 +12,11 @@ func _gui_input(event: InputEvent) -> void:
 		is_following = false
 func _physics_process(delta: float) -> void:
 	if is_following:
-		var angle := get_global_mouse_position().angle_to_point(global_position) + PI/2
+		var angle := get_global_mouse_position().angle_to_point($MiddlePosition.global_position) + PI/2
 		
 		$TextureRect.rotation = angle
 		if knob_puppet:
+			
 			knob_puppet.on_rotation_change(angle)
 		
 func _on_mouse_entered() -> void:

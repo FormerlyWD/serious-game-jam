@@ -25,6 +25,7 @@
 [ext_resource type="Script" uid="uid://dp0imyw1pnfep" path="res://Radio/KnobToSliderPuppet/knob_puppet_slider.gd" id="24_e7ng2"]
 [ext_resource type="Script" uid="uid://csgd60avu0ydm" path="res://Radio/KnobToChannelIdPuppet/knob_channel.gd" id="24_me8kd"]
 [ext_resource type="Script" uid="uid://bbcyh2bi4e4om" path="res://Radio/test/channel_id.gd" id="25_me8kd"]
+[ext_resource type="PackedScene" uid="uid://cdiix473sr3b3" path="res://Radio/RadioDisabler/RadioDisabler.tscn" id="26_s4qw5"]
 
 [sub_resource type="Resource" id="Resource_kcuwd"]
 script = ExtResource("4_ilola")
@@ -74,7 +75,7 @@ animations = [{
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_q2h2e"]
 blend_mode = 1
 
-[node name="RadioNode" type="Control" unique_id=155327058 node_paths=PackedStringArray("clip_manager_audio_stream", "central_and_static_noise_channels", "knob_slider", "timer")]
+[node name="RadioNode" type="Control" unique_id=155327058 node_paths=PackedStringArray("clip_manager_audio_stream", "central_and_static_noise_channels", "knob_slider", "timer", "radio_disabler")]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 320.0
@@ -82,8 +83,9 @@ offset_bottom = 153.0
 script = ExtResource("1_2hs0g")
 clip_manager_audio_stream = NodePath("ClipManagerAudioStream")
 central_and_static_noise_channels = NodePath("CentralAndStaticNoiseChannels")
-knob_slider = NodePath("Knob/knob slider")
+knob_slider = NodePath("KnobFrequency/knob slider")
 timer = NodePath("CustomTimer")
+radio_disabler = NodePath("RadioDisabler")
 
 [node name="ClipManagerAudioStream" parent="." unique_id=1715325066 node_paths=PackedStringArray("button_tracker", "central_noise_audio_stream", "timer_node") instance=ExtResource("3_s7opi")]
 all_clips_insertions = Array[ExtResource("4_ilola")]([ExtResource("5_aw04w"), SubResource("Resource_kcuwd")])
@@ -107,7 +109,7 @@ central_noise_channel = NodePath("../CentralAndStaticNoiseChannels")
 unique_name_in_owner = true
 stream = null
 channel_array = Array[ExtResource("10_atd8r")]([SubResource("Resource_5gbna"), SubResource("Resource_1y8mp")])
-frequency_knob = NodePath("../Knob/knob slider")
+frequency_knob = NodePath("../KnobFrequency/knob slider")
 clip_manager = NodePath("../ClipManagerAudioStream")
 timer_node = NodePath("../CustomTimer")
 idle_channel = SubResource("Resource_260hf")
@@ -119,12 +121,14 @@ offset_top = 107.0
 offset_right = 220.536
 offset_bottom = 107.0
 delay_intervals = 20.0
-knob_slider = NodePath("../Knob/knob slider")
+knob_slider = NodePath("../KnobFrequency/knob slider")
 clip_manager = NodePath("../ClipManagerAudioStream")
 
 [node name="Button" parent="ClipTrackButton" index="0" unique_id=715674673]
-offset_right = 96.0
-offset_bottom = 48.0
+offset_left = 116.0
+offset_top = -29.0
+offset_right = 212.0
+offset_bottom = 19.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ClipTrackButton" unique_id=253074337]
 position = Vector2(145, -1)
@@ -155,7 +159,7 @@ texture = ExtResource("21_n2i0h")
 material = SubResource("CanvasItemMaterial_q2h2e")
 texture = ExtResource("22_xmpfd")
 
-[node name="Knob" parent="." unique_id=140393109 node_paths=PackedStringArray("knob_puppet") instance=ExtResource("23_q2h2e")]
+[node name="KnobFrequency" parent="." unique_id=140393109 node_paths=PackedStringArray("knob_puppet") instance=ExtResource("23_q2h2e")]
 z_index = -1
 layout_mode = 1
 offset_left = 62.519997
@@ -167,13 +171,14 @@ grow_vertical = 1
 scale = Vector2(0.389, 0.389)
 knob_puppet = NodePath("KnobPuppet")
 
-[node name="knob slider" type="HSlider" parent="Knob" unique_id=1946158888 node_paths=PackedStringArray("central_static_noise", "clip_manager_audio_stream")]
+[node name="knob slider" type="HSlider" parent="KnobFrequency" unique_id=1946158888 node_paths=PackedStringArray("central_static_noise", "clip_manager_audio_stream")]
 layout_mode = 0
 offset_left = -600.0001
 offset_top = -72.941216
 offset_right = -287.00012
 offset_bottom = -56.941216
 scale = Vector2(2.665, 2.665)
+mouse_filter = 2
 max_value = 360.0
 script = ExtResource("1_f218l")
 signal_clear_flag_requirement = 0.05
@@ -181,19 +186,19 @@ clip_volume_outside_curve = -10.0
 central_static_noise = NodePath("../../CentralAndStaticNoiseChannels")
 clip_manager_audio_stream = NodePath("../../ClipManagerAudioStream")
 
-[node name="indicator" type="Sprite2D" parent="Knob/knob slider" unique_id=1117832813]
+[node name="indicator" type="Sprite2D" parent="KnobFrequency/knob slider" unique_id=1117832813]
 visible = false
 modulate = Color(0, 0, 0, 1)
 position = Vector2(342.25, 8.500002)
 scale = Vector2(0.24609336, 0.19531247)
 texture = ExtResource("2_h2ysq")
 
-[node name="KnobPuppet" type="Node" parent="Knob" unique_id=348484461 node_paths=PackedStringArray("knob_slider")]
+[node name="KnobPuppet" type="Node" parent="KnobFrequency" unique_id=348484461 node_paths=PackedStringArray("knob_slider")]
 script = ExtResource("24_e7ng2")
 knob_slider = NodePath("../knob slider")
 metadata/_custom_type_script = "uid://hcgfljpao81u"
 
-[node name="Knob2" parent="." unique_id=879884178 node_paths=PackedStringArray("knob_puppet") instance=ExtResource("23_q2h2e")]
+[node name="KnobChannel" parent="." unique_id=879884178 node_paths=PackedStringArray("knob_puppet") instance=ExtResource("23_q2h2e")]
 layout_mode = 1
 offset_left = -14.480001
 offset_top = 96.47599
@@ -204,12 +209,12 @@ grow_vertical = 1
 scale = Vector2(0.389, 0.389)
 knob_puppet = NodePath("KnobPuppet")
 
-[node name="KnobPuppet" type="Node" parent="Knob2" unique_id=1322766055 node_paths=PackedStringArray("central_and_static_noise_channels")]
+[node name="KnobPuppet" type="Node" parent="KnobChannel" unique_id=1322766055 node_paths=PackedStringArray("central_and_static_noise_channels")]
 script = ExtResource("24_me8kd")
 central_and_static_noise_channels = NodePath("../../CentralAndStaticNoiseChannels")
 metadata/_custom_type_script = "uid://hcgfljpao81u"
 
-[node name="Label" type="Label" parent="Knob2" unique_id=1793153064 node_paths=PackedStringArray("central_and_static_noise_channels")]
+[node name="Label" type="Label" parent="KnobChannel" unique_id=1793153064 node_paths=PackedStringArray("central_and_static_noise_channels")]
 layout_mode = 0
 offset_left = -123.393326
 offset_top = 41.131126
@@ -219,6 +224,9 @@ scale = Vector2(3.685, 3.685)
 script = ExtResource("25_me8kd")
 central_and_static_noise_channels = NodePath("../../CentralAndStaticNoiseChannels")
 
-[connection signal="value_changed" from="Knob/knob slider" to="Knob/knob slider" method="_on_value_changed"]
+[node name="RadioDisabler" parent="." unique_id=1426527273 node_paths=PackedStringArray("all_disables") instance=ExtResource("26_s4qw5")]
+all_disables = [NodePath("../KnobChannel"), NodePath("../KnobFrequency"), NodePath("../ClipTrackButton/Button")]
+
+[connection signal="value_changed" from="KnobFrequency/knob slider" to="KnobFrequency/knob slider" method="_on_value_changed"]
 
 [editable path="ClipTrackButton"]
