@@ -57,10 +57,10 @@ current_shift_object = ExtResource("2_u83au")
 
 [node name="Handbook" parent="." unique_id=2007939756 instance=ExtResource("3_u83au")]
 unique_name_in_owner = true
-offset_left = 152.0
-offset_top = 124.0
-offset_right = 621.0
-offset_bottom = 512.0
+offset_left = 107.0
+offset_top = 14.0
+offset_right = 576.0
+offset_bottom = 402.0
 default_page_previewer_inclusion = SubResource("Resource_4jb1o")
 
 [node name="RadioNode" parent="." unique_id=170821821 instance=ExtResource("3_0rdti")]
