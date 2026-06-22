@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://d2o2i0y6w1uy8"]
+
+[ext_resource type="Script" uid="uid://bidfkxhm7sn61" path="res://Handbook/handbook.gd" id="1_cxkbg"]
+[ext_resource type="PackedScene" uid="uid://0cpx3b178rt6" path="res://Handbook/Pages/BasePage.tscn" id="2_1dcfc"]
+
+[node name="Handbook" type="Control" unique_id=2007939756]
+custom_minimum_size = Vector2(469, 388)
+layout_mode = 3
+anchor_right = 0.407
+anchor_bottom = 0.59900004
+offset_right = 0.13598633
+offset_bottom = -0.15203857
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cxkbg")
+
+[node name="BasePage" parent="." unique_id=1294302572 instance=ExtResource("2_1dcfc")]
+layout_mode = 1
+offset_left = -142.0
+offset_top = -74.0
+offset_right = 27.687996
+offset_bottom = 111.57999

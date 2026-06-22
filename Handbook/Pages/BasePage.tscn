@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://0cpx3b178rt6"]
+
+[ext_resource type="Script" uid="uid://cu3fmuogxyyj3" path="res://Handbook/Pages/pageclass.gd" id="1_au4c3"]
+[ext_resource type="Texture2D" uid="uid://qhej807de15" path="res://Art/Placeholder/images (1).png" id="2_agh5e"]
+
+[node name="BasePage" type="Control" unique_id=1294302572]
+custom_minimum_size = Vector2(286, 463)
+layout_mode = 3
+anchor_right = 0.24800001
+anchor_bottom = 0.71500003
+offset_right = 0.3039856
+offset_bottom = -0.32000732
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_au4c3")
+
+[node name="Sprite2D" type="TextureRect" parent="." unique_id=456606488]
+layout_mode = 1
+offset_right = 193.0
+offset_bottom = 262.0
+scale = Vector2(1.385, 1.385)
+texture = ExtResource("2_agh5e")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1951358133]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 11.0
+offset_right = 249.0
+offset_bottom = 342.0

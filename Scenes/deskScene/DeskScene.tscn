@@ -3,10 +3,17 @@
 [ext_resource type="Script" uid="uid://cwfa0vwadh6a4" path="res://Scenes/deskScene/DeskScene.gd" id="1_uf8a2"]
 [ext_resource type="Resource" uid="uid://d10ynls4fdc32" path="res://ShiftManager/NewShift.tres" id="2_u83au"]
 [ext_resource type="PackedScene" uid="uid://bqbn0wnsg1ful" path="res://Radio/RadioNode.tscn" id="3_0rdti"]
+[ext_resource type="PackedScene" uid="uid://d2o2i0y6w1uy8" path="res://Handbook/Handbook.tscn" id="3_u83au"]
 
 [node name="DeskScene" type="Node2D" unique_id=522105481]
 script = ExtResource("1_uf8a2")
 current_shift_object = ExtResource("2_u83au")
+
+[node name="Handbook" parent="." unique_id=2007939756 instance=ExtResource("3_u83au")]
+offset_left = 66.0
+offset_top = -274.0
+offset_right = 535.0
+offset_bottom = 114.0
 
 [node name="RadioNode" parent="." unique_id=170821821 instance=ExtResource("3_0rdti")]
 unique_name_in_owner = true
