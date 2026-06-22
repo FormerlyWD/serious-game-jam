@@ -18,21 +18,22 @@ func _physics_process(delta: float) -> void:
 		var angle := get_global_mouse_position().angle_to_point($MiddlePosition.global_position) + PI/2
 		var angle_deg := fposmod(rad_to_deg(angle), 360)
 		if knob_limit_at_360:
-			if not past_angle == -1:
-				print("past_angle" + str(past_angle_degrees) + "/angle" + str(angle_deg))
-				if past_angle_degrees+180 < angle_deg or past_angle_degrees+180 > angle_deg:
-					
-					
+			if past_angle_degrees >= 0:
+				var diff = abs(angle_deg - past_angle_degrees)
+				if diff > 180:
 					angle_deg = past_angle_degrees
-					
-					$TextureRect.rotation = past_angle
 				else:
-					past_angle_degrees = fposmod(rad_to_deg(past_angle), 360)
-					$TextureRect.rotation = angle
-			past_angle = angle
+					past_angle_degrees = angle_deg
+				
+			else:
+				past_angle_degrees = angle_deg
+			
+			angle = deg_to_rad(angle_deg)
+			$TextureRect.rotation = angle
 		else:
 			
 			$TextureRect.rotation = angle
+		past_angle = angle
 		if knob_puppet:
 			
 			knob_puppet.on_rotation_change(angle)

@@ -5,6 +5,8 @@ class_name FrequencyKnob
 signal frequency_cleared
 var is_dragging: bool = false
 enum DialDirection {TOMIN, TOMAX}
+enum WrapState {NONE,THREESIXTY }
+@export var current_wrap_state:WrapState = WrapState.NONE
 @export var chosen_target_deg:float = 180
 
 @export var signal_clear_flag_requirement:float = 0.1
@@ -27,7 +29,12 @@ func reset():
 func find_dist(new_value:float):
 	return 180-abs(180-abs(new_value-chosen_target_deg))
 func _on_value_changed(cur_value:float) -> void:
-	var distance:float = cur_value
+	var distance:float
+	match current_wrap_state:
+		WrapState.NONE:
+			distance = cur_value
+		WrapState.THREESIXTY:
+			distance = find_dist(cur_value)
 	var distance_ratio:float = distance/180
 	
 	match current_dial_direction:
