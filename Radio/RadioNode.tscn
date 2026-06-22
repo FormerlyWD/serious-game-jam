@@ -127,8 +127,8 @@ clip_manager = NodePath("../ClipManagerAudioStream")
 [node name="Button" parent="ClipTrackButton" index="0" unique_id=715674673]
 offset_left = 116.0
 offset_top = -29.0
-offset_right = 212.0
-offset_bottom = 19.0
+offset_right = 180.055
+offset_bottom = 23.830002
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ClipTrackButton" unique_id=253074337]
 position = Vector2(145, -1)
@@ -173,10 +173,10 @@ knob_puppet = NodePath("KnobPuppet")
 
 [node name="knob slider" type="HSlider" parent="KnobFrequency" unique_id=1946158888 node_paths=PackedStringArray("central_static_noise", "clip_manager_audio_stream")]
 layout_mode = 0
-offset_left = -600.0001
-offset_top = -72.941216
-offset_right = -287.00012
-offset_bottom = -56.941216
+offset_left = -598.97174
+offset_top = -77.120865
+offset_right = -285.97174
+offset_bottom = -61.120865
 scale = Vector2(2.665, 2.665)
 mouse_filter = 2
 max_value = 360.0
@@ -202,7 +202,7 @@ metadata/_custom_type_script = "uid://hcgfljpao81u"
 layout_mode = 1
 offset_left = -14.480001
 offset_top = 96.47599
-offset_right = 132.52
+offset_right = 132.52003
 offset_bottom = 236.476
 grow_horizontal = 1
 grow_vertical = 1

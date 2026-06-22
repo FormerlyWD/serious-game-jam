@@ -9,6 +9,10 @@ var left_pointer:int
 var right_pointer:int
 func _ready() -> void:
 	initialize_pages()
+
+func apply_handbook_data(shift_data:Shift):
+	if shift_data.page_previewer_inclusion:
+		page_previewer_scene.page_include = shift_data.page_previewer_inclusion
 func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("new_page"):
 		page_pointer =wrapi(page_pointer+2,0,page_previewer_scene.all_fetched_pages.size())

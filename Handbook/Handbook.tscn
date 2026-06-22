@@ -39,6 +39,4 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="PagePreviewerScene" parent="." unique_id=1683508456 instance=ExtResource("2_1dcfc")]
-visible = false
 position = Vector2(0, 916.28)
-include_all = true

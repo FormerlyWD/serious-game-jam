@@ -5,6 +5,7 @@ class_name Shift
 @export var duration:float = 200
 @export var all_clip_insertions :Array[ClipInsertion]
 @export var channel_array:Array[Channel]
+@export var page_previewer_inclusion:PagePreviewerIncludeResource
 @export var all_blanks:Array[ShiftBlank]
 
 @export var is_clip_insertion_scatter_enabled:bool

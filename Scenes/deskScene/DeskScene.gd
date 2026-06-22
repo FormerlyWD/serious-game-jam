@@ -11,4 +11,4 @@ func process_shift_object():
 	current_shift_object = GlobalShiftManager.currently_focused_shift
 	%RadioNode.apply_shift_radio_data(current_shift_object)
 	%RadioNode.reset_radio()
-	
+	%Handbook.apply_handbook_data(current_shift_object)
