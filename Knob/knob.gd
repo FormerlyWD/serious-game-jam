@@ -3,6 +3,8 @@ class_name InteractableKnob
 const MAX_DIST := 7000
 var is_following:bool = false
 var is_hovered:bool
+var past_angle:float
+@export var knob_limit_at_360:bool = true
 @export var knob_puppet:KnobPuppet
 func _gui_input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("click"):
@@ -13,8 +15,11 @@ func _gui_input(event: InputEvent) -> void:
 func _physics_process(delta: float) -> void:
 	if is_following:
 		var angle := get_global_mouse_position().angle_to_point($MiddlePosition.global_position) + PI/2
-		
-		$TextureRect.rotation = angle
+		if knob_limit_at_360:
+			pass
+		else:
+			
+			$TextureRect.rotation = angle
 		if knob_puppet:
 			
 			knob_puppet.on_rotation_change(angle)

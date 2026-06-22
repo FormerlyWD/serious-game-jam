@@ -27,7 +27,7 @@ func reset():
 func find_dist(new_value:float):
 	return 180-abs(180-abs(new_value-chosen_target_deg))
 func _on_value_changed(cur_value:float) -> void:
-	var distance:float = find_dist(cur_value)
+	var distance:float = cur_value
 	var distance_ratio:float = distance/180
 	
 	match current_dial_direction:
