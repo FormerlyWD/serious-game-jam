@@ -207,6 +207,7 @@ offset_bottom = 236.476
 grow_horizontal = 1
 grow_vertical = 1
 scale = Vector2(0.389, 0.389)
+knob_limit_at_360 = false
 knob_puppet = NodePath("KnobPuppet")
 
 [node name="KnobPuppet" type="Node" parent="KnobChannel" unique_id=1322766055 node_paths=PackedStringArray("central_and_static_noise_channels")]
