@@ -5,12 +5,51 @@
 [ext_resource type="PackedScene" uid="uid://bqbn0wnsg1ful" path="res://Radio/RadioNode.tscn" id="3_0rdti"]
 [ext_resource type="PackedScene" uid="uid://d2o2i0y6w1uy8" path="res://Handbook/Handbook.tscn" id="3_u83au"]
 [ext_resource type="Script" uid="uid://cc6bi80v2lkjr" path="res://Handbook/Pages/PagePreviewerScene/PagePreviewerIncludeResource/page_previewer_include.gd" id="4_c73jo"]
-[ext_resource type="Texture2D" uid="uid://co7srhkhk33k4" path="res://Art/Desk/desk.PNG" id="4_u83au"]
+[ext_resource type="Texture2D" uid="uid://da5dga4fekgmb" path="res://Art/Desk/desk.png" id="6_4jb1o"]
+[ext_resource type="Texture2D" uid="uid://d0kxe30sjawi0" path="res://Art/Desk/Dark overlay.png" id="7_0njgj"]
 
 [sub_resource type="Resource" id="Resource_4jb1o"]
 script = ExtResource("4_c73jo")
 include_all = true
 metadata/_custom_type_script = "uid://cc6bi80v2lkjr"
+
+[sub_resource type="Animation" id="Animation_4jb1o"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1.0]
+}
+
+[sub_resource type="Animation" id="Animation_0njgj"]
+resource_name = "light flicker"
+length = 5.3333335
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate:a")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.2333333, 1.7666667, 2.2333333, 2.9666667, 4.4333334),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [1.0, 0.7, 1.0, 0.7, 1.0, 0.7]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_csl3a"]
+_data = {
+&"RESET": SubResource("Animation_4jb1o"),
+&"light flicker": SubResource("Animation_0njgj")
+}
 
 [node name="DeskScene" type="Node2D" unique_id=522105481]
 script = ExtResource("1_uf8a2")
@@ -38,8 +77,20 @@ metadata/_edit_use_anchors_ = true
 z_index = -2
 position = Vector2(11, 0.23451233)
 scale = Vector2(0.38877037, 0.3887704)
-texture = ExtResource("4_u83au")
+texture = ExtResource("6_4jb1o")
 metadata/_edit_lock_ = true
+
+[node name="dark overlay" type="Sprite2D" parent="." unique_id=1724065007]
+z_index = 1
+z_as_relative = false
+position = Vector2(11, 0.23451233)
+scale = Vector2(0.38877037, 0.3887704)
+texture = ExtResource("7_0njgj")
+metadata/_edit_lock_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="dark overlay" unique_id=1411389438]
+libraries/ = SubResource("AnimationLibrary_csl3a")
+autoplay = &"light flicker"
 
 [node name="Button" type="Button" parent="." unique_id=209868724]
 offset_left = 390.0

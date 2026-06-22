@@ -24,7 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://s0m83o07lgug" path="res://Knob/Knob.tscn" id="23_q2h2e"]
 [ext_resource type="Script" uid="uid://dp0imyw1pnfep" path="res://Radio/KnobToSliderPuppet/knob_puppet_slider.gd" id="24_e7ng2"]
 [ext_resource type="Script" uid="uid://csgd60avu0ydm" path="res://Radio/KnobToChannelIdPuppet/knob_channel.gd" id="24_me8kd"]
-[ext_resource type="Script" uid="uid://bbcyh2bi4e4om" path="res://Radio/test/channel_id.gd" id="25_me8kd"]
+[ext_resource type="Script" path="res://Radio/test/channel_id.gd" id="25_me8kd"]
 [ext_resource type="PackedScene" uid="uid://cdiix473sr3b3" path="res://Radio/RadioDisabler/RadioDisabler.tscn" id="26_s4qw5"]
 
 [sub_resource type="Resource" id="Resource_kcuwd"]
@@ -229,6 +229,8 @@ central_and_static_noise_channels = NodePath("../../CentralAndStaticNoiseChannel
 [node name="RadioDisabler" parent="." unique_id=1426527273 node_paths=PackedStringArray("all_disables") instance=ExtResource("26_s4qw5")]
 all_disables = [NodePath("../KnobChannel"), NodePath("../KnobFrequency"), NodePath("../ClipTrackButton/Button")]
 
+[connection signal="button_down" from="ClipTrackButton/Button" to="ClipTrackButton" method="_on_button_button_down"]
+[connection signal="button_up" from="ClipTrackButton/Button" to="ClipTrackButton" method="_on_button_button_up"]
 [connection signal="value_changed" from="KnobFrequency/knob slider" to="KnobFrequency/knob slider" method="_on_value_changed"]
 
 [editable path="ClipTrackButton"]
