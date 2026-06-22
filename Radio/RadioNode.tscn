@@ -188,6 +188,8 @@ clip_manager_audio_stream = NodePath("../ClipManagerAudioStream")
 central_and_static_noise_channels = NodePath("../CentralAndStaticNoiseChannels")
 
 [node name="Lights" type="Sprite2D" parent="." unique_id=1080992565]
+z_index = 3
+z_as_relative = false
 position = Vector2(343, 69)
 scale = Vector2(0.389, 0.389)
 texture = ExtResource("21_n2i0h")
