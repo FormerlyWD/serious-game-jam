@@ -1,22 +1,44 @@
 [gd_scene format=3 uid="uid://d2o2i0y6w1uy8"]
 
 [ext_resource type="Script" uid="uid://bidfkxhm7sn61" path="res://Handbook/handbook.gd" id="1_cxkbg"]
-[ext_resource type="PackedScene" uid="uid://0cpx3b178rt6" path="res://Handbook/Pages/BasePage.tscn" id="2_1dcfc"]
+[ext_resource type="PackedScene" uid="uid://htn57ncwlpwg" path="res://Handbook/Pages/PagePreviewerScene/PagePreviewerScene.tscn" id="2_1dcfc"]
 
-[node name="Handbook" type="Control" unique_id=2007939756]
+[node name="Handbook" type="Control" unique_id=2007939756 node_paths=PackedStringArray("page_previewer_scene", "left_page_container", "right_page_container")]
 custom_minimum_size = Vector2(469, 388)
 layout_mode = 3
-anchor_right = 0.407
+anchor_right = 0.5
 anchor_bottom = 0.59900004
-offset_right = 0.13598633
 offset_bottom = -0.15203857
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_cxkbg")
+page_previewer_scene = NodePath("PagePreviewerScene")
+left_page_container = NodePath("LeftPageContainer")
+right_page_container = NodePath("RightPageContainer")
 
-[node name="BasePage" parent="." unique_id=1294302572 instance=ExtResource("2_1dcfc")]
+[node name="RightPageContainer" type="Container" parent="." unique_id=1034560067]
 layout_mode = 1
-offset_left = -142.0
-offset_top = -74.0
-offset_right = 27.687996
-offset_bottom = 111.57999
+anchors_preset = -1
+anchor_left = 0.55700004
+anchor_right = 1.0730001
+anchor_bottom = 1.0
+offset_left = 0.16796875
+offset_top = 2.0
+offset_right = 0.19995117
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LeftPageContainer" type="Container" parent="." unique_id=1013622885]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_top = 2.0
+offset_right = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PagePreviewerScene" parent="." unique_id=1683508456 instance=ExtResource("2_1dcfc")]
+visible = false
+position = Vector2(0, 916.28)
+include_all = true

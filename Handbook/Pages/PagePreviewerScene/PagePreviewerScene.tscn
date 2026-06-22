@@ -11,3 +11,30 @@ offset_left = -53.0
 offset_top = 138.0
 offset_right = 233.0
 offset_bottom = 601.0
+
+[node name="BasePage2" parent="." unique_id=1893597452 instance=ExtResource("2_rqkq4")]
+offset_left = 310.0
+offset_top = 103.0
+offset_right = 596.0
+offset_bottom = 566.0
+
+[node name="RichTextLabel" parent="BasePage2" index="1" unique_id=1951358133]
+text = "ff 1000"
+
+[node name="BasePage3" parent="." unique_id=1414872256 instance=ExtResource("2_rqkq4")]
+offset_left = 681.0
+offset_top = 123.0
+offset_right = 967.0
+offset_bottom = 586.0
+
+[node name="RichTextLabel" parent="BasePage3" index="1" unique_id=1951358133]
+text = "ff 23532451235"
+
+[node name="BasePage4" parent="." unique_id=829628226 instance=ExtResource("2_rqkq4")]
+offset_left = 1018.0
+offset_top = 136.0
+offset_right = 1304.0
+offset_bottom = 599.0
+
+[editable path="BasePage2"]
+[editable path="BasePage3"]

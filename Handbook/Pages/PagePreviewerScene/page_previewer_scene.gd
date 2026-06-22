@@ -1,4 +1,5 @@
 extends Node2D
+class_name PagePreviewerScene
 @export var include_all:bool
 @export var include_array:Array[int]
 @export var exclude_all:bool
