@@ -15,3 +15,5 @@ class_name Shift
 var accumilatable_points:float
 @export var post_shift_stats:PostShiftStats
 @export var capped_points:float = 10000
+
+@export var bg_music:AudioStream

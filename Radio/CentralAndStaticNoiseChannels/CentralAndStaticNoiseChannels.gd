@@ -22,6 +22,7 @@ func update_stream_count():
 	
 	if channel_array:
 		amount_of_streams = channel_array.size()
+	%KnobChannel.knob_slice_count = amount_of_streams
 	for base_channel in channel_array:
 		if base_channel.channel_locked:
 			all_locked_channel_nums.append(channel_array.find(base_channel))

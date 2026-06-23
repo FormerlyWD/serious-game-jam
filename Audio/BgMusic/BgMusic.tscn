@@ -3,4 +3,5 @@
 [ext_resource type="Script" uid="uid://8slli0ehs4wk" path="res://Audio/BgMusic/bg_music.gd" id="1_yl6r5"]
 
 [node name="BgMusic" type="AudioStreamPlayer" unique_id=53523705]
+autoplay = true
 script = ExtResource("1_yl6r5")
