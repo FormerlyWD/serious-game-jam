@@ -1,4 +1,5 @@
 extends Control
+class_name Handbook
 @export var all_pages:Array[Page]
 @export var page_previewer_scene: PagePreviewerScene
 @export var left_page_container: Container

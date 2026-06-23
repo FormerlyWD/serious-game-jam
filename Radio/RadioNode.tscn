@@ -75,7 +75,7 @@ animations = [{
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_q2h2e"]
 blend_mode = 1
 
-[node name="RadioNode" type="Control" unique_id=155327058 node_paths=PackedStringArray("clip_manager_audio_stream", "central_and_static_noise_channels", "knob_slider", "timer", "radio_disabler")]
+[node name="RadioNode" type="Control" unique_id=155327058 node_paths=PackedStringArray("clip_manager_audio_stream", "central_and_static_noise_channels", "knob_slider", "timer", "radio_disabler", "clip_track_button")]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 320.0
@@ -86,6 +86,7 @@ central_and_static_noise_channels = NodePath("CentralAndStaticNoiseChannels")
 knob_slider = NodePath("KnobFrequency/knob slider")
 timer = NodePath("CustomTimer")
 radio_disabler = NodePath("RadioDisabler")
+clip_track_button = NodePath("ClipTrackButton")
 
 [node name="ClipManagerAudioStream" parent="." unique_id=1715325066 node_paths=PackedStringArray("button_tracker", "central_noise_audio_stream", "timer_node") instance=ExtResource("3_s7opi")]
 all_clips_insertions = Array[ExtResource("4_ilola")]([ExtResource("5_aw04w"), SubResource("Resource_kcuwd")])
@@ -117,9 +118,9 @@ idle_channel = SubResource("Resource_260hf")
 [node name="ClipTrackButton" parent="." unique_id=2116075426 node_paths=PackedStringArray("knob_slider", "clip_manager") instance=ExtResource("12_1y8mp")]
 layout_mode = 1
 offset_left = 221.0
-offset_top = 107.0
+offset_top = 106.0
 offset_right = 220.536
-offset_bottom = 107.0
+offset_bottom = 106.0
 delay_intervals = 20.0
 knob_slider = NodePath("../KnobFrequency/knob slider")
 clip_manager = NodePath("../ClipManagerAudioStream")
@@ -228,6 +229,7 @@ central_and_static_noise_channels = NodePath("../../CentralAndStaticNoiseChannel
 [node name="RadioDisabler" parent="." unique_id=1426527273 node_paths=PackedStringArray("all_disables") instance=ExtResource("26_s4qw5")]
 all_disables = [NodePath("../KnobChannel"), NodePath("../KnobFrequency"), NodePath("../ClipTrackButton/Button")]
 
+[connection signal="finished" from="CentralAndStaticNoiseChannels" to="CentralAndStaticNoiseChannels" method="_on_finished"]
 [connection signal="button_down" from="ClipTrackButton/Button" to="ClipTrackButton" method="_on_button_button_down"]
 [connection signal="button_up" from="ClipTrackButton/Button" to="ClipTrackButton" method="_on_button_button_up"]
 [connection signal="value_changed" from="KnobFrequency/knob slider" to="KnobFrequency/knob slider" method="_on_value_changed"]

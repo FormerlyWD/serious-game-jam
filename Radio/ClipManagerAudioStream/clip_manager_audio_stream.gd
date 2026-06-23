@@ -33,7 +33,7 @@ func check_clip_state():
 		PlayState.NONREADY:
 			pass
 		PlayState.FREE:
-			
+			print("is trying to add")
 			var reparse_condition:bool = true
 			while reparse_condition:
 				
@@ -65,9 +65,9 @@ func discard_clip_from_play(from_channel_switch:bool = false):
 	stop()
 	stream = null
 	if from_channel_switch:
+		if current_clip_parsed:
+			button_tracker.remove_element(saved_clip_id)
 		current_clip_parsed= null
-		button_tracker.remove_element(saved_clip_id)
-		
 	elif current_clip_parsed:
 		current_clip_parsed= null
 		await get_tree().create_timer(button_tracker.delay_intervals).timeout
@@ -105,7 +105,13 @@ func auto_evaluate_clips()-> void:
 	for channel_array in all_clips_insertions_sorted:
 		channel_array.sort_custom(
 			func(a:ClipInsertion, b:ClipInsertion): return a.start_time < b.start_time)
-		
+
+func get_max_points(shift_data:Shift):
+	for clip in all_clips_insertions:
+		match clip.designated_clip_tag:
+			ClipInsertion.ClipTags.ALIEN:
+				shift_data.accumilatable_points += clip.override_points
+
 func fill_end_time(clip:ClipInsertion, duration_only:bool = false	) -> void:
 	if clip.audio_clip:
 		clip.duration = clip.audio_clip.get_length()

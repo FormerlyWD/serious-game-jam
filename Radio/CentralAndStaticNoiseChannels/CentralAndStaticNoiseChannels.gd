@@ -52,6 +52,7 @@ func switch_process(new_channel:int):
 	clip_manager.lock_clips()
 	stop()
 	stream = idle_channel.radio_noise
+	stream.loop = true
 	play(timer_node.current_timer)
 	switching_timer = get_tree().create_timer(idle_time)
 	
@@ -67,21 +68,23 @@ func switch_process(new_channel:int):
 
 	
 	
-	new_channel_switched.emit()
+	
 	
 	currently_chosen_channel = new_channel
+	new_channel_switched.emit()
 	frequency_knob.chosen_target_deg = channel_array[currently_chosen_channel].lowest_frequency_point
 	frequency_knob._on_value_changed(frequency_knob.value)
 	
 	stop()
 	stream = channel_array[currently_chosen_channel].radio_noise
+	stream.loop = true
 	play(timer_node.current_timer)
 	
 	
 
 	clip_manager.check_clip_state()
 	switching = false
-
+	clip_manager.current_availability_state = ClipManagerAudioStream.AvailabilityState.AVAILABLE
 	
 
 func get_random_channel_num() -> int:
@@ -89,3 +92,7 @@ func get_random_channel_num() -> int:
 	while random_channel_num in all_locked_channel_nums:
 		random_channel_num = randi_range(0,amount_of_streams-1)
 	return random_channel_num
+
+
+func _on_finished() -> void:
+	pass # Replace with function body.

@@ -5,8 +5,11 @@
 [ext_resource type="PackedScene" uid="uid://bqbn0wnsg1ful" path="res://Radio/RadioNode.tscn" id="3_0rdti"]
 [ext_resource type="PackedScene" uid="uid://d2o2i0y6w1uy8" path="res://Handbook/Handbook.tscn" id="3_u83au"]
 [ext_resource type="Script" uid="uid://cc6bi80v2lkjr" path="res://Handbook/Pages/PagePreviewerScene/PagePreviewerIncludeResource/page_previewer_include.gd" id="4_c73jo"]
-[ext_resource type="Texture2D" uid="uid://da5dga4fekgmb" path="res://Art/Desk/desk.png" id="6_4jb1o"]
+[ext_resource type="Texture2D" uid="uid://da5dga4fekgmb" path="res://Art/Desk/desk.PNG" id="6_4jb1o"]
 [ext_resource type="Texture2D" uid="uid://d0kxe30sjawi0" path="res://Art/Desk/Dark overlay.png" id="7_0njgj"]
+[ext_resource type="Texture2D" uid="uid://ucq4o58itb5g" path="res://Art/Desk/Handbook.png" id="8_0njgj"]
+[ext_resource type="Script" uid="uid://dy6025oangv67" path="res://Handbook/handbookButton/handbook_button.gd" id="8_8d1sc"]
+[ext_resource type="Texture2D" uid="uid://doym6napmg2ah" path="res://Art/Desk/handbook shadow.png" id="8_csl3a"]
 
 [sub_resource type="Resource" id="Resource_4jb1o"]
 script = ExtResource("4_c73jo")
@@ -57,10 +60,11 @@ current_shift_object = ExtResource("2_u83au")
 
 [node name="Handbook" parent="." unique_id=2007939756 instance=ExtResource("3_u83au")]
 unique_name_in_owner = true
-offset_left = 107.0
-offset_top = 14.0
-offset_right = 576.0
-offset_bottom = 402.0
+z_index = 1
+offset_left = -203.0
+offset_top = 355.0
+offset_right = 266.0
+offset_bottom = 743.0
 default_page_previewer_inclusion = SubResource("Resource_4jb1o")
 
 [node name="RadioNode" parent="." unique_id=170821821 instance=ExtResource("3_0rdti")]
@@ -92,8 +96,37 @@ metadata/_edit_lock_ = true
 libraries/ = SubResource("AnimationLibrary_csl3a")
 autoplay = &"light flicker"
 
-[node name="Button" type="Button" parent="." unique_id=209868724]
-offset_left = 390.0
-offset_top = 15.0
-offset_right = 398.0
-offset_bottom = 23.0
+[node name="handbookButton" type="Node2D" parent="." unique_id=1775280228 node_paths=PackedStringArray("handbook")]
+position = Vector2(115.065, 0)
+script = ExtResource("8_8d1sc")
+initial_y_position = 355.0
+final_y_position = -100.0
+duration = 2.0
+transition_type = 4
+handbook = NodePath("../Handbook")
+
+[node name="handbook shadow" type="Sprite2D" parent="handbookButton" unique_id=584275968]
+z_index = -1
+z_as_relative = false
+position = Vector2(11, 0.23451233)
+scale = Vector2(0.38877037, 0.3887704)
+texture = ExtResource("8_csl3a")
+metadata/_edit_lock_ = true
+
+[node name="handbook shadow2" type="Sprite2D" parent="handbookButton" unique_id=1124208146]
+z_as_relative = false
+position = Vector2(247, 95)
+scale = Vector2(0.38877037, 0.3887704)
+texture = ExtResource("8_0njgj")
+metadata/_edit_lock_ = true
+
+[node name="handbook" type="Button" parent="handbookButton" unique_id=1813174463]
+modulate = Color(1, 1, 1, 0)
+offset_left = 141.59
+offset_top = -75.0
+offset_right = 351.26025
+offset_bottom = 212.775
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="handbookButton" unique_id=262624159]
+
+[connection signal="pressed" from="handbookButton/handbook" to="handbookButton" method="_on_handbook_pressed"]

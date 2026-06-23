@@ -7,11 +7,15 @@ signal request_top
 @export var knob_slider: FrequencyKnob
 @export var timer:CustomTimer
 @export var radio_disabler: RadioDisabler
+@export var clip_track_button: ClipTrackButton
 
 
 func _ready() -> void:
 	timer.radio_finished.connect(radio_finished)
 func radio_finished():
+	
+	GlobalShiftManager.currently_focused_shift.post_shift_stats.all_tracked_clips = clip_track_button.confirmed_track_clips 
+	print(clip_track_button.confirmed_track_clips)
 	GlobalShiftManager.finish_shift()
 func reset_radio():
 	pass
@@ -32,3 +36,4 @@ func apply_shift_radio_data(shift_data:Shift):
 		clip_manager_audio_stream.fill_end_time_for_shift(shift_data)
 		$ShiftClipScatterProcessing.scatter_clips(shift_data)
 		clip_manager_audio_stream.all_clips_insertions = shift_data.all_clip_insertions
+		clip_manager_audio_stream.get_max_points(shift_data)
