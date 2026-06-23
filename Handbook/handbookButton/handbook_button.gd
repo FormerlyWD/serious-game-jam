@@ -1,5 +1,5 @@
 extends Node2D
-
+class_name handbookButton
 enum BookShownState {SHOWN, INVISIBLE}
 @export var initial_y_position:float
 @export var final_y_position:float
@@ -20,7 +20,7 @@ func _on_handbook_pressed() -> void:
 			current_tween = null
 			
 			$AnimationPlayer.play("pickup")
-			$handbook.disabled = true
+			
 			await $AnimationPlayer.animation_finished
 			$handbook.disabled = false
 			
@@ -45,3 +45,7 @@ func _on_handbook_pressed() -> void:
 			$handbook.disabled = false
 			%RadioNode.radio_disabler.enable_clicks()
 		
+
+
+func _on_button_pressed() -> void:
+	_on_handbook_pressed()

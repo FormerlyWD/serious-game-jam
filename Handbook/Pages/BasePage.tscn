@@ -4,14 +4,15 @@
 [ext_resource type="Texture2D" uid="uid://qhej807de15" path="res://Art/Placeholder/images (1).png" id="2_agh5e"]
 
 [node name="BasePage" type="Control" unique_id=1294302572 node_paths=PackedStringArray("rich_text_label")]
-custom_minimum_size = Vector2(286, 463)
+custom_minimum_size = Vector2(267, 362)
 layout_mode = 3
-anchor_right = 0.24800001
-anchor_bottom = 0.71500003
-offset_right = 0.3039856
-offset_bottom = -0.32000732
+anchor_right = 0.231
+anchor_bottom = 0.558
+offset_right = 0.8880005
+offset_bottom = 0.4159851
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("1_au4c3")
 rich_text_label = NodePath("RichTextLabel")
 
@@ -21,6 +22,7 @@ layout_mode = 1
 offset_right = 193.0
 offset_bottom = 262.0
 scale = Vector2(1.385, 1.385)
+mouse_filter = 2
 texture = ExtResource("2_agh5e")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1951358133]
@@ -30,5 +32,6 @@ offset_left = 15.0
 offset_top = 11.0
 offset_right = 249.0
 offset_bottom = 342.0
+mouse_filter = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 text = "ff "

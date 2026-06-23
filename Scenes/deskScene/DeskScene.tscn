@@ -109,6 +109,18 @@ tracks/3/keys = {
 "update": 0,
 "values": [Vector2(0.38877037, 0.3887704)]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Button:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_o3bos"]
 resource_name = "pickup"
@@ -160,6 +172,18 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(0.38877037, 0.3887704), Vector2(0.519, 0.519)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Button:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7p32j"]
@@ -249,6 +273,14 @@ offset_bottom = 212.775
 [node name="AnimationPlayer" type="AnimationPlayer" parent="handbookButton" unique_id=262624159]
 libraries/ = SubResource("AnimationLibrary_7p32j")
 
+[node name="Button" type="Button" parent="handbookButton" unique_id=1306253837]
+modulate = Color(1, 1, 1, 0)
+offset_left = 366.935
+offset_top = 251.0
+offset_right = 442.87
+offset_bottom = 315.0
+text = "go back ->"
+
 [node name="BgMusic" parent="." unique_id=53523705 instance=ExtResource("11_l5tyu")]
 unique_name_in_owner = true
 
@@ -267,4 +299,7 @@ offset_bottom = -75.0
 label_settings = SubResource("LabelSettings_o3bos")
 
 [connection signal="pressed" from="handbookButton/handbook" to="handbookButton" method="_on_handbook_pressed"]
+[connection signal="pressed" from="handbookButton/Button" to="handbookButton" method="_on_button_pressed"]
 [connection signal="finished" from="BgMusic" to="BgMusic" method="_on_finished"]
+
+[editable path="Handbook"]

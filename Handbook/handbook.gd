@@ -15,11 +15,17 @@ func apply_handbook_data(shift_data:Shift):
 		page_previewer_scene.page_include = shift_data.page_previewer_inclusion
 	else:
 		page_previewer_scene.page_include = default_page_previewer_inclusion
+func page_up():
+	page_pointer = clamp(page_pointer+2,0,page_previewer_scene.all_fetched_pages.size() -2)
+	update_book_faces()
+	apply_pointer()
+
+func page_down():
+	page_pointer = clamp(page_pointer-2,0,page_previewer_scene.all_fetched_pages.size()-2 )
+	update_book_faces()
+	apply_pointer()
 func _input(event: InputEvent) -> void:
-	if Input.is_action_just_pressed("new_page"):
-		page_pointer =wrapi(page_pointer+2,0,page_previewer_scene.all_fetched_pages.size())
-		update_book_faces()
-		apply_pointer()
+	pass
 func initialize_pages():
 	page_previewer_scene.scour_children_for_pages()
 	page_pointer = 0
@@ -30,9 +36,11 @@ func update_book_faces():
 	right_pointer = left_pointer +1
 func apply_pointer():
 	for child in left_page_container.get_children():
-		child.queue_free()
+		if child is Page:
+			child.reparent(page_previewer_scene)
 	for child in right_page_container.get_children():
-		child.queue_free()
+		if child is Page:
+			child.reparent(page_previewer_scene)
 	
 	if left_pointer < page_previewer_scene.all_fetched_pages.size():
 		pass
@@ -42,9 +50,10 @@ func apply_pointer():
 		var right_page:Page = page_previewer_scene.all_fetched_pages[right_pointer]
 		add_page_to_container(right_page, right_page_container)
 func add_page_to_container(page:Page, container:Container):
-	page = page.duplicate()
-
-	container.add_child(page)
+	if container.get_child_count() > 0:
+		if container.get_child(0) is Page:
+			container.get_child(0).reparent(page_previewer_scene)
+	page.reparent(container)
 
 	page.anchor_left = 0
 	page.anchor_top = 0

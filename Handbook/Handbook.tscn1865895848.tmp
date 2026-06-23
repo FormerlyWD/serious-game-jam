@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://bidfkxhm7sn61" path="res://Handbook/handbook.gd" id="1_cxkbg"]
 [ext_resource type="PackedScene" uid="uid://htn57ncwlpwg" path="res://Handbook/Pages/PagePreviewerScene/PagePreviewerScene.tscn" id="2_1dcfc"]
 [ext_resource type="Script" uid="uid://6ea8wbyf1dqj" path="res://Handbook/page_container.gd" id="2_ukk68"]
-[ext_resource type="Script" uid="uid://umrxkqcprp4v" path="res://Handbook/button_2.gd" id="3_pbo3m"]
 
 [node name="Handbook" type="Control" unique_id=2007939756 node_paths=PackedStringArray("page_previewer_scene", "left_page_container", "right_page_container")]
 custom_minimum_size = Vector2(469, 388)
@@ -13,13 +12,12 @@ anchor_bottom = 0.59900004
 offset_bottom = -0.15203857
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 2
 script = ExtResource("1_cxkbg")
 page_previewer_scene = NodePath("PagePreviewerScene")
 left_page_container = NodePath("LeftPageContainer")
 right_page_container = NodePath("RightPageContainer")
 
-[node name="RightPageContainer" type="Container" parent="." unique_id=1034560067 node_paths=PackedStringArray("handbook", "button")]
+[node name="RightPageContainer" type="Container" parent="." unique_id=1034560067 node_paths=PackedStringArray("handbook")]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.55700004
@@ -28,22 +26,13 @@ anchor_bottom = 1.0
 offset_left = 0.16796875
 offset_top = 2.0
 offset_right = 0.19995117
-grow_horizontal = 0
+grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 2
+mouse_filter = 0
 script = ExtResource("2_ukk68")
 handbook = NodePath("..")
-page_up = true
-button = NodePath("Button")
 
-[node name="Button" type="Button" parent="RightPageContainer" unique_id=498085224]
-z_index = 5
-custom_minimum_size = Vector2(297.248, 386)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="LeftPageContainer" type="Container" parent="." unique_id=1013622885 node_paths=PackedStringArray("handbook", "button")]
+[node name="LeftPageContainer" type="Container" parent="." unique_id=1013622885 node_paths=PackedStringArray("handbook")]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.5
@@ -52,21 +41,11 @@ offset_top = 2.0
 offset_right = 4.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 2
+mouse_filter = 0
 script = ExtResource("2_ukk68")
 handbook = NodePath("..")
-button = NodePath("Button2")
-
-[node name="Button2" type="Button" parent="LeftPageContainer" unique_id=627457801]
-z_index = 5
-custom_minimum_size = Vector2(297.248, 386)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-script = ExtResource("3_pbo3m")
+page_up = true
 
 [node name="PagePreviewerScene" parent="." unique_id=1683508456 instance=ExtResource("2_1dcfc")]
 visible = false
 position = Vector2(0, 916.28)
-
-[connection signal="pressed" from="LeftPageContainer/Button2" to="LeftPageContainer/Button2" method="_on_pressed"]

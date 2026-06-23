@@ -86,6 +86,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 320.0
 offset_bottom = 153.0
+mouse_filter = 2
 script = ExtResource("1_2hs0g")
 clip_manager_audio_stream = NodePath("ClipManagerAudioStream")
 central_and_static_noise_channels = NodePath("CentralAndStaticNoiseChannels")
@@ -139,6 +140,7 @@ offset_left = 116.0
 offset_top = -29.0
 offset_right = 180.055
 offset_bottom = 23.830002
+mouse_filter = 1
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ClipTrackButton" unique_id=253074337]
 position = Vector2(145, -1)
