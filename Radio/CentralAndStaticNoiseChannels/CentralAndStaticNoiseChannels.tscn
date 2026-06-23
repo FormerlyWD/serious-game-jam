@@ -12,3 +12,4 @@ stream_1 = ExtResource("1_b7is0")
 stream = SubResource("AudioStreamPlaylist_c4e5o")
 autoplay = true
 script = ExtResource("2_v2703")
+idle_time = 0.0

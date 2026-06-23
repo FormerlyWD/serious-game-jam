@@ -4,6 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://0cpx3b178rt6" path="res://Handbook/Pages/BasePage.tscn" id="2_rqkq4"]
 
 [node name="PagePreviewerScene" type="Node2D" unique_id=1683508456]
+z_index = 5
+z_as_relative = false
 script = ExtResource("1_cs3o7")
 
 [node name="BasePage" parent="." unique_id=1294302572 instance=ExtResource("2_rqkq4")]
