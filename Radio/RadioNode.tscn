@@ -78,7 +78,7 @@ blend_mode = 1
 
 [sub_resource type="LabelSettings" id="LabelSettings_2b2hv"]
 font = ExtResource("26_rtbd1")
-font_size = 25
+font_size = 34
 font_color = Color(0, 0.67, 0, 1)
 
 [node name="RadioNode" type="Control" unique_id=155327058 node_paths=PackedStringArray("clip_manager_audio_stream", "central_and_static_noise_channels", "knob_slider", "timer", "radio_disabler", "clip_track_button")]
@@ -233,11 +233,11 @@ all_disables = [NodePath("../KnobChannel"), NodePath("../KnobFrequency"), NodePa
 
 [node name="RadioInfo" type="Label" parent="." unique_id=1793153064 node_paths=PackedStringArray("central_and_static_noise_channels", "knob_slider")]
 layout_mode = 0
-offset_left = 33.0
-offset_top = 26.0
-offset_right = 120.403595
-offset_bottom = 53.0
-text = "x"
+offset_left = 37.0
+offset_top = 23.0
+offset_right = 124.403595
+offset_bottom = 63.0
+text = "0.00"
 label_settings = SubResource("LabelSettings_2b2hv")
 script = ExtResource("25_me8kd")
 central_and_static_noise_channels = NodePath("../CentralAndStaticNoiseChannels")
