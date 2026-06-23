@@ -15,7 +15,10 @@ func _ready() -> void:
 func radio_finished():
 	
 	GlobalShiftManager.currently_focused_shift.post_shift_stats.all_tracked_clips = clip_track_button.confirmed_track_clips 
-	print(clip_track_button.confirmed_track_clips)
+	
+
+	%SceneFadeSilhouette.fade_in()
+	await %SceneFadeSilhouette.fade_finished
 	GlobalShiftManager.finish_shift()
 func reset_radio():
 	pass

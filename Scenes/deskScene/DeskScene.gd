@@ -3,9 +3,13 @@ extends Node2D
 
 
 @export var current_shift_object:Shift
+@export var scene_fade_silhouette: SceneFadeSilhouette
+
 @export var default_bg_music:AudioStream
 func _ready() -> void:
 	GlobalShiftManager.choose_new_shift()
+	if scene_fade_silhouette:
+		scene_fade_silhouette.fade_out()
 	process_shift_object()
 func process_shift_object():
 	

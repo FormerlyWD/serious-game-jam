@@ -1,7 +1,13 @@
 extends Node2D
+@export var default_bg_music:AudioStream
+@export var bg_music: BgMusic
+
 func _ready() -> void:
 	process_stats()
-	
+	if GlobalShiftManager.currently_focused_shift.post_shift_bg_music:
+		bg_music.replace_music(GlobalShiftManager.currently_focused_shift.post_shift_bg_music)
+	else:
+		bg_music.replace_music(default_bg_music)
 func process_stats():
 	for clip in GlobalShiftManager.currently_focused_shift.post_shift_stats.all_tracked_clips:
 		

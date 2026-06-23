@@ -12,6 +12,7 @@
 [ext_resource type="Script" uid="uid://dy6025oangv67" path="res://Handbook/handbookButton/handbook_button.gd" id="8_8d1sc"]
 [ext_resource type="Texture2D" uid="uid://doym6napmg2ah" path="res://Art/Desk/handbook shadow.png" id="8_csl3a"]
 [ext_resource type="PackedScene" uid="uid://c81m42ovpxs68" path="res://Audio/BgMusic/BgMusic.tscn" id="11_l5tyu"]
+[ext_resource type="PackedScene" uid="uid://cmbg4vxyvsjpy" path="res://Scenes/SceneFadeSilhouette/SceneFadeSilhouette.tscn" id="13_fk51s"]
 
 [sub_resource type="Resource" id="Resource_4jb1o"]
 script = ExtResource("4_c73jo")
@@ -56,9 +57,10 @@ _data = {
 &"light flicker": SubResource("Animation_0njgj")
 }
 
-[node name="DeskScene" type="Node2D" unique_id=522105481]
+[node name="DeskScene" type="Node2D" unique_id=522105481 node_paths=PackedStringArray("scene_fade_silhouette")]
 script = ExtResource("1_uf8a2")
 current_shift_object = ExtResource("2_u83au")
+scene_fade_silhouette = NodePath("SceneFadeSilhouette")
 default_bg_music = ExtResource("3_rioox")
 
 [node name="Handbook" parent="." unique_id=2007939756 instance=ExtResource("3_u83au")]
@@ -134,6 +136,10 @@ offset_bottom = 212.775
 
 [node name="BgMusic" parent="." unique_id=53523705 instance=ExtResource("11_l5tyu")]
 unique_name_in_owner = true
+
+[node name="SceneFadeSilhouette" parent="." unique_id=422242111 instance=ExtResource("13_fk51s")]
+unique_name_in_owner = true
+position = Vector2(-587, -345)
 
 [connection signal="pressed" from="handbookButton/handbook" to="handbookButton" method="_on_handbook_pressed"]
 [connection signal="finished" from="BgMusic" to="BgMusic" method="_on_finished"]

@@ -14,6 +14,7 @@ func _process(delta: float) -> void:
 			current_timer +=delta
 			if current_timer >= maximum_radio_time:
 				radio_finished.emit()
+				current_timer_state = TimerState.LOCKED
 		TimerState.LOCKED:
 			pass
 func reset_timer():

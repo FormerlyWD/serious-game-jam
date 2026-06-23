@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://cmbg4vxyvsjpy"]
+
+[ext_resource type="Script" uid="uid://b7li6s72jksgr" path="res://Scenes/SceneFadeSilhouette/scene_fade_silhouette.gd" id="1_amr0b"]
+
+[node name="SceneFadeSilhouette" type="Node2D" unique_id=422242111 node_paths=PackedStringArray("silhouette")]
+script = ExtResource("1_amr0b")
+silhouette = NodePath("Silhouette")
+
+[node name="Silhouette" type="ColorRect" parent="." unique_id=1000140189]
+modulate = Color(1, 1, 1, 0)
+offset_left = -110.0
+offset_top = -66.0
+offset_right = 1374.0
+offset_bottom = 748.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
