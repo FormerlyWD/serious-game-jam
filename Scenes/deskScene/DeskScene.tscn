@@ -13,6 +13,8 @@
 [ext_resource type="Texture2D" uid="uid://doym6napmg2ah" path="res://Art/Desk/handbook shadow.png" id="8_csl3a"]
 [ext_resource type="PackedScene" uid="uid://c81m42ovpxs68" path="res://Audio/BgMusic/BgMusic.tscn" id="11_l5tyu"]
 [ext_resource type="PackedScene" uid="uid://cmbg4vxyvsjpy" path="res://Scenes/SceneFadeSilhouette/SceneFadeSilhouette.tscn" id="13_fk51s"]
+[ext_resource type="PackedScene" uid="uid://b3fnvqjbt8ua8" path="res://Timer/VisualTimer.tscn" id="14_2g3f4"]
+[ext_resource type="FontFile" uid="uid://cra8h2lbb2upv" path="res://FontsAndTheme/alarm_clock/alarm clock.ttf" id="15_x7o61"]
 
 [sub_resource type="Resource" id="Resource_4jb1o"]
 script = ExtResource("4_c73jo")
@@ -57,6 +59,9 @@ _data = {
 &"light flicker": SubResource("Animation_0njgj")
 }
 
+[sub_resource type="LabelSettings" id="LabelSettings_o3bos"]
+font = ExtResource("15_x7o61")
+
 [node name="DeskScene" type="Node2D" unique_id=522105481 node_paths=PackedStringArray("scene_fade_silhouette")]
 script = ExtResource("1_uf8a2")
 current_shift_object = ExtResource("2_u83au")
@@ -72,12 +77,13 @@ offset_right = 266.0
 offset_bottom = 743.0
 default_page_previewer_inclusion = SubResource("Resource_4jb1o")
 
-[node name="RadioNode" parent="." unique_id=170821821 instance=ExtResource("3_0rdti")]
+[node name="RadioNode" parent="." unique_id=170821821 node_paths=PackedStringArray("visual_timer") instance=ExtResource("3_0rdti")]
 unique_name_in_owner = true
 offset_left = -332.0
 offset_top = -69.0
 offset_right = -12.0
 offset_bottom = 84.0
+visual_timer = NodePath("../VisualTimer")
 metadata/_edit_use_anchors_ = true
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=514651589]
@@ -140,6 +146,13 @@ unique_name_in_owner = true
 [node name="SceneFadeSilhouette" parent="." unique_id=422242111 instance=ExtResource("13_fk51s")]
 unique_name_in_owner = true
 position = Vector2(-587, -345)
+
+[node name="VisualTimer" parent="." unique_id=1183476949 instance=ExtResource("14_2g3f4")]
+offset_left = -483.0
+offset_top = -98.0
+offset_right = -433.55197
+offset_bottom = -75.0
+label_settings = SubResource("LabelSettings_o3bos")
 
 [connection signal="pressed" from="handbookButton/handbook" to="handbookButton" method="_on_handbook_pressed"]
 [connection signal="finished" from="BgMusic" to="BgMusic" method="_on_finished"]

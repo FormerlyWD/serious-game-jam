@@ -25,6 +25,7 @@
 [ext_resource type="Script" uid="uid://dp0imyw1pnfep" path="res://Radio/KnobToSliderPuppet/knob_puppet_slider.gd" id="24_e7ng2"]
 [ext_resource type="Script" uid="uid://csgd60avu0ydm" path="res://Radio/KnobToChannelIdPuppet/knob_channel.gd" id="24_me8kd"]
 [ext_resource type="Script" uid="uid://bbcyh2bi4e4om" path="res://Radio/test/channel_id.gd" id="25_me8kd"]
+[ext_resource type="FontFile" uid="uid://cra8h2lbb2upv" path="res://FontsAndTheme/alarm_clock/alarm clock.ttf" id="26_rtbd1"]
 [ext_resource type="PackedScene" uid="uid://cdiix473sr3b3" path="res://Radio/RadioDisabler/RadioDisabler.tscn" id="26_s4qw5"]
 
 [sub_resource type="Resource" id="Resource_kcuwd"]
@@ -75,6 +76,9 @@ animations = [{
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_q2h2e"]
 blend_mode = 1
 
+[sub_resource type="LabelSettings" id="LabelSettings_2b2hv"]
+font = ExtResource("26_rtbd1")
+
 [node name="RadioNode" type="Control" unique_id=155327058 node_paths=PackedStringArray("clip_manager_audio_stream", "central_and_static_noise_channels", "knob_slider", "timer", "radio_disabler", "clip_track_button")]
 layout_mode = 3
 anchors_preset = 0
@@ -94,8 +98,9 @@ button_tracker = NodePath("../ClipTrackButton")
 central_noise_audio_stream = NodePath("../CentralAndStaticNoiseChannels")
 timer_node = NodePath("../CustomTimer")
 
-[node name="CustomTimer" type="Node" parent="." unique_id=945941770]
+[node name="CustomTimer" type="Node" parent="." unique_id=945941770 node_paths=PackedStringArray("radio_node")]
 script = ExtResource("6_aw04w")
+radio_node = NodePath("..")
 
 [node name="DIAL2" type="Control" parent="." unique_id=1905388804 node_paths=PackedStringArray("central_noise_channel")]
 anchors_preset = 0
@@ -173,7 +178,7 @@ grow_vertical = 1
 scale = Vector2(0.389, 0.389)
 knob_puppet = NodePath("KnobPuppet")
 
-[node name="knob slider" type="HSlider" parent="KnobFrequency" unique_id=1946158888 node_paths=PackedStringArray("central_static_noise", "clip_manager_audio_stream")]
+[node name="knob slider" type="HSlider" parent="KnobFrequency" unique_id=1946158888 node_paths=PackedStringArray("central_static_noise", "clip_manager_audio_stream", "radio_info")]
 layout_mode = 0
 offset_left = -598.97174
 offset_top = -77.120865
@@ -187,6 +192,7 @@ signal_clear_flag_requirement = 0.05
 clip_volume_outside_curve = -10.0
 central_static_noise = NodePath("../../CentralAndStaticNoiseChannels")
 clip_manager_audio_stream = NodePath("../../ClipManagerAudioStream")
+radio_info = NodePath("../../RadioInfo")
 
 [node name="indicator" type="Sprite2D" parent="KnobFrequency/knob slider" unique_id=1117832813]
 visible = false
@@ -218,18 +224,19 @@ script = ExtResource("24_me8kd")
 central_and_static_noise_channels = NodePath("../../CentralAndStaticNoiseChannels")
 metadata/_custom_type_script = "uid://hcgfljpao81u"
 
-[node name="Label" type="Label" parent="KnobChannel" unique_id=1793153064 node_paths=PackedStringArray("central_and_static_noise_channels")]
-layout_mode = 0
-offset_left = -123.393326
-offset_top = 41.131126
-offset_right = -35.989723
-offset_bottom = 120.82263
-scale = Vector2(3.685, 3.685)
-script = ExtResource("25_me8kd")
-central_and_static_noise_channels = NodePath("../../CentralAndStaticNoiseChannels")
-
 [node name="RadioDisabler" parent="." unique_id=1426527273 node_paths=PackedStringArray("all_disables") instance=ExtResource("26_s4qw5")]
 all_disables = [NodePath("../KnobChannel"), NodePath("../KnobFrequency"), NodePath("../ClipTrackButton/Button")]
+
+[node name="RadioInfo" type="Label" parent="." unique_id=1793153064 node_paths=PackedStringArray("central_and_static_noise_channels", "knob_slider")]
+layout_mode = 0
+offset_left = 46.0
+offset_top = 31.0
+offset_right = 133.4036
+offset_bottom = 54.33786
+label_settings = SubResource("LabelSettings_2b2hv")
+script = ExtResource("25_me8kd")
+central_and_static_noise_channels = NodePath("../CentralAndStaticNoiseChannels")
+knob_slider = NodePath("../KnobFrequency/knob slider")
 
 [connection signal="finished" from="CentralAndStaticNoiseChannels" to="CentralAndStaticNoiseChannels" method="_on_finished"]
 [connection signal="button_down" from="ClipTrackButton/Button" to="ClipTrackButton" method="_on_button_button_down"]

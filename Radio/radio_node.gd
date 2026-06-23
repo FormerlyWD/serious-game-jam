@@ -9,6 +9,7 @@ signal request_top
 @export var radio_disabler: RadioDisabler
 @export var clip_track_button: ClipTrackButton
 
+@export var visual_timer: VisualTimer
 
 func _ready() -> void:
 	timer.radio_finished.connect(radio_finished)

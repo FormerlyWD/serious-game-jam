@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://b3fnvqjbt8ua8"]
+
+[ext_resource type="Script" uid="uid://bcwuxs6sjm7lx" path="res://Timer/visual_timer.gd" id="1_3yr4k"]
+
+[node name="VisualTimer" type="Label" unique_id=1183476949]
+anchors_preset = -1
+anchor_right = 0.59800005
+anchor_bottom = 0.284
+offset_right = 0.10394287
+offset_bottom = -0.03201294
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3yr4k")

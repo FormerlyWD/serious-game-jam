@@ -18,6 +18,8 @@ enum WrapState {NONE,THREESIXTY }
 @export var current_dial_direction:DialDirection = DialDirection.TOMIN
 @export var central_static_noise:CentralAndStaticNoiseChannels
 @export var clip_manager_audio_stream: ClipManagerAudioStream
+@export var radio_info: RadioInfo
+
 var is_frequency_cleared:bool
 
 
@@ -26,6 +28,7 @@ func reset():
 	
 	central_static_noise.volume_db = noise_default_volume
 	value = 0 #subject to change
+	
 func find_dist(new_value:float):
 	return 180-abs(180-abs(new_value-chosen_target_deg))
 func _on_value_changed(cur_value:float) -> void:
@@ -54,3 +57,5 @@ func _on_value_changed(cur_value:float) -> void:
 
 					is_frequency_cleared = false
 			central_static_noise.volume_db = (maximum_value*exponential_increase_ratio)+noise_default_volume
+	radio_info.text_change()
+	
