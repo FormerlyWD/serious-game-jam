@@ -19,6 +19,11 @@ func _on_handbook_pressed() -> void:
 				current_tween.stop()
 			current_tween = null
 			
+			$AnimationPlayer.play("pickup")
+			$handbook.disabled = true
+			await $AnimationPlayer.animation_finished
+			$handbook.disabled = false
+			
 			current_tween = create_tween()
 			
 			current_tween.tween_property(
@@ -33,5 +38,10 @@ func _on_handbook_pressed() -> void:
 			current_tween = create_tween()
 			current_tween.tween_property(
 				handbook,"position:y",initial_y_position,duration).set_trans(transition_type)
+			await current_tween.finished
+			$AnimationPlayer.play_backwards("pickup")
+			$handbook.disabled = true
+			await $AnimationPlayer.animation_finished
+			$handbook.disabled = false
 			%RadioNode.radio_disabler.enable_clicks()
 		

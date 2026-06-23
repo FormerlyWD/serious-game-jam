@@ -20,6 +20,10 @@ offset_top = 103.0
 offset_right = 596.0
 offset_bottom = 566.0
 
+[node name="Sprite2D" parent="BasePage2" index="0" unique_id=456606488]
+z_index = 8
+z_as_relative = false
+
 [node name="RichTextLabel" parent="BasePage2" index="1" unique_id=1951358133]
 text = "ff 1000"
 
@@ -28,6 +32,9 @@ offset_left = 681.0
 offset_top = 123.0
 offset_right = 967.0
 offset_bottom = 586.0
+
+[node name="Sprite2D" parent="BasePage3" index="0" unique_id=456606488]
+z_index = 8
 
 [node name="RichTextLabel" parent="BasePage3" index="1" unique_id=1951358133]
 text = "ff 23532451235"

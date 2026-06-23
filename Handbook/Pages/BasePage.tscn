@@ -16,6 +16,7 @@ script = ExtResource("1_au4c3")
 rich_text_label = NodePath("RichTextLabel")
 
 [node name="Sprite2D" type="TextureRect" parent="." unique_id=456606488]
+z_index = 8
 layout_mode = 1
 offset_right = 193.0
 offset_bottom = 262.0
@@ -23,6 +24,7 @@ scale = Vector2(1.385, 1.385)
 texture = ExtResource("2_agh5e")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1951358133]
+z_index = 9
 layout_mode = 0
 offset_left = 15.0
 offset_top = 11.0
