@@ -6,7 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://nhjukobh861" path="res://Audio/BgMusic/The_Deep.wav" id="3_rioox"]
 [ext_resource type="PackedScene" uid="uid://d2o2i0y6w1uy8" path="res://Handbook/Handbook.tscn" id="3_u83au"]
 [ext_resource type="Script" uid="uid://cc6bi80v2lkjr" path="res://Handbook/Pages/PagePreviewerScene/PagePreviewerIncludeResource/page_previewer_include.gd" id="4_c73jo"]
-[ext_resource type="Texture2D" uid="uid://da5dga4fekgmb" path="res://Art/Desk/desk.png" id="6_4jb1o"]
+[ext_resource type="Texture2D" uid="uid://da5dga4fekgmb" path="res://Art/Desk/desk.PNG" id="6_4jb1o"]
 [ext_resource type="Texture2D" uid="uid://d0kxe30sjawi0" path="res://Art/Desk/Dark overlay.png" id="7_0njgj"]
 [ext_resource type="Texture2D" uid="uid://ucq4o58itb5g" path="res://Art/Desk/Handbook.png" id="8_0njgj"]
 [ext_resource type="Script" uid="uid://dy6025oangv67" path="res://Handbook/handbookButton/handbook_button.gd" id="8_8d1sc"]

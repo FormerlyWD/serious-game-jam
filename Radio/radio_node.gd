@@ -17,7 +17,7 @@ func radio_finished():
 	
 	GlobalShiftManager.currently_focused_shift.post_shift_stats.all_tracked_clips = clip_track_button.confirmed_track_clips 
 	
-
+	radio_disabler.disable_clicks()
 	%SceneFadeSilhouette.fade_in()
 	await %SceneFadeSilhouette.fade_finished
 	GlobalShiftManager.finish_shift()

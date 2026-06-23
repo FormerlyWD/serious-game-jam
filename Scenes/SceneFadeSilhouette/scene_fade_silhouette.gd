@@ -26,3 +26,5 @@ func fade_out():
 	silhouette.modulate.a = 1.0
 	current_tween = get_tree().create_tween()
 	current_tween.tween_property(silhouette,"modulate:a",0,duration).set_trans(transition_type)
+	await  current_tween.finished
+	fade_finished.emit()
