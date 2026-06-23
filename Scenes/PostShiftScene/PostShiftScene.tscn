@@ -3,17 +3,31 @@
 [ext_resource type="Script" uid="uid://curlyinpq7g3l" path="res://Scenes/PostShiftScene/post_shift_scene.gd" id="1_e8f65"]
 [ext_resource type="AudioStream" uid="uid://nhjukobh861" path="res://Audio/BgMusic/The_Deep.wav" id="2_1qxvw"]
 [ext_resource type="PackedScene" uid="uid://c81m42ovpxs68" path="res://Audio/BgMusic/BgMusic.tscn" id="2_m8q0t"]
+[ext_resource type="Script" uid="uid://cwi0melgglivi" path="res://Scenes/PostShiftScene/post_shift_message_label.gd" id="3_oqm8l"]
 
 [node name="PostShiftScene" type="Node2D" unique_id=1419339163 node_paths=PackedStringArray("bg_music")]
 script = ExtResource("1_e8f65")
 default_bg_music = ExtResource("2_1qxvw")
 bg_music = NodePath("BgMusic")
 
-[node name="Label" type="Label" parent="." unique_id=1007806526]
-offset_left = 215.0
-offset_top = -181.0
-offset_right = 861.0
-offset_bottom = 140.0
+[node name="PostShiftMessageLabel" type="Label" parent="." unique_id=1007806526 node_paths=PackedStringArray("post_shift_message_label")]
+offset_left = 102.0
+offset_top = -293.0
+offset_right = 487.0
+offset_bottom = 107.0
+text = "sadffasf
+asdfd
+asd
+a
+fsd
+gd
+sgasdfasdasdsdsd
+das
+dasdasdsadsdsdsd"
+visible_characters = 15
+visible_ratio = 0.23076923
+script = ExtResource("3_oqm8l")
+post_shift_message_label = NodePath(".")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=654635590]
 
