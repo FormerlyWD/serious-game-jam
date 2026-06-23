@@ -18,7 +18,7 @@ metadata/_custom_type_script = "uid://cdwotjgvtyhjm"
 [resource]
 script = ExtResource("7_m21ru")
 all_clip_insertions = Array[ExtResource("2_mboxh")]([ExtResource("3_c1sqy")])
-channel_array = Array[ExtResource("4_feej3")]([ExtResource("5_vxlrt"), ExtResource("5_vxlrt")])
+channel_array = Array[ExtResource("4_feej3")]([ExtResource("5_vxlrt"), ExtResource("5_vxlrt"), ExtResource("5_vxlrt"), ExtResource("5_vxlrt")])
 is_clip_insertion_scatter_enabled = true
 clip_insertion_scatter_count = 2
 clip_insertion_scatter_pool = Array[ExtResource("2_mboxh")]([SubResource("Resource_2cgwh")])
