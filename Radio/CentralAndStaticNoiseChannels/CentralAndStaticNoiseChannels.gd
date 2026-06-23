@@ -9,6 +9,7 @@ signal new_channel_switched
 @export var currently_chosen_channel:int = 0
 @export var timer_node:CustomTimer
 @export var idle_channel:Channel
+@export var is_idle_enabled:bool
 @export var idle_time:float = 1.0
 var all_locked_channel_nums:Array[int]
 
@@ -57,7 +58,8 @@ func switch_process(new_channel:int):
 	play(timer_node.current_timer)
 	switching_timer = get_tree().create_timer(idle_time)
 	
-	await switching_timer.timeout
+	if is_idle_enabled:
+		await switching_timer.timeout
 	if cancel_switch:
 		
 		if is_queued_channel_valid:

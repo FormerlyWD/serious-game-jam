@@ -114,6 +114,7 @@ frequency_knob = NodePath("../KnobFrequency/knob slider")
 clip_manager = NodePath("../ClipManagerAudioStream")
 timer_node = NodePath("../CustomTimer")
 idle_channel = SubResource("Resource_260hf")
+idle_time = 0.1
 
 [node name="ClipTrackButton" parent="." unique_id=2116075426 node_paths=PackedStringArray("knob_slider", "clip_manager") instance=ExtResource("12_1y8mp")]
 layout_mode = 1
