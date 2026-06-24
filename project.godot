@@ -12,12 +12,16 @@ config_version=5
 
 config/name="SeriousGameJam"
 run/main_scene="uid://cqprmlotrxfsx"
-config/features=PackedStringArray("4.6", "GL Compatibility")
+config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
 
 GlobalShiftManager="*uid://qcljh1h3if7p"
+
+[display]
+
+window/stretch/mode="canvas_items"
 
 [input]
 
