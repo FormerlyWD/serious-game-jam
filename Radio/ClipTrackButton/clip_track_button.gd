@@ -34,14 +34,9 @@ func _on_button_pressed() -> void:
 func _on_button_button_down() -> void:
 	$AnimatedSprite2D.play("press")
 	await $AnimatedSprite2D.animation_finished
+	$AnimatedSprite2D.play_backwards("press")
 	for clip in queue_track_clips:
 		if not clip in confirmed_track_clips:
 			$"../Label".text += str(clip.id)
 			confirmed_track_clips.append(clip)
 	clear_queue()
-	
-	
-
-
-func _on_button_button_up() -> void:
-	$AnimatedSprite2D.play_backwards("press")
