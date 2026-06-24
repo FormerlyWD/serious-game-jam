@@ -112,7 +112,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Button:modulate")
+tracks/4/path = NodePath("BackButton:modulate")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -176,7 +176,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Button:modulate")
+tracks/4/path = NodePath("BackButton:modulate")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -240,7 +240,7 @@ metadata/_edit_lock_ = true
 libraries/ = SubResource("AnimationLibrary_csl3a")
 autoplay = &"light flicker"
 
-[node name="handbookButton" type="Node2D" parent="." unique_id=1775280228 node_paths=PackedStringArray("handbook")]
+[node name="handbookButton" type="Node2D" parent="." unique_id=1775280228 node_paths=PackedStringArray("handbook", "back_button")]
 position = Vector2(115.065, 0)
 script = ExtResource("8_8d1sc")
 initial_y_position = 377.725
@@ -248,6 +248,7 @@ final_y_position = -100.0
 duration = 0.71
 transition_type = 4
 handbook = NodePath("../Handbook")
+back_button = NodePath("BackButton")
 
 [node name="handbook shadow" type="Sprite2D" parent="handbookButton" unique_id=584275968]
 z_index = -1
@@ -273,16 +274,18 @@ offset_bottom = 212.775
 [node name="AnimationPlayer" type="AnimationPlayer" parent="handbookButton" unique_id=262624159]
 libraries/ = SubResource("AnimationLibrary_7p32j")
 
-[node name="Button" type="Button" parent="handbookButton" unique_id=1306253837]
+[node name="BackButton" type="Button" parent="handbookButton" unique_id=1306253837]
 modulate = Color(1, 1, 1, 0)
 offset_left = 366.935
 offset_top = 251.0
 offset_right = 442.87
 offset_bottom = 315.0
+disabled = true
 text = "go back ->"
 
 [node name="BgMusic" parent="." unique_id=53523705 instance=ExtResource("11_l5tyu")]
 unique_name_in_owner = true
+duration = 5.0
 
 [node name="SceneFadeSilhouette" parent="." unique_id=422242111 instance=ExtResource("13_fk51s")]
 unique_name_in_owner = true
@@ -299,7 +302,7 @@ offset_bottom = -75.0
 label_settings = SubResource("LabelSettings_o3bos")
 
 [connection signal="pressed" from="handbookButton/handbook" to="handbookButton" method="_on_handbook_pressed"]
-[connection signal="pressed" from="handbookButton/Button" to="handbookButton" method="_on_button_pressed"]
+[connection signal="pressed" from="handbookButton/BackButton" to="handbookButton" method="_on_button_pressed"]
 [connection signal="finished" from="BgMusic" to="BgMusic" method="_on_finished"]
 
 [editable path="Handbook"]

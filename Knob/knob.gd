@@ -26,9 +26,11 @@ func _physics_process(delta: float) -> void:
 			angle = deg_to_rad(angle_deg)
 		if knob_limit_at_360:
 			if past_angle_degrees >= 0:
-				var diff = abs(angle_deg - past_angle_degrees)
+				var diff = angle_deg - past_angle_degrees
 				if diff > 180:
-					angle_deg = past_angle_degrees
+					angle_deg = 0
+				elif diff < -180:
+					angle_deg = 359.9
 				else:
 					past_angle_degrees = angle_deg
 				

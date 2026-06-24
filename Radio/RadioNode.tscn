@@ -157,6 +157,7 @@ offset_right = 435.0
 offset_bottom = 164.0
 
 [node name="ShiftClipScatterProcessing" parent="." unique_id=1051648214 node_paths=PackedStringArray("clip_manager_audio_stream", "central_and_static_noise_channels") instance=ExtResource("14_kcuwd")]
+scatter_mode = 1
 clip_manager_audio_stream = NodePath("../ClipManagerAudioStream")
 central_and_static_noise_channels = NodePath("../CentralAndStaticNoiseChannels")
 

@@ -48,7 +48,9 @@ func scatter_clips(shift_data:Shift) -> void:
 					continue
 				clip.start_time = interval.start
 				clip.end_time = interval.end
-				clip.designated_channel = randi_range(0,central_and_static_noise_channels.amount_of_streams-1)
+				
+				if clip.designated_channel == -1:
+					clip.designated_channel = randi_range(0,central_and_static_noise_channels.amount_of_streams-1)
 				start_time_intervals.append(interval.start)
 				end_time_intervals.append(interval.end)
 				clip_packed_array.append(clip)
@@ -79,7 +81,8 @@ func scatter_clips(shift_data:Shift) -> void:
 			
 			for clip_loop in range(shift_data.clip_insertion_scatter_count):
 				var clip:ClipInsertion= shift_data.clip_insertion_scatter_pool.pick_random().duplicate()
-				clip.designated_channel =  randi_range(0,central_and_static_noise_channels.amount_of_streams-1)
+				if clip.designated_channel == -1:
+					clip.designated_channel =  randi_range(0,central_and_static_noise_channels.amount_of_streams-1)
 				var cur_start_time_intervals:Array[float]
 				cur_start_time_intervals.assign(start_time_intervals[clip.designated_channel])
 				var cur_end_time_intervals:Array[float]

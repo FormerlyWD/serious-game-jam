@@ -8,6 +8,10 @@
 [ext_resource type="AudioStream" uid="uid://bhd3m1vgonjqw" path="res://Audio/Recording (22).mp3" id="6_f74ss"]
 [ext_resource type="Script" uid="uid://4yh70i0yfekf" path="res://ShiftManager/ShiftClass/shift_class.gd" id="7_m21ru"]
 
+[sub_resource type="Resource" id="Resource_nifm1"]
+script = ExtResource("2_mboxh")
+metadata/_custom_type_script = "uid://cdwotjgvtyhjm"
+
 [sub_resource type="Resource" id="Resource_2cgwh"]
 script = ExtResource("2_mboxh")
 audio_clip = ExtResource("6_f74ss")
@@ -17,8 +21,8 @@ metadata/_custom_type_script = "uid://cdwotjgvtyhjm"
 
 [resource]
 script = ExtResource("7_m21ru")
-duration = 20.0
-all_clip_insertions = Array[ExtResource("2_mboxh")]([ExtResource("3_c1sqy")])
+duration = 30.0
+all_clip_insertions = Array[ExtResource("2_mboxh")]([ExtResource("3_c1sqy"), SubResource("Resource_nifm1")])
 channel_array = Array[ExtResource("4_feej3")]([ExtResource("5_vxlrt"), ExtResource("5_vxlrt"), ExtResource("5_vxlrt"), ExtResource("5_vxlrt")])
 is_clip_insertion_scatter_enabled = true
 clip_insertion_scatter_count = 2

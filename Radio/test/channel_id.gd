@@ -8,4 +8,7 @@ func _ready() -> void:
 	central_and_static_noise_channels.new_channel_switched.connect(text_change)
 	
 func text_change():
-	text = str(central_and_static_noise_channels.currently_chosen_channel) + "." + str(int(round(knob_slider.value/3.63636)))
+	var channel:int = (central_and_static_noise_channels.currently_chosen_channel)
+	var frequency:int =  (int(round(knob_slider.value/3.63636)))
+	
+	text = "%02d.%02d" % [channel, frequency]
