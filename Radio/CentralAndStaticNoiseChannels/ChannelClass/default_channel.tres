@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Channel" format=3 uid="uid://caeu0uab0mc42"]
 
-[ext_resource type="AudioStream" uid="uid://edf4l8nlh2i" path="res://Audio/freesound_community-static-radio-noise-and-searching-for-stations-48537.mp3" id="1_78u6e"]
+[ext_resource type="AudioStream" uid="uid://c5peylgeub21j" path="res://Audio/radio noise.mp3" id="1_78u6e"]
 [ext_resource type="Script" uid="uid://cn5762sv6ibx3" path="res://Radio/CentralAndStaticNoiseChannels/ChannelClass/channel_class.gd" id="1_k4s58"]
 
 [resource]
