@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dlrev2alkg8xb" path="res://Handbook/Pages/PagePreviewerScene/page_previewer_scene.gd" id="1_cs3o7"]
 [ext_resource type="PackedScene" uid="uid://0cpx3b178rt6" path="res://Handbook/Pages/BasePage.tscn" id="2_rqkq4"]
+[ext_resource type="Texture2D" uid="uid://jk64e83gc87n" path="res://Art/Handbook/Left page.png" id="3_na5te"]
 
 [node name="PagePreviewerScene" type="Node2D" unique_id=1683508456]
 z_index = 5
@@ -14,8 +15,17 @@ offset_top = 138.0
 offset_right = 233.0
 offset_bottom = 601.0
 
-[node name="RichTextLabel" parent="BasePage" index="1" unique_id=1951358133]
+[node name="RichTextLabel" parent="BasePage" index="0" unique_id=1951358133]
 text = "ff estfges"
+
+[node name="Sprite2D" parent="BasePage" index="1" unique_id=622782904]
+layout_mode = 0
+offset_top = -12.000002
+offset_right = 682.0
+offset_bottom = 951.0
+scale = Vector2(0.43152392, 0.43152392)
+mouse_filter = 1
+texture = ExtResource("3_na5te")
 
 [node name="BasePage2" parent="." unique_id=1893597452 instance=ExtResource("2_rqkq4")]
 offset_left = 310.0
@@ -23,11 +33,18 @@ offset_top = 103.0
 offset_right = 596.0
 offset_bottom = 566.0
 
-[node name="Sprite2D" parent="BasePage2" index="0" unique_id=456606488]
-z_as_relative = false
-
-[node name="RichTextLabel" parent="BasePage2" index="1" unique_id=1951358133]
+[node name="RichTextLabel" parent="BasePage2" index="0" unique_id=1951358133]
 text = "ff 1000"
+
+[node name="Sprite2D" parent="BasePage2" index="1" unique_id=622782904]
+z_as_relative = false
+layout_mode = 0
+offset_top = -12.000002
+offset_right = 682.0
+offset_bottom = 951.0
+scale = Vector2(0.43152392, 0.43152392)
+mouse_filter = 1
+texture = ExtResource("3_na5te")
 
 [node name="BasePage3" parent="." unique_id=1414872256 instance=ExtResource("2_rqkq4")]
 offset_left = 681.0
@@ -35,14 +52,32 @@ offset_top = 123.0
 offset_right = 967.0
 offset_bottom = 586.0
 
-[node name="RichTextLabel" parent="BasePage3" index="1" unique_id=1951358133]
+[node name="RichTextLabel" parent="BasePage3" index="0" unique_id=1951358133]
 text = "ff 23532451235"
+
+[node name="Sprite2D" parent="BasePage3" index="1" unique_id=622782904]
+layout_mode = 0
+offset_top = -12.000002
+offset_right = 682.0
+offset_bottom = 951.0
+scale = Vector2(0.43152392, 0.43152392)
+mouse_filter = 1
+texture = ExtResource("3_na5te")
 
 [node name="BasePage4" parent="." unique_id=829628226 instance=ExtResource("2_rqkq4")]
 offset_left = 1018.0
 offset_top = 136.0
 offset_right = 1286.0
 offset_bottom = 499.0
+
+[node name="Sprite2D" parent="BasePage4" index="1" unique_id=622782904]
+layout_mode = 0
+offset_top = -12.000002
+offset_right = 682.0
+offset_bottom = 951.0
+scale = Vector2(0.43152392, 0.43152392)
+mouse_filter = 1
+texture = ExtResource("3_na5te")
 
 [editable path="BasePage"]
 [editable path="BasePage2"]
