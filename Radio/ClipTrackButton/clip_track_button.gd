@@ -13,6 +13,7 @@ func check_if_frequency_and_clip_valid():
 	print("does it work")
 	if knob_slider.is_frequency_cleared and clip_manager.current_play_state == clip_manager.PlayState.BUSY:
 		var registered_clip = clip_manager.clip_history_registry[clip_manager.current_clip_parsed.id]
+		
 		if queue_track_clips.has(registered_clip):
 			return
 		print("123")
@@ -24,6 +25,7 @@ func clear_queue():
 func remove_element(clip_id:int):
 	if queue_track_clips.has(clip_manager.clip_history_registry[clip_id]):
 		queue_track_clips.erase(clip_manager.clip_history_registry[clip_id])
+		
 	
 
 
@@ -38,6 +40,10 @@ func _on_button_button_down() -> void:
 		if not clip in confirmed_track_clips:
 			$"../Label".text += str(clip.id)
 			confirmed_track_clips.append(clip)
+			if clip.designated_clip_tag == ClipInsertion.ClipTags.ALIEN:
+				$indicator.play("lights_flicker")
+			break
+	
 	clear_queue()
 	
 	

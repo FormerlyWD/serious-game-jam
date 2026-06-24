@@ -16,6 +16,9 @@ func _ready() -> void:
 
 func process_stats():
 	post_shift_message_label.visible = false
+	post_shift_message_label.text =str ( int(GlobalShiftManager.currently_focused_shift.accumilatable_points)) + " /max anamoly points" +" \n"
+	post_shift_message_label.text +=str ( int(GlobalShiftManager.currently_focused_shift.post_shift_stats.all_accumilated_points)) + "/current anamolies gotten"+ " \n"
+	post_shift_message_label.text += "the logs;"+ " \n"
 	for clip in GlobalShiftManager.currently_focused_shift.post_shift_stats.all_tracked_clips:
 		
 		if clip.designated_clip_tag == ClipInsertion.ClipTags.ALIEN:
