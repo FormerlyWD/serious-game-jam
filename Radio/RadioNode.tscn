@@ -169,7 +169,7 @@ metadata/_edit_lock_ = true
 
 [node name="indicator" type="AnimatedSprite2D" parent="ClipTrackButton" unique_id=1569369603]
 modulate = Color(0, 0, 0, 1)
-position = Vector2(216.5, -46)
+position = Vector2(-322, -27)
 scale = Vector2(0.4765625, 0.484375)
 sprite_frames = SubResource("SpriteFrames_rtbd1")
 animation = &"lights_flicker"

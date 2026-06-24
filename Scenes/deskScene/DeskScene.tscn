@@ -6,7 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://nhjukobh861" path="res://Audio/BgMusic/The_Deep.wav" id="3_rioox"]
 [ext_resource type="PackedScene" uid="uid://d2o2i0y6w1uy8" path="res://Handbook/Handbook.tscn" id="3_u83au"]
 [ext_resource type="Script" uid="uid://cc6bi80v2lkjr" path="res://Handbook/Pages/PagePreviewerScene/PagePreviewerIncludeResource/page_previewer_include.gd" id="4_c73jo"]
-[ext_resource type="Texture2D" uid="uid://da5dga4fekgmb" path="res://Art/Desk/desk.png" id="6_4jb1o"]
+[ext_resource type="Texture2D" uid="uid://da5dga4fekgmb" path="res://Art/Desk/desk.PNG" id="6_4jb1o"]
 [ext_resource type="Texture2D" uid="uid://d0kxe30sjawi0" path="res://Art/Desk/Dark overlay.png" id="7_0njgj"]
 [ext_resource type="Texture2D" uid="uid://ucq4o58itb5g" path="res://Art/Desk/Handbook.png" id="8_0njgj"]
 [ext_resource type="Script" uid="uid://dy6025oangv67" path="res://Handbook/handbookButton/handbook_button.gd" id="8_8d1sc"]
@@ -270,6 +270,8 @@ offset_left = 141.59
 offset_top = -75.0
 offset_right = 351.26025
 offset_bottom = 212.775
+mouse_filter = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="handbookButton" unique_id=262624159]
 libraries/ = SubResource("AnimationLibrary_7p32j")
@@ -282,6 +284,7 @@ offset_right = 442.87
 offset_bottom = 315.0
 disabled = true
 text = "go back ->"
+metadata/_edit_use_anchors_ = true
 
 [node name="BgMusic" parent="." unique_id=53523705 instance=ExtResource("11_l5tyu")]
 unique_name_in_owner = true
@@ -299,6 +302,7 @@ offset_top = -98.0
 offset_right = -433.55197
 offset_bottom = -75.0
 label_settings = SubResource("LabelSettings_o3bos")
+metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="handbookButton/handbook" to="handbookButton" method="_on_handbook_pressed"]
 [connection signal="pressed" from="handbookButton/BackButton" to="handbookButton" method="_on_button_pressed"]
