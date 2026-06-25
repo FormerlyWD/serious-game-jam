@@ -5,6 +5,7 @@ class_name Handbook
 @export var left_page_container: Container
 @export var right_page_container: Container
 @export var default_page_previewer_inclusion:PagePreviewerIncludeResource
+
 var page_pointer:int = 0
 var left_pointer:int
 var right_pointer:int
@@ -21,6 +22,7 @@ func page_up():
 	apply_pointer()
 
 func page_down():
+	
 	page_pointer = clamp(page_pointer-2,0,page_previewer_scene.all_fetched_pages.size()-2 )
 	update_book_faces()
 	apply_pointer()

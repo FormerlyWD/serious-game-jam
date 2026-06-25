@@ -315,9 +315,9 @@ libraries/ = SubResource("AnimationLibrary_7p32j")
 
 [node name="BackButton" type="Button" parent="handbookButton" unique_id=1306253837]
 modulate = Color(1, 1, 1, 0)
-offset_left = 366.935
+offset_left = 312.305
 offset_top = 251.0
-offset_right = 442.87
+offset_right = 398.305
 offset_bottom = 315.0
 disabled = true
 text = "go back ->"

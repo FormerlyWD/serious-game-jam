@@ -5,4 +5,4 @@ extends Button
 func _on_pressed() -> void:
 	scene_fade_silhouette.fade_in()
 	await scene_fade_silhouette.fade_finished
-	GlobalShiftManager.next_shift()
+	GlobalShiftManager.switch_scene(GlobalShiftManager.Scene.PAPER_SCENE)

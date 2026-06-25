@@ -5,17 +5,21 @@ signal shifts_finished
 @export var point_log:PointLog
 enum Scene {
 	DESK,
-	POST_SHIFT
+	POST_SHIFT,
+	MAIN_MENU,
+	PAPER_SCENE
 }
 
 @onready var all_scene_paths:Dictionary = {
 	Scene.DESK:"res://Scenes/deskScene/DeskScene.tscn",
-	Scene.POST_SHIFT:"res://Scenes/PostShiftScene/PostShiftScene.tscn"
+	Scene.POST_SHIFT:"res://Scenes/PostShiftScene/PostShiftScene.tscn",
+	Scene.PAPER_SCENE:"res://Scenes/IntroPageScene/IntroPageScene.tscn"
 }
 @export var default_post_shift_stats:PostShiftStats
 @export var currently_focused_shift:Shift
 @export var current_shift_parse:int = -1
-
+func switch_scene(scene_enum:Scene):
+	get_tree().change_scene_to_file(all_scene_paths[scene_enum])
 func next_shift():
 	
 	current_shift_parse +=1
