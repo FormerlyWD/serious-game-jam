@@ -40,7 +40,6 @@ offset_right = 682.0
 offset_bottom = 951.0
 scale = Vector2(0.43152392, 0.43152392)
 texture = ExtResource("3_na5te")
-flip_h = true
 
 [node name="RichTextLabel" parent="BasePage2" index="1" unique_id=1951358133]
 text = "ff 1000"
