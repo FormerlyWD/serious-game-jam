@@ -21,6 +21,7 @@ func radio_finished():
 	%SceneFadeSilhouette.fade_in()
 	await %SceneFadeSilhouette.fade_finished
 	GlobalShiftManager.finish_shift()
+
 func reset_radio():
 	pass
 	timer.reset_timer()

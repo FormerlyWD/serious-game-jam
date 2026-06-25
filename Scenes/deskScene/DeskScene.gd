@@ -23,7 +23,13 @@ func process_shift_object():
 		%BgMusic.replace_music(current_shift_object.bg_music)
 	else:
 		%BgMusic.replace_music(default_bg_music)
-	%RadioNode.apply_shift_radio_data(current_shift_object)
-	%RadioNode.reset_radio()
+	
+	if not GlobalShiftManager.current_shift_parse ==0:
+		%RadioNode.apply_shift_radio_data(current_shift_object)
+		%RadioNode.reset_radio()
+		
+	else:
+		%RadioNode.radio_disabler.disable_clicks()
+		%RadioNode.timer.current_timer_state = CustomTimer.TimerState.LOCKED
 	%Handbook.apply_handbook_data(current_shift_object)
 	%Handbook.initialize_pages()

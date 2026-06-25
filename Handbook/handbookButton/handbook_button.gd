@@ -7,11 +7,13 @@ enum BookShownState {SHOWN, INVISIBLE}
 @export var transition_type:Tween.TransitionType
 @export var handbook: Handbook
 @export var back_button: Button
-
+var is_tutorial_shift_enabled:bool = true
 var current_tween:Tween
 var is_animating:bool
 var current_book_shown_state:BookShownState = BookShownState.INVISIBLE
 func _on_handbook_pressed() -> void:
+	
+	
 	match current_book_shown_state:
 		BookShownState.INVISIBLE:
 			
@@ -51,7 +53,11 @@ func _on_handbook_pressed() -> void:
 			await $AnimationPlayer.animation_finished
 			$handbook.disabled = false
 			%RadioNode.radio_disabler.enable_clicks()
-		
+			if GlobalShiftManager.current_shift_parse ==0 and is_tutorial_shift_enabled:
+				is_tutorial_shift_enabled = false
+				%RadioNode.apply_shift_radio_data(GlobalShiftManager.currently_focused_shift)
+				%RadioNode.reset_radio()
+				%RadioNode.timer.current_timer_state = CustomTimer.TimerState.RUNNING
 
 
 func _on_button_pressed() -> void:

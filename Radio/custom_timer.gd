@@ -11,7 +11,8 @@ enum TimerState {
 
 var current_timer_state:TimerState = TimerState.RUNNING
 var current_timer:float
-var maximum_radio_time:float
+var maximum_radio_time:float = 3
+
 func _process(delta: float) -> void:	
 	match current_timer_state:
 		TimerState.RUNNING:

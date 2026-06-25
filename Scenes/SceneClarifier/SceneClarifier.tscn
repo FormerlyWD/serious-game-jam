@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://gvp86r5qvfp"]
 
 [ext_resource type="Script" uid="uid://cjgyuir1s637l" path="res://Scenes/SceneClarifier/scene_clarifier.gd" id="1_61qki"]
+[ext_resource type="AudioStream" uid="uid://cui5mfepjfyil" path="res://Audio/jingle/jingle.wav" id="2_3h316"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_61qki"]
 font_size = 145
@@ -11,6 +12,7 @@ font_size = 145
 offset_right = 117.0
 offset_bottom = 53.0
 script = ExtResource("1_61qki")
+sfx = ExtResource("2_3h316")
 
 [node name="Msg" type="Label" parent="." unique_id=1408063739]
 modulate = Color(1, 1, 1, 0)
