@@ -11,8 +11,10 @@ config_version=5
 [application]
 
 config/name="SeriousGameJam"
+
 run/main_scene="uid://drw02dqbiijfy"
 config/features=PackedStringArray("4.6", "GL Compatibility")
+
 config/icon="res://icon.svg"
 
 [autoload]
