@@ -4,8 +4,8 @@
 [ext_resource type="Script" uid="uid://cdwotjgvtyhjm" path="res://Radio/ClipInsertion/clip_insertion.gd" id="2_mboxh"]
 [ext_resource type="Script" uid="uid://cn5762sv6ibx3" path="res://Radio/CentralAndStaticNoiseChannels/ChannelClass/channel_class.gd" id="4_feej3"]
 [ext_resource type="Resource" uid="uid://caeu0uab0mc42" path="res://Radio/CentralAndStaticNoiseChannels/ChannelClass/default_channel.tres" id="5_vxlrt"]
-[ext_resource type="AudioStream" uid="uid://c3dmtwid5yw2c" path="res://Audio/Signals/anomaly_bossa.wav" id="6_mboxh"]
-[ext_resource type="AudioStream" uid="uid://b6in60up51sxq" path="res://Audio/Signals/bossa.wav" id="7_c1sqy"]
+[ext_resource type="AudioStream" uid="uid://gr80g8xt4e8y" path="res://Audio/Signals/anomaly_bossa.wav" id="6_mboxh"]
+[ext_resource type="AudioStream" uid="uid://chygirqa1jofa" path="res://Audio/Signals/bossa.wav" id="7_c1sqy"]
 [ext_resource type="Script" uid="uid://4yh70i0yfekf" path="res://ShiftManager/ShiftClass/shift_class.gd" id="7_m21ru"]
 
 [sub_resource type="Resource" id="Resource_nifm1"]
@@ -23,6 +23,7 @@ metadata/_custom_type_script = "uid://cdwotjgvtyhjm"
 [sub_resource type="Resource" id="Resource_feej3"]
 script = ExtResource("2_mboxh")
 audio_clip = ExtResource("7_c1sqy")
+designated_channel = 1
 metadata/_custom_type_script = "uid://cdwotjgvtyhjm"
 
 [resource]
