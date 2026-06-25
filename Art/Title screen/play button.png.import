@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://da5dga4fekgmb"
-path="res://.godot/imported/desk.png-b33843d7d60e0d25685b8e23c44c4446.ctex"
+uid="uid://85ur166twe7h"
+path="res://.godot/imported/play button.png-d7bc490f0acffce3d12e9e9ea131a386.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Desk/desk.png"
-dest_files=["res://.godot/imported/desk.png-b33843d7d60e0d25685b8e23c44c4446.ctex"]
+source_file="res://Art/Title screen/play button.png"
+dest_files=["res://.godot/imported/play button.png-d7bc490f0acffce3d12e9e9ea131a386.ctex"]
 
 [params]
 

@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://bidfkxhm7sn61" path="res://Handbook/handbook.gd" id="1_cxkbg"]
 [ext_resource type="PackedScene" uid="uid://htn57ncwlpwg" path="res://Handbook/Pages/PagePreviewerScene/PagePreviewerScene.tscn" id="2_1dcfc"]
-[ext_resource type="Script" uid="uid://6ea8wbyf1dqj" path="res://Handbook/page_container.gd" id="2_ukk68"]
-[ext_resource type="Script" uid="uid://umrxkqcprp4v" path="res://Handbook/button_2.gd" id="3_pbo3m"]
+[ext_resource type="Script" path="res://Handbook/page_container.gd" id="2_ukk68"]
+[ext_resource type="Script" path="res://Handbook/button_2.gd" id="3_pbo3m"]
 
 [node name="Handbook" type="Control" unique_id=2007939756 node_paths=PackedStringArray("page_previewer_scene", "left_page_container", "right_page_container")]
 custom_minimum_size = Vector2(469, 388)
@@ -20,6 +20,7 @@ left_page_container = NodePath("LeftPageContainer")
 right_page_container = NodePath("RightPageContainer")
 
 [node name="Button" type="Button" parent="." unique_id=498085224]
+modulate = Color(1, 1, 1, 0)
 z_index = 5
 custom_minimum_size = Vector2(297.248, 386)
 layout_mode = 0
@@ -49,6 +50,7 @@ button = NodePath("../Button")
 metadata/_edit_lock_ = true
 
 [node name="Button2" type="Button" parent="." unique_id=627457801]
+modulate = Color(1, 1, 1, 0)
 z_index = 5
 custom_minimum_size = Vector2(297.248, 386)
 layout_mode = 0

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://da5dga4fekgmb"
-path="res://.godot/imported/desk.png-b33843d7d60e0d25685b8e23c44c4446.ctex"
+uid="uid://d4nsmqea0fdwv"
+path="res://.godot/imported/staticglow-2.png-39eaef07b1bd2186c0f7aebc49d085f4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Desk/desk.png"
-dest_files=["res://.godot/imported/desk.png-b33843d7d60e0d25685b8e23c44c4446.ctex"]
+source_file="res://Art/Title screen/staticglow-2.png"
+dest_files=["res://.godot/imported/staticglow-2.png-39eaef07b1bd2186c0f7aebc49d085f4.ctex"]
 
 [params]
 
