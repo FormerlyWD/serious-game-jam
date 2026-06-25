@@ -33,7 +33,7 @@ post_shift_message_label = NodePath(".")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=654635590]
 
-[node name="Button" type="Button" parent="." unique_id=1476002027]
+[node name="Next" type="Button" parent="." unique_id=1476002027]
 offset_left = 362.0
 offset_top = 115.0
 offset_right = 446.085
@@ -54,6 +54,6 @@ offset_top = -441.0
 offset_right = 752.42
 offset_bottom = 373.0
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Next" to="." method="_on_button_pressed"]
 
 [editable path="SceneFadeSilhouette"]

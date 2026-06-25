@@ -19,6 +19,17 @@ page_previewer_scene = NodePath("PagePreviewerScene")
 left_page_container = NodePath("LeftPageContainer")
 right_page_container = NodePath("RightPageContainer")
 
+[node name="Button" type="Button" parent="." unique_id=498085224]
+z_index = 5
+custom_minimum_size = Vector2(297.248, 386)
+layout_mode = 0
+offset_left = 286.0
+offset_top = -2.0
+offset_right = 583.248
+offset_bottom = 384.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
 [node name="RightPageContainer" type="Container" parent="." unique_id=1034560067 node_paths=PackedStringArray("handbook", "button")]
 layout_mode = 1
 anchors_preset = -1
@@ -34,14 +45,20 @@ mouse_filter = 2
 script = ExtResource("2_ukk68")
 handbook = NodePath("..")
 page_up = true
-button = NodePath("Button")
+button = NodePath("../Button")
+metadata/_edit_lock_ = true
 
-[node name="Button" type="Button" parent="RightPageContainer" unique_id=498085224]
+[node name="Button2" type="Button" parent="." unique_id=627457801]
 z_index = 5
 custom_minimum_size = Vector2(297.248, 386)
-layout_mode = 2
+layout_mode = 0
+offset_left = -11.0
+offset_top = -2.0
+offset_right = 286.248
+offset_bottom = 384.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+script = ExtResource("3_pbo3m")
 
 [node name="LeftPageContainer" type="Container" parent="." unique_id=1013622885 node_paths=PackedStringArray("handbook", "button")]
 layout_mode = 1
@@ -55,18 +72,11 @@ grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("2_ukk68")
 handbook = NodePath("..")
-button = NodePath("Button2")
-
-[node name="Button2" type="Button" parent="LeftPageContainer" unique_id=627457801]
-z_index = 5
-custom_minimum_size = Vector2(297.248, 386)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-script = ExtResource("3_pbo3m")
+button = NodePath("../Button2")
+metadata/_edit_lock_ = true
 
 [node name="PagePreviewerScene" parent="." unique_id=1683508456 instance=ExtResource("2_1dcfc")]
 visible = false
 position = Vector2(0, 916.28)
 
-[connection signal="pressed" from="LeftPageContainer/Button2" to="LeftPageContainer/Button2" method="_on_pressed"]
+[connection signal="pressed" from="Button2" to="Button2" method="_on_pressed"]

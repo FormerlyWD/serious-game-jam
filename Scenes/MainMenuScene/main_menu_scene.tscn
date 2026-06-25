@@ -1,12 +1,15 @@
 [gd_scene format=3 uid="uid://drw02dqbiijfy"]
 
 [ext_resource type="Script" uid="uid://kofcstn7qvon" path="res://Scenes/MainMenuScene/main_menu_scene.gd" id="1_56leo"]
+[ext_resource type="AudioStream" uid="uid://4ug8codobjnk" path="res://Audio/BgMusic/Main_Menu.wav" id="2_cktwe"]
 [ext_resource type="Script" uid="uid://bsw1lcdva5djc" path="res://Scenes/MainMenuScene/switch_to_game.gd" id="2_mctld"]
 [ext_resource type="PackedScene" uid="uid://cmbg4vxyvsjpy" path="res://Scenes/SceneFadeSilhouette/SceneFadeSilhouette.tscn" id="3_mctld"]
+[ext_resource type="PackedScene" uid="uid://c81m42ovpxs68" path="res://Audio/BgMusic/BgMusic.tscn" id="5_2ojsq"]
 
 [node name="MainMenuScene" type="Node2D" unique_id=73558169 node_paths=PackedStringArray("scene_fade_silhouette")]
 script = ExtResource("1_56leo")
 scene_fade_silhouette = NodePath("SceneFadeSilhouette")
+default_bg_music = ExtResource("2_cktwe")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1716119656]
 offset_right = 1154.0
@@ -29,5 +32,7 @@ script = ExtResource("2_mctld")
 scene_fade_silhouette = NodePath("../SceneFadeSilhouette")
 
 [node name="SceneFadeSilhouette" parent="." unique_id=422242111 instance=ExtResource("3_mctld")]
+
+[node name="BgMusic" parent="." unique_id=53523705 instance=ExtResource("5_2ojsq")]
 
 [connection signal="pressed" from="SwitchToGame" to="SwitchToGame" method="_on_pressed"]

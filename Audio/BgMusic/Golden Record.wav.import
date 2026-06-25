@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dmx2fuhmy0262"
+path="res://.godot/imported/Golden Record.wav-5f3f37a1d3bcff1c4133092e056cf75b.sample"
+
+[deps]
+
+source_file="res://Audio/BgMusic/Golden Record.wav"
+dest_files=["res://.godot/imported/Golden Record.wav-5f3f37a1d3bcff1c4133092e056cf75b.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
