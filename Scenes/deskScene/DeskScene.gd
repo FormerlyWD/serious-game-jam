@@ -4,10 +4,15 @@ extends Node2D
 
 @export var current_shift_object:Shift
 @export var scene_fade_silhouette: SceneFadeSilhouette
+@export var scene_clarifier: SceneClarifier
 
 @export var default_bg_music:AudioStream
 func _ready() -> void:
+	
+	
 	GlobalShiftManager.choose_new_shift()
+	scene_clarifier.change_text("DAY " + str(GlobalShiftManager.current_shift_parse+1))
+	scene_clarifier.flicker_animation()
 	if scene_fade_silhouette:
 		scene_fade_silhouette.fade_out()
 	process_shift_object()

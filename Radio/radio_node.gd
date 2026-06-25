@@ -42,5 +42,4 @@ func apply_shift_radio_data(shift_data:Shift):
 		clip_manager_audio_stream.fill_end_time_for_shift(shift_data)
 		$ShiftClipScatterProcessing.scatter_clips(shift_data)
 		clip_manager_audio_stream.all_clips_insertions = shift_data.all_clip_insertions
-		
 		clip_manager_audio_stream.get_max_points(shift_data)

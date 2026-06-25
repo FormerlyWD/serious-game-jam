@@ -14,7 +14,7 @@ enum Scene {
 }
 @export var default_post_shift_stats:PostShiftStats
 @export var currently_focused_shift:Shift
-@export var current_shift_parse:int = 0
+@export var current_shift_parse:int = -1
 
 func next_shift():
 	

@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://cmbg4vxyvsjpy" path="res://Scenes/SceneFadeSilhouette/SceneFadeSilhouette.tscn" id="13_fk51s"]
 [ext_resource type="PackedScene" uid="uid://b3fnvqjbt8ua8" path="res://Timer/VisualTimer.tscn" id="14_2g3f4"]
 [ext_resource type="FontFile" uid="uid://cra8h2lbb2upv" path="res://FontsAndTheme/alarm_clock/alarm clock.ttf" id="15_x7o61"]
+[ext_resource type="PackedScene" uid="uid://gvp86r5qvfp" path="res://Scenes/SceneClarifier/SceneClarifier.tscn" id="16_o3bos"]
 
 [sub_resource type="Resource" id="Resource_4jb1o"]
 script = ExtResource("4_c73jo")
@@ -195,10 +196,11 @@ _data = {
 [sub_resource type="LabelSettings" id="LabelSettings_o3bos"]
 font = ExtResource("15_x7o61")
 
-[node name="DeskScene" type="Node2D" unique_id=522105481 node_paths=PackedStringArray("scene_fade_silhouette")]
+[node name="DeskScene" type="Node2D" unique_id=522105481 node_paths=PackedStringArray("scene_fade_silhouette", "scene_clarifier")]
 script = ExtResource("1_uf8a2")
 current_shift_object = ExtResource("2_u83au")
 scene_fade_silhouette = NodePath("SceneFadeSilhouette")
+scene_clarifier = NodePath("SceneClarifier")
 default_bg_music = ExtResource("3_rioox")
 
 [node name="Handbook" parent="." unique_id=2007939756 instance=ExtResource("3_u83au")]
@@ -303,6 +305,14 @@ offset_right = -433.55197
 offset_bottom = -75.0
 label_settings = SubResource("LabelSettings_o3bos")
 metadata/_edit_use_anchors_ = true
+
+[node name="SceneClarifier" parent="." unique_id=430433529 instance=ExtResource("16_o3bos")]
+offset_left = -596.0
+offset_top = -324.0
+offset_right = 619.0
+offset_bottom = 329.0
+mouse_filter = 2
+inbetween_wait = 2.0
 
 [connection signal="pressed" from="handbookButton/handbook" to="handbookButton" method="_on_handbook_pressed"]
 [connection signal="pressed" from="handbookButton/BackButton" to="handbookButton" method="_on_button_pressed"]

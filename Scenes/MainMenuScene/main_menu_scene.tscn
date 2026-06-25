@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://drw02dqbiijfy"]
+
+[ext_resource type="Script" uid="uid://kofcstn7qvon" path="res://Scenes/MainMenuScene/main_menu_scene.gd" id="1_56leo"]
+[ext_resource type="Script" uid="uid://bsw1lcdva5djc" path="res://Scenes/MainMenuScene/switch_to_game.gd" id="2_mctld"]
+[ext_resource type="PackedScene" uid="uid://cmbg4vxyvsjpy" path="res://Scenes/SceneFadeSilhouette/SceneFadeSilhouette.tscn" id="3_mctld"]
+
+[node name="MainMenuScene" type="Node2D" unique_id=73558169 node_paths=PackedStringArray("scene_fade_silhouette")]
+script = ExtResource("1_56leo")
+scene_fade_silhouette = NodePath("SceneFadeSilhouette")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1716119656]
+offset_right = 1154.0
+offset_bottom = 656.0
+
+[node name="Label" type="Label" parent="." unique_id=1909423282]
+offset_right = 1151.0
+offset_bottom = 654.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "<Game title>
+"
+
+[node name="SwitchToGame" type="Button" parent="." unique_id=685484069 node_paths=PackedStringArray("scene_fade_silhouette")]
+offset_left = 1030.0
+offset_top = 594.0
+offset_right = 1147.0
+offset_bottom = 650.0
+text = "go to game ->"
+script = ExtResource("2_mctld")
+scene_fade_silhouette = NodePath("../SceneFadeSilhouette")
+
+[node name="SceneFadeSilhouette" parent="." unique_id=422242111 instance=ExtResource("3_mctld")]
+
+[connection signal="pressed" from="SwitchToGame" to="SwitchToGame" method="_on_pressed"]

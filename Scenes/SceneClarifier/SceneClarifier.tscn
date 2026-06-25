@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://gvp86r5qvfp"]
+
+[ext_resource type="Script" uid="uid://cjgyuir1s637l" path="res://Scenes/SceneClarifier/scene_clarifier.gd" id="1_61qki"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_61qki"]
+font_size = 145
+
+[sub_resource type="AudioStream" id="AudioStream_61qki"]
+
+[node name="SceneClarifier" type="CenterContainer" unique_id=430433529]
+offset_right = 117.0
+offset_bottom = 53.0
+script = ExtResource("1_61qki")
+
+[node name="Msg" type="Label" parent="." unique_id=1408063739]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+text = "<DAY 1>"
+label_settings = SubResource("LabelSettings_61qki")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=714778544]
+stream = SubResource("AudioStream_61qki")
