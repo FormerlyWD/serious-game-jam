@@ -23,13 +23,16 @@ func switch_scene(scene_enum:Scene):
 func next_shift():
 	
 	current_shift_parse +=1
+	if not current_shift_parse == 0:
+		discard_new_shift()
 	choose_new_shift()
 	get_tree().change_scene_to_file(all_scene_paths[Scene.DESK])
+func discard_new_shift():
+	all_shifts.pop_front()
 func choose_new_shift():
 	if not all_shifts.size() == 0:
 		currently_focused_shift = all_shifts[0]
 		currently_focused_shift.post_shift_stats = default_post_shift_stats.duplicate()
-		all_shifts.pop_front()
 	else:
 		shifts_finished.emit()
 func finish_shift():

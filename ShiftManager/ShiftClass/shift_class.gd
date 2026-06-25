@@ -21,3 +21,6 @@ var accumilatable_points:float
 @export_category("MUSIC")
 @export var bg_music:AudioStream
 @export var post_shift_bg_music:AudioStream
+
+@export_category("EXTRAS")
+@export var hideable_nodes_shown:Array[int]

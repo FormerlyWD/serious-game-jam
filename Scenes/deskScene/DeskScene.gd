@@ -5,6 +5,7 @@ extends Node2D
 @export var current_shift_object:Shift
 @export var scene_fade_silhouette: SceneFadeSilhouette
 @export var scene_clarifier: SceneClarifier
+@export var hideable_nodes: HideableNodes
 
 @export var default_bg_music:AudioStream
 func _ready() -> void:
@@ -17,8 +18,11 @@ func _ready() -> void:
 		scene_fade_silhouette.fade_out()
 	process_shift_object()
 func process_shift_object():
-	
 	current_shift_object = GlobalShiftManager.currently_focused_shift
+	hideable_nodes.initialize()
+	if not current_shift_object.hideable_nodes_shown.size() == 0:
+		hideable_nodes.show_children(current_shift_object.hideable_nodes_shown)
+	
 	if current_shift_object.bg_music:
 		%BgMusic.replace_music(current_shift_object.bg_music)
 	else:

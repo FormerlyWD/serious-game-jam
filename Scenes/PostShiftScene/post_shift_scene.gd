@@ -5,6 +5,7 @@ extends Node2D
 @export var scene_fade_silhouette: SceneFadeSilhouette
 
 func _ready() -> void:
+	
 	scene_fade_silhouette.fade_out()
 	if GlobalShiftManager.currently_focused_shift.post_shift_bg_music:
 		bg_music.replace_music(GlobalShiftManager.currently_focused_shift.post_shift_bg_music)

@@ -5,7 +5,19 @@
 [ext_resource type="Resource" uid="uid://d10ynls4fdc32" path="res://ShiftManager/NewShift.tres" id="3_bo2tm"]
 [ext_resource type="Script" uid="uid://cecr46qa4ca78" path="res://Radio/ClipInsertion/PointLog/point_log.gd" id="4_kidut"]
 [ext_resource type="Script" uid="uid://cdwotjgvtyhjm" path="res://Radio/ClipInsertion/clip_insertion.gd" id="4_nvnst"]
+[ext_resource type="Script" uid="uid://dkftuq0swcdld" path="res://ShiftManager/ShiftBlanks/shift_blank.gd" id="4_x5htm"]
 [ext_resource type="Script" uid="uid://dbk3av0f1ghn7" path="res://ShiftManager/PostShiftStats/shift_stats.gd" id="5_kidut"]
+[ext_resource type="Script" uid="uid://cn5762sv6ibx3" path="res://Radio/CentralAndStaticNoiseChannels/ChannelClass/channel_class.gd" id="6_255wl"]
+
+[sub_resource type="Resource" id="Resource_ivjl5"]
+script = ExtResource("6_255wl")
+metadata/_custom_type_script = "uid://cn5762sv6ibx3"
+
+[sub_resource type="Resource" id="Resource_wpvob"]
+script = ExtResource("2_ip1fe")
+channel_array = Array[ExtResource("6_255wl")]([SubResource("Resource_ivjl5")])
+hideable_nodes_shown = Array[int]([0])
+metadata/_custom_type_script = "uid://4yh70i0yfekf"
 
 [sub_resource type="Resource" id="Resource_x5htm"]
 script = ExtResource("4_kidut")
@@ -20,7 +32,7 @@ metadata/_custom_type_script = "uid://dbk3av0f1ghn7"
 
 [node name="ShiftManager" type="Node" unique_id=848978670]
 script = ExtResource("1_38p0g")
-all_shifts = Array[ExtResource("2_ip1fe")]([ExtResource("3_bo2tm")])
+all_shifts = Array[ExtResource("2_ip1fe")]([ExtResource("3_bo2tm"), SubResource("Resource_wpvob")])
 point_log = SubResource("Resource_x5htm")
 default_post_shift_stats = SubResource("Resource_jwglg")
 metadata/_custom_type_script = "uid://dp2bjpv2ue7q7"
