@@ -6,7 +6,6 @@ class_name Shift
 @export var all_clip_insertions :Array[ClipInsertion]
 @export var channel_array:Array[Channel]
 @export var page_previewer_inclusion:PagePreviewerIncludeResource
-
 @export var all_blanks:Array[ShiftBlank]
 
 @export_category("CLIP SCATTER")

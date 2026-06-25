@@ -21,8 +21,8 @@ func scatter_clips(shift_data:Shift) -> void:
 	var clip_packed_array:Array[ClipInsertion]
 	match scatter_mode:
 		ScatterMode.GLOBAL:
-			var start_time_intervals:Array[float]
-			var end_time_intervals:Array[float]
+			var start_time_intervals:Array[float]= []
+			var end_time_intervals:Array[float]= []
 			
 			for clip in shift_data.all_clip_insertions:
 				start_time_intervals.append(clip.start_time)
@@ -83,10 +83,12 @@ func scatter_clips(shift_data:Shift) -> void:
 				var clip:ClipInsertion= shift_data.clip_insertion_scatter_pool.pick_random().duplicate()
 				if clip.designated_channel == -1:
 					clip.designated_channel =  randi_range(0,central_and_static_noise_channels.amount_of_streams-1)
-				var cur_start_time_intervals:Array[float]
+				var cur_start_time_intervals:Array[float] = []
 				cur_start_time_intervals.assign(start_time_intervals[clip.designated_channel])
-				var cur_end_time_intervals:Array[float]
+				cur_start_time_intervals.append_array(persistent_start_time_intervals)
+				var cur_end_time_intervals:Array[float] = []
 				cur_end_time_intervals.assign(end_time_intervals[clip.designated_channel])
+				cur_end_time_intervals.append_array(persistent_end_time_intervals)
 				var interval = generate_non_overlapping_duration(
 					clip.duration,
 					shift_data.duration,

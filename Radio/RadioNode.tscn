@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://d3sf7u516x306" path="res://Radio/ClipManagerAudioStream/ClipManagerAudioStream.tscn" id="3_s7opi"]
 [ext_resource type="Script" uid="uid://cdwotjgvtyhjm" path="res://Radio/ClipInsertion/clip_insertion.gd" id="4_ilola"]
 [ext_resource type="Resource" uid="uid://dpag8ljha4aqy" path="res://Radio/ClipInsertion/sample_clip.tres" id="5_aw04w"]
+[ext_resource type="Script" uid="uid://cecr46qa4ca78" path="res://Radio/ClipInsertion/PointLog/point_log.gd" id="6_a0xl0"]
 [ext_resource type="Script" uid="uid://bfeujwd5vplb" path="res://Radio/custom_timer.gd" id="6_aw04w"]
 [ext_resource type="PackedScene" uid="uid://b8ll7g4yo3t4d" path="res://Radio/CentralAndStaticNoiseChannels/CentralAndStaticNoiseChannels.tscn" id="7_2hs0g"]
 [ext_resource type="AudioStream" uid="uid://bhd3m1vgonjqw" path="res://Audio/Recording (22).mp3" id="7_2odom"]
@@ -29,11 +30,16 @@
 [ext_resource type="FontFile" uid="uid://cra8h2lbb2upv" path="res://FontsAndTheme/alarm_clock/alarm clock.ttf" id="26_rtbd1"]
 [ext_resource type="PackedScene" uid="uid://cdiix473sr3b3" path="res://Radio/RadioDisabler/RadioDisabler.tscn" id="26_s4qw5"]
 
+[sub_resource type="Resource" id="Resource_3xq4l"]
+script = ExtResource("6_a0xl0")
+metadata/_custom_type_script = "uid://cecr46qa4ca78"
+
 [sub_resource type="Resource" id="Resource_kcuwd"]
 script = ExtResource("4_ilola")
 audio_clip = ExtResource("7_2odom")
 designated_channel = 1
-start_time = 10.0
+start_time = 2.0
+special_points_addition = SubResource("Resource_3xq4l")
 metadata/_custom_type_script = "uid://cdwotjgvtyhjm"
 
 [sub_resource type="Resource" id="Resource_5gbna"]

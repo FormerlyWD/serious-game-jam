@@ -2,6 +2,7 @@ extends Node
 class_name ShiftManager
 signal shifts_finished
 @export var all_shifts:Array[Shift]
+@export var point_log:PointLog
 enum Scene {
 	DESK,
 	POST_SHIFT
@@ -30,3 +31,4 @@ func choose_new_shift():
 func finish_shift():
 	get_tree().change_scene_to_file(all_scene_paths[Scene.POST_SHIFT])
 	
+ 

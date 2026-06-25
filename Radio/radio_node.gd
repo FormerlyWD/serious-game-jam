@@ -37,7 +37,10 @@ func apply_shift_radio_data(shift_data:Shift):
 		central_and_static_noise_channels.channel_array = shift_data.channel_array
 		central_and_static_noise_channels.update_stream_count()
 	if clip_manager_audio_stream:
+		clip_manager_audio_stream.evaluate_special_points(shift_data)
+		clip_manager_audio_stream.evaluate_special_points_for_scatter_pool(shift_data)
 		clip_manager_audio_stream.fill_end_time_for_shift(shift_data)
 		$ShiftClipScatterProcessing.scatter_clips(shift_data)
 		clip_manager_audio_stream.all_clips_insertions = shift_data.all_clip_insertions
+		
 		clip_manager_audio_stream.get_max_points(shift_data)

@@ -14,9 +14,9 @@ enum ClipTags {
 @export var duration:float = -1
 @export var end_time:float = -1
 
-
+@export var special_points_requirement:PointLog
 @export var override_points:int
-
+@export var special_points_addition:PointLog
 var id
 
 func create_id():

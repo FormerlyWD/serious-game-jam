@@ -106,11 +106,39 @@ func auto_evaluate_clips()-> void:
 		channel_array.sort_custom(
 			func(a:ClipInsertion, b:ClipInsertion): return a.start_time < b.start_time)
 
+func evaluate_special_points(shift_data:Shift):
+	for clip in shift_data.all_clip_insertions:
+		if clip.special_points_requirement:
+			if not compare_points(clip.special_points_requirement.all_points_log, GlobalShiftManager.point_log.all_points_log):
+				shift_data.all_clips_insertions.erase(clip)
+func evaluate_special_points_for_scatter_pool(shift_data:Shift):
+	for clip in shift_data.clip_insertion_scatter_pool:
+		if clip.special_points_requirement:
+			if not compare_points(clip.special_points_requirement.all_points_log, GlobalShiftManager.point_log.all_points_log):
+				shift_data.clip_insertion_scatter_pool.erase(clip)
+			
+
+func compare_points(base_dict: Dictionary, compared_dict: Dictionary) -> bool:
+	for key in compared_dict:
+		if base_dict.has(key):
+			if base_dict[key] < compared_dict[key]:
+				return false
+		else:
+			if compared_dict[key] >0:
+				return false
+	return true
+func merge_and_add(base_dict: Dictionary, extra_dict: Dictionary):
+	for key in extra_dict:
+		if base_dict.has(key):
+			base_dict[key] += extra_dict[key]
+		else:
+			base_dict[key] = extra_dict[key]
 func get_max_points(shift_data:Shift):
 	for clip in all_clips_insertions:
 		match clip.designated_clip_tag:
 			ClipInsertion.ClipTags.ALIEN:
 				shift_data.accumilatable_points += clip.override_points
+				
 
 func fill_end_time(clip:ClipInsertion, duration_only:bool = false	) -> void:
 	if clip.audio_clip:
