@@ -12,8 +12,11 @@
 [ext_resource type="Script" uid="uid://dy6025oangv67" path="res://Handbook/handbookButton/handbook_button.gd" id="8_8d1sc"]
 [ext_resource type="Texture2D" uid="uid://doym6napmg2ah" path="res://Art/Desk/handbook shadow.png" id="8_csl3a"]
 [ext_resource type="PackedScene" uid="uid://c81m42ovpxs68" path="res://Audio/BgMusic/BgMusic.tscn" id="11_l5tyu"]
+[ext_resource type="AudioStream" uid="uid://c0hhhmvvk7vsp" path="res://Audio/handbookpickup1.mp3" id="12_drerw"]
 [ext_resource type="PackedScene" uid="uid://cmbg4vxyvsjpy" path="res://Scenes/SceneFadeSilhouette/SceneFadeSilhouette.tscn" id="13_fk51s"]
+[ext_resource type="AudioStream" uid="uid://c3li7ax4wvdad" path="res://Audio/handbookpickup2.mp3" id="13_rq3cl"]
 [ext_resource type="PackedScene" uid="uid://b3fnvqjbt8ua8" path="res://Timer/VisualTimer.tscn" id="14_2g3f4"]
+[ext_resource type="AudioStream" uid="uid://b3lyv5jyw7kon" path="res://Audio/handbookpickup3.mp3" id="14_ixu4m"]
 [ext_resource type="FontFile" uid="uid://cra8h2lbb2upv" path="res://FontsAndTheme/alarm_clock/alarm clock.ttf" id="15_x7o61"]
 [ext_resource type="PackedScene" uid="uid://gvp86r5qvfp" path="res://Scenes/SceneClarifier/SceneClarifier.tscn" id="16_o3bos"]
 [ext_resource type="Texture2D" uid="uid://yfgavtc8lypq" path="res://Art/Desk/Clock.png" id="17_7p32j"]
@@ -194,6 +197,12 @@ _data = {
 &"pickup": SubResource("Animation_o3bos")
 }
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_4ojwe"]
+streams_count = 3
+stream_0/stream = ExtResource("12_drerw")
+stream_1/stream = ExtResource("13_rq3cl")
+stream_2/stream = ExtResource("14_ixu4m")
+
 [sub_resource type="LabelSettings" id="LabelSettings_o3bos"]
 font = ExtResource("15_x7o61")
 font_size = 25
@@ -314,6 +323,12 @@ disabled = true
 text = "go back ->"
 metadata/_edit_use_anchors_ = true
 
+[node name="pickupsfx" type="AudioStreamPlayer" parent="handbookButton" unique_id=737268480]
+stream = SubResource("AudioStreamRandomizer_4ojwe")
+volume_db = 10.592
+pitch_scale = 0.89
+bus = &"Room"
+
 [node name="BgMusic" parent="." unique_id=53523705 instance=ExtResource("11_l5tyu")]
 unique_name_in_owner = true
 
@@ -325,6 +340,8 @@ position = Vector2(-587, -345)
 metadata/_edit_lock_ = true
 
 [node name="VisualTimer" parent="." unique_id=1183476949 instance=ExtResource("14_2g3f4")]
+z_index = -1
+z_as_relative = false
 offset_left = 67.0
 offset_top = 148.00002
 offset_right = 162.0
@@ -345,6 +362,7 @@ inbetween_wait = 2.0
 
 [node name="clock glow" type="Sprite2D" parent="." unique_id=495614825]
 modulate = Color(1, 1, 1, 0.5686275)
+z_index = -1
 z_as_relative = false
 material = SubResource("CanvasItemMaterial_7p32j")
 position = Vector2(120.00001, 161)
@@ -360,7 +378,7 @@ scale = Vector2(2.2810018, 1.5421853)
 texture = SubResource("GradientTexture2D_sq8fj")
 
 [node name="Clock" type="Sprite2D" parent="." unique_id=587065307]
-z_index = -1
+z_index = -2
 z_as_relative = false
 position = Vector2(90, 169)
 scale = Vector2(0.389, 0.389)

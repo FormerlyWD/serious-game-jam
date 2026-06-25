@@ -35,6 +35,7 @@ func _on_button_pressed() -> void:
 
 func _on_button_button_down() -> void:
 	$AnimatedSprite2D.play("press")
+	$sfx.play()
 	await $AnimatedSprite2D.animation_finished
 	$AnimatedSprite2D.play_backwards("press")
 	for clip in queue_track_clips:

@@ -23,6 +23,7 @@ func _on_handbook_pressed() -> void:
 			current_tween = null
 			$handbook.disabled = true
 			$AnimationPlayer.play("pickup")
+			$pickupsfx.play()
 			
 			await $AnimationPlayer.animation_finished
 			back_button.disabled = false
@@ -45,6 +46,7 @@ func _on_handbook_pressed() -> void:
 			
 			await current_tween.finished
 			$AnimationPlayer.play_backwards("pickup")
+			$pickupsfx.play()
 			
 			await $AnimationPlayer.animation_finished
 			$handbook.disabled = false
