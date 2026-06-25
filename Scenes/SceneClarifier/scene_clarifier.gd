@@ -25,7 +25,8 @@ func flicker_animation():
 	
 	
 	await current_tween.finished
-	
+	if sfx:
+		$AudioStreamPlayer.play(sfx)
 	await get_tree().create_timer(inbetween_wait).timeout
 	if current_tween:
 		current_tween.stop()
