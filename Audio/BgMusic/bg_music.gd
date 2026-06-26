@@ -29,4 +29,4 @@ func _on_finished() -> void:
 	current_tween= create_tween()
 	current_tween.tween_property(self, "volume_db", initial_DB, duration).set_trans(transition_type)
 	await current_tween.finished
-	play()
+	replace_music(stream)
