@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://da5dga4fekgmb"
-path="res://.godot/imported/desk.png-b33843d7d60e0d25685b8e23c44c4446.ctex"
+uid="uid://cprablhtkqpyl"
+path="res://.godot/imported/shift2note.png-5dca1e90d5f3f2e8c811615c33386b0d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Desk/desk.png"
-dest_files=["res://.godot/imported/desk.png-b33843d7d60e0d25685b8e23c44c4446.ctex"]
+source_file="res://Art/Radio/shift2note.png"
+dest_files=["res://.godot/imported/shift2note.png-5dca1e90d5f3f2e8c811615c33386b0d.ctex"]
 
 [params]
 
