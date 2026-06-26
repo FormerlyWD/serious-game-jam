@@ -7,5 +7,5 @@
 script = ExtResource("2_t3ohw")
 audio_clip = ExtResource("1_7n5uf")
 designated_clip_tag = 1
-designated_channel = -1
+designated_channel = 2
 metadata/_custom_type_script = "uid://cdwotjgvtyhjm"

@@ -32,14 +32,16 @@ texture = ExtResource("3_na5te")
 
 [node name="RichTextLabel" parent="BasePage" index="1" unique_id=1951358133]
 offset_left = 24.0
-offset_top = 74.0
+offset_top = 53.0
 offset_right = 266.0
-offset_bottom = 449.63882
+offset_bottom = 428.63882
 theme_override_font_sizes/normal_font_size = 15
 text = "Turn the left dial to change the channel.
 Turn the right dial to fine tune the frequency.
 
-If you hear an anomaly (see other pages), then press the red button on the right of the radio to report it."
+If you hear an anomaly (see other pages), then press the red button on the right of the radio to report it.
+
+If you do this successfully, the lights on the top of the radio will flicker."
 
 [node name="Label" type="Label" parent="BasePage" unique_id=1753565860]
 z_index = 9
