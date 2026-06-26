@@ -12,7 +12,7 @@ func _ready() -> void:
 	
 	
 	GlobalShiftManager.choose_new_shift()
-	scene_clarifier.change_text("DAY " + str(GlobalShiftManager.current_shift_parse+1))
+	scene_clarifier.change_text("SHIFT " + str(GlobalShiftManager.current_shift_parse+1))
 	scene_clarifier.flicker_animation()
 	if scene_fade_silhouette:
 		scene_fade_silhouette.fade_out()
