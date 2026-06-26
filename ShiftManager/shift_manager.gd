@@ -28,6 +28,7 @@ func next_shift():
 	if not current_shift_parse == 0:
 		if not discard_new_shift():
 			get_tree().change_scene_to_file(all_scene_paths[Scene.END])
+			return
 	choose_new_shift()
 	get_tree().change_scene_to_file(all_scene_paths[Scene.DESK])
 func discard_new_shift() -> bool:
