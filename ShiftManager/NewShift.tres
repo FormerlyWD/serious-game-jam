@@ -57,4 +57,5 @@ is_clip_insertion_scatter_enabled = true
 clip_insertion_scatter_count = 20
 clip_insertion_scatter_pool = Array[ExtResource("5_4sry0")]([SubResource("Resource_fydmp"), SubResource("Resource_xvhc4"), SubResource("Resource_qd5o2"), SubResource("Resource_fv3hh"), SubResource("Resource_m8rek"), SubResource("Resource_weanp")])
 current_random_picking_mode = 1
+hideable_nodes_shown = Array[int]([0])
 metadata/_custom_type_script = "uid://4yh70i0yfekf"

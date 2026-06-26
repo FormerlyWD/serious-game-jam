@@ -28,7 +28,8 @@
 [ext_resource type="PackedScene" uid="uid://gvp86r5qvfp" path="res://Scenes/SceneClarifier/SceneClarifier.tscn" id="16_o3bos"]
 [ext_resource type="Texture2D" uid="uid://yfgavtc8lypq" path="res://Art/Desk/Clock.png" id="17_7p32j"]
 [ext_resource type="Script" uid="uid://jpxwpwygdbbx" path="res://Scenes/deskScene/HideableNodes/hideable_nodes.gd" id="21_rq3cl"]
-[ext_resource type="PackedScene" uid="uid://0cpx3b178rt6" path="res://Handbook/Pages/BasePage.tscn" id="22_ixu4m"]
+[ext_resource type="Texture2D" uid="uid://lpsntvgop84g" path="res://Art/Radio/shift1note.png" id="29_lufwb"]
+[ext_resource type="Texture2D" uid="uid://cprablhtkqpyl" path="res://Art/Radio/shift2note.png" id="30_u5pif"]
 
 [sub_resource type="Resource" id="Resource_nifm1"]
 script = ExtResource("2_p4ikf")
@@ -394,6 +395,19 @@ text = "1:11 AM"
 label_settings = SubResource("LabelSettings_o3bos")
 metadata/_edit_use_anchors_ = true
 
+[node name="HideableNodes" type="Node2D" parent="." unique_id=1428620559]
+script = ExtResource("21_rq3cl")
+
+[node name="sticky_note1" type="Sprite2D" parent="HideableNodes" unique_id=1834319945]
+position = Vector2(-53.785, 11.78)
+scale = Vector2(0.26, 0.26)
+texture = ExtResource("29_lufwb")
+
+[node name="sticky_note2" type="Sprite2D" parent="HideableNodes" unique_id=1545126155]
+position = Vector2(-53.785, 11.78)
+scale = Vector2(0.26, 0.26)
+texture = ExtResource("30_u5pif")
+
 [node name="SceneClarifier" parent="." unique_id=430433529 instance=ExtResource("16_o3bos")]
 offset_left = -596.0
 offset_top = -324.0
@@ -425,12 +439,6 @@ z_as_relative = false
 position = Vector2(90, 169)
 scale = Vector2(0.389, 0.389)
 texture = ExtResource("17_7p32j")
-
-[node name="HideableNodes" type="Node2D" parent="." unique_id=1428620559]
-script = ExtResource("21_rq3cl")
-
-[node name="BasePage" parent="HideableNodes" unique_id=1294302572 instance=ExtResource("22_ixu4m")]
-visible = false
 
 [connection signal="pressed" from="handbookButton/handbook" to="handbookButton" method="_on_handbook_pressed"]
 [connection signal="pressed" from="handbookButton/BackButton" to="handbookButton" method="_on_button_pressed"]

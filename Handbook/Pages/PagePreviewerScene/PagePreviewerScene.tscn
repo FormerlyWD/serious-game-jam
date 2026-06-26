@@ -130,6 +130,7 @@ offset_left = 1018.0
 offset_top = 136.0
 offset_right = 1286.0
 offset_bottom = 499.0
+metadata/_edit_lock_ = true
 
 [node name="Sprite2D" parent="BasePage4" index="0" unique_id=456606488]
 layout_mode = 0
@@ -156,7 +157,61 @@ Channel 3:
 - High pitched repetitive whirring sounds can be heard at the middle frequencies of this channel 
 - The sound of wind can be heard at the low frequencies of this channel"
 
+[node name="BasePage5" parent="." unique_id=1153972871 instance=ExtResource("2_rqkq4")]
+offset_left = 1315.385
+offset_top = 136.0
+offset_right = 1583.3853
+offset_bottom = 499.0
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" parent="BasePage5" index="0" unique_id=456606488]
+layout_mode = 0
+offset_left = 0.0
+offset_top = -12.000002
+offset_right = 682.0
+offset_bottom = 951.0
+scale = Vector2(0.43152392, 0.43152392)
+texture = ExtResource("3_na5te")
+flip_h = true
+
+[node name="RichTextLabel" parent="BasePage5" index="1" unique_id=1951358133]
+offset_left = 27.0
+offset_top = 36.0
+offset_right = 261.0
+offset_bottom = 367.0
+theme_override_font_sizes/normal_font_size = 13
+text = "asfasfsfa
+
+rt"
+
+[node name="BasePage6" parent="." unique_id=1059941714 instance=ExtResource("2_rqkq4")]
+offset_left = 1615.385
+offset_top = 136.0
+offset_right = 1883.3853
+offset_bottom = 499.0
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" parent="BasePage6" index="0" unique_id=456606488]
+layout_mode = 0
+offset_left = 0.0
+offset_top = -12.000002
+offset_right = 682.0
+offset_bottom = 951.0
+scale = Vector2(0.43152392, 0.43152392)
+texture = ExtResource("3_na5te")
+flip_h = true
+
+[node name="RichTextLabel" parent="BasePage6" index="1" unique_id=1951358133]
+offset_left = 27.0
+offset_top = 36.0
+offset_right = 261.0
+offset_bottom = 367.0
+theme_override_font_sizes/normal_font_size = 13
+text = "sdfgshfhdf"
+
 [editable path="BasePage"]
 [editable path="BasePage2"]
 [editable path="BasePage3"]
 [editable path="BasePage4"]
+[editable path="BasePage5"]
+[editable path="BasePage6"]
