@@ -3,7 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://cmbg4vxyvsjpy" path="res://Scenes/SceneFadeSilhouette/SceneFadeSilhouette.tscn" id="1_v4dyd"]
 [ext_resource type="Script" uid="uid://d7av3rmwich7" path="res://Scenes/IntroPageScene/intro_page_scene.gd" id="1_xu746"]
 [ext_resource type="Texture2D" uid="uid://ci1c7m44h4exl" path="res://Art/paper.png" id="3_ewvd3"]
+[ext_resource type="Texture2D" uid="uid://cqv2bmkeboqmk" path="res://Art/white arrow.png" id="3_smhiu"]
 [ext_resource type="FontFile" uid="uid://cs61rul1cwbb6" path="res://FontsAndTheme/circ_handwriting/circhand.ttf" id="4_20thw"]
+[ext_resource type="Texture2D" uid="uid://28jbk1me5ade" path="res://Art/Handbook/backbutton.png" id="4_su6hs"]
 
 [sub_resource type="FontVariation" id="FontVariation_20thw"]
 base_font = ExtResource("4_20thw")
@@ -26,7 +28,19 @@ offset_bottom = 658.0
 color = Color(0, 0, 0, 1)
 metadata/_edit_lock_ = true
 
-[node name="Button" type="Button" parent="." unique_id=1714621661]
+[node name="Button" type="TextureButton" parent="." unique_id=1054858229]
+offset_left = 1010.00006
+offset_top = 560.0
+offset_right = 1671.0001
+offset_bottom = 1056.0
+scale = Vector2(0.17960371, 0.16509312)
+texture_normal = ExtResource("3_smhiu")
+texture_pressed = ExtResource("3_smhiu")
+texture_hover = ExtResource("4_su6hs")
+
+[node name="buttonold" type="Button" parent="." unique_id=1714621661]
+visible = false
+z_index = -1
 offset_left = 971.0
 offset_top = 590.0
 offset_right = 1134.0
@@ -79,6 +93,8 @@ I’ll give you any updates I can before your next shift tomorrow night.
 
 I'm trying my best for you, kiddo.
 "
+scroll_active = false
 metadata/_edit_lock_ = true
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="buttonold" to="." method="_on_button_pressed"]

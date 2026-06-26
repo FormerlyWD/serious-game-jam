@@ -13,6 +13,8 @@
 [ext_resource type="Texture2D" uid="uid://doym6napmg2ah" path="res://Art/Desk/handbook shadow.png" id="8_csl3a"]
 [ext_resource type="PackedScene" uid="uid://c81m42ovpxs68" path="res://Audio/BgMusic/BgMusic.tscn" id="11_l5tyu"]
 [ext_resource type="AudioStream" uid="uid://c0hhhmvvk7vsp" path="res://Audio/handbookpickup1.mp3" id="12_drerw"]
+[ext_resource type="Texture2D" uid="uid://28jbk1me5ade" path="res://Art/Handbook/backbutton.png" id="12_rq3cl"]
+[ext_resource type="Texture2D" uid="uid://cqv2bmkeboqmk" path="res://Art/white arrow.png" id="13_ado2n"]
 [ext_resource type="PackedScene" uid="uid://cmbg4vxyvsjpy" path="res://Scenes/SceneFadeSilhouette/SceneFadeSilhouette.tscn" id="13_fk51s"]
 [ext_resource type="AudioStream" uid="uid://c3li7ax4wvdad" path="res://Audio/handbookpickup2.mp3" id="13_rq3cl"]
 [ext_resource type="PackedScene" uid="uid://b3fnvqjbt8ua8" path="res://Timer/VisualTimer.tscn" id="14_2g3f4"]
@@ -119,14 +121,14 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("BackButton:modulate")
+tracks/4/path = NodePath("BackButton:modulate:a")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
+"update": 1,
+"values": [0.0]
 }
 
 [sub_resource type="Animation" id="Animation_o3bos"]
@@ -183,14 +185,14 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("BackButton:modulate")
+tracks/4/path = NodePath("BackButton:modulate:a")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.8),
+"times": PackedFloat32Array(0.23333333, 0.73333335),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+"values": [0.0, 1.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7p32j"]
@@ -288,7 +290,7 @@ final_y_position = -100.0
 duration = 0.71
 transition_type = 4
 handbook = NodePath("../Handbook")
-back_button = NodePath("BackButton")
+back_button = NodePath("backbuttonold")
 
 [node name="handbook shadow" type="Sprite2D" parent="handbookButton" unique_id=584275968]
 z_index = -1
@@ -316,8 +318,21 @@ metadata/_edit_use_anchors_ = true
 [node name="AnimationPlayer" type="AnimationPlayer" parent="handbookButton" unique_id=262624159]
 libraries/ = SubResource("AnimationLibrary_7p32j")
 
-[node name="BackButton" type="Button" parent="handbookButton" unique_id=1306253837]
+[node name="BackButton" type="TextureButton" parent="handbookButton" unique_id=236333530]
 modulate = Color(1, 1, 1, 0)
+offset_left = 294.14502
+offset_top = 223.0
+offset_right = 955.145
+offset_bottom = 719.0
+scale = Vector2(0.16841058, 0.19677548)
+texture_normal = ExtResource("12_rq3cl")
+texture_pressed = ExtResource("12_rq3cl")
+texture_hover = ExtResource("13_ado2n")
+
+[node name="backbuttonold" type="Button" parent="handbookButton" unique_id=1306253837]
+visible = false
+modulate = Color(1, 1, 1, 0)
+self_modulate = Color(1, 1, 1, 0)
 offset_left = 312.305
 offset_top = 251.0
 offset_right = 398.305
@@ -325,6 +340,11 @@ offset_bottom = 315.0
 disabled = true
 text = "go back ->"
 metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="handbookButton/backbuttonold" unique_id=1158585384]
+position = Vector2(40.840027, 35)
+scale = Vector2(0.13165371, 0.17633644)
+texture = ExtResource("12_rq3cl")
 
 [node name="pickupsfx" type="AudioStreamPlayer" parent="handbookButton" unique_id=737268480]
 stream = SubResource("AudioStreamRandomizer_4ojwe")
@@ -395,6 +415,7 @@ visible = false
 
 [connection signal="pressed" from="handbookButton/handbook" to="handbookButton" method="_on_handbook_pressed"]
 [connection signal="pressed" from="handbookButton/BackButton" to="handbookButton" method="_on_button_pressed"]
+[connection signal="pressed" from="handbookButton/backbuttonold" to="handbookButton" method="_on_button_pressed"]
 [connection signal="finished" from="BgMusic" to="BgMusic" method="_on_finished"]
 
 [editable path="Handbook"]
