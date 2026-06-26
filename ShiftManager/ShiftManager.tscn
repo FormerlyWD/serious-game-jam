@@ -17,7 +17,7 @@ metadata/_custom_type_script = "uid://dkftuq0swcdld"
 
 [sub_resource type="Resource" id="Resource_kcghl"]
 script = ExtResource("2_ip1fe")
-duration = 55.0
+duration = 25.0
 channel_array = Array[ExtResource("6_255wl")]([ExtResource("6_ivjl5"), ExtResource("6_ivjl5"), ExtResource("6_ivjl5"), ExtResource("6_ivjl5")])
 all_blanks = Array[ExtResource("4_x5htm")]([SubResource("Resource_nifm1")])
 clip_insertion_scatter_count = 5

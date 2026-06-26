@@ -4,7 +4,7 @@
 [ext_resource type="AudioStream" uid="uid://nhjukobh861" path="res://Audio/BgMusic/The_Deep.wav" id="2_1qxvw"]
 [ext_resource type="PackedScene" uid="uid://c81m42ovpxs68" path="res://Audio/BgMusic/BgMusic.tscn" id="2_m8q0t"]
 [ext_resource type="FontFile" uid="uid://cra8h2lbb2upv" path="res://FontsAndTheme/alarm_clock/alarm clock.ttf" id="3_mykou"]
-[ext_resource type="Script" path="res://Scenes/PostShiftScene/post_shift_message_label.gd" id="3_oqm8l"]
+[ext_resource type="Script" uid="uid://cwi0melgglivi" path="res://Scenes/PostShiftScene/post_shift_message_label.gd" id="3_oqm8l"]
 [ext_resource type="PackedScene" uid="uid://cmbg4vxyvsjpy" path="res://Scenes/SceneFadeSilhouette/SceneFadeSilhouette.tscn" id="5_whkx1"]
 [ext_resource type="Texture2D" uid="uid://cqv2bmkeboqmk" path="res://Art/white arrow.png" id="7_1ee6u"]
 [ext_resource type="Texture2D" uid="uid://28jbk1me5ade" path="res://Art/Handbook/backbutton.png" id="8_ymr2j"]
