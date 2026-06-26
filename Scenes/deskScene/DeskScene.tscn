@@ -1,13 +1,18 @@
 [gd_scene format=3 uid="uid://cqprmlotrxfsx"]
 
 [ext_resource type="Script" uid="uid://cwfa0vwadh6a4" path="res://Scenes/deskScene/DeskScene.gd" id="1_uf8a2"]
-[ext_resource type="Resource" uid="uid://d10ynls4fdc32" path="res://ShiftManager/NewShift.tres" id="2_u83au"]
+[ext_resource type="Script" uid="uid://dkftuq0swcdld" path="res://ShiftManager/ShiftBlanks/shift_blank.gd" id="2_p4ikf"]
 [ext_resource type="PackedScene" uid="uid://bqbn0wnsg1ful" path="res://Radio/RadioNode.tscn" id="3_0rdti"]
+[ext_resource type="Script" uid="uid://cdwotjgvtyhjm" path="res://Radio/ClipInsertion/clip_insertion.gd" id="3_lufwb"]
 [ext_resource type="AudioStream" uid="uid://nhjukobh861" path="res://Audio/BgMusic/The_Deep.wav" id="3_rioox"]
 [ext_resource type="PackedScene" uid="uid://d2o2i0y6w1uy8" path="res://Handbook/Handbook.tscn" id="3_u83au"]
 [ext_resource type="Script" uid="uid://cc6bi80v2lkjr" path="res://Handbook/Pages/PagePreviewerScene/PagePreviewerIncludeResource/page_previewer_include.gd" id="4_c73jo"]
-[ext_resource type="Texture2D" uid="uid://da5dga4fekgmb" path="res://Art/Desk/desk.PNG" id="6_4jb1o"]
+[ext_resource type="Script" uid="uid://cn5762sv6ibx3" path="res://Radio/CentralAndStaticNoiseChannels/ChannelClass/channel_class.gd" id="4_u5pif"]
+[ext_resource type="Resource" uid="uid://caeu0uab0mc42" path="res://Radio/CentralAndStaticNoiseChannels/ChannelClass/default_channel.tres" id="5_jm33l"]
+[ext_resource type="Texture2D" uid="uid://da5dga4fekgmb" path="res://Art/Desk/desk.png" id="6_4jb1o"]
+[ext_resource type="Script" uid="uid://do2fo11l1seti" path="res://Radio/ClipInsertion/ClipScatterContainer/clip_scatter_container.gd" id="6_g3ohe"]
 [ext_resource type="Texture2D" uid="uid://d0kxe30sjawi0" path="res://Art/Desk/Dark overlay.png" id="7_0njgj"]
+[ext_resource type="Script" uid="uid://4yh70i0yfekf" path="res://ShiftManager/ShiftClass/shift_class.gd" id="7_8lx1y"]
 [ext_resource type="Texture2D" uid="uid://ucq4o58itb5g" path="res://Art/Desk/Handbook.png" id="8_0njgj"]
 [ext_resource type="Script" uid="uid://dy6025oangv67" path="res://Handbook/handbookButton/handbook_button.gd" id="8_8d1sc"]
 [ext_resource type="Texture2D" uid="uid://doym6napmg2ah" path="res://Art/Desk/handbook shadow.png" id="8_csl3a"]
@@ -24,6 +29,19 @@
 [ext_resource type="Texture2D" uid="uid://yfgavtc8lypq" path="res://Art/Desk/Clock.png" id="17_7p32j"]
 [ext_resource type="Script" uid="uid://jpxwpwygdbbx" path="res://Scenes/deskScene/HideableNodes/hideable_nodes.gd" id="21_rq3cl"]
 [ext_resource type="PackedScene" uid="uid://0cpx3b178rt6" path="res://Handbook/Pages/BasePage.tscn" id="22_ixu4m"]
+
+[sub_resource type="Resource" id="Resource_nifm1"]
+script = ExtResource("2_p4ikf")
+end_time = 5.0
+metadata/_custom_type_script = "uid://dkftuq0swcdld"
+
+[sub_resource type="Resource" id="Resource_kcghl"]
+script = ExtResource("7_8lx1y")
+duration = 55.0
+channel_array = Array[ExtResource("4_u5pif")]([ExtResource("5_jm33l"), ExtResource("5_jm33l"), ExtResource("5_jm33l"), ExtResource("5_jm33l")])
+all_blanks = Array[ExtResource("2_p4ikf")]([SubResource("Resource_nifm1")])
+clip_insertion_scatter_count = 5
+metadata/_custom_type_script = "uid://4yh70i0yfekf"
 
 [sub_resource type="Resource" id="Resource_4jb1o"]
 script = ExtResource("4_c73jo")
@@ -237,7 +255,7 @@ fill_to = Vector2(0.495, 0.955)
 
 [node name="DeskScene" type="Node2D" unique_id=522105481 node_paths=PackedStringArray("scene_fade_silhouette", "scene_clarifier", "hideable_nodes")]
 script = ExtResource("1_uf8a2")
-current_shift_object = ExtResource("2_u83au")
+current_shift_object = SubResource("Resource_kcghl")
 scene_fade_silhouette = NodePath("SceneFadeSilhouette")
 scene_clarifier = NodePath("SceneClarifier")
 hideable_nodes = NodePath("HideableNodes")

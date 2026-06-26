@@ -3,6 +3,12 @@
 [ext_resource type="Script" uid="uid://dlrev2alkg8xb" path="res://Handbook/Pages/PagePreviewerScene/page_previewer_scene.gd" id="1_cs3o7"]
 [ext_resource type="PackedScene" uid="uid://0cpx3b178rt6" path="res://Handbook/Pages/BasePage.tscn" id="2_rqkq4"]
 [ext_resource type="Texture2D" uid="uid://jk64e83gc87n" path="res://Art/Handbook/Left page.png" id="3_na5te"]
+[ext_resource type="FontFile" uid="uid://cs61rul1cwbb6" path="res://FontsAndTheme/circ_handwriting/circhand.ttf" id="4_na5te"]
+
+[sub_resource type="FontVariation" id="FontVariation_m64f8"]
+base_font = ExtResource("4_na5te")
+variation_embolden = 0.62
+spacing_glyph = 2
 
 [node name="PagePreviewerScene" type="Node2D" unique_id=1683508456]
 z_index = 5
@@ -35,6 +41,18 @@ Turn the right dial to fine tune the frequency.
 
 If you hear an anomaly (see other pages), then press the red button on the right of the radio to report it."
 
+[node name="Label" type="Label" parent="BasePage" unique_id=1753565860]
+z_index = 9
+layout_mode = 0
+offset_left = 48.0
+offset_top = 352.0
+offset_right = 381.0
+offset_bottom = 401.0
+scale = Vector2(0.5664344, 0.5664344)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "PROPERTY OF THE WAYWARD COMMITTEE
+              FOR INTERNAL USE ONLY"
+
 [node name="BasePage2" parent="." unique_id=1893597452 instance=ExtResource("2_rqkq4")]
 offset_left = 310.0
 offset_top = 103.0
@@ -52,14 +70,26 @@ scale = Vector2(0.43152392, 0.43152392)
 texture = ExtResource("3_na5te")
 
 [node name="RichTextLabel" parent="BasePage2" index="1" unique_id=1951358133]
-offset_left = 24.0
+offset_left = 34.0
 offset_top = 83.0
-offset_right = 258.0
+offset_right = 268.0
 offset_bottom = 414.0
 theme_override_font_sizes/normal_font_size = 15
 text = "Your shift will go until 6:00 AM.
 
 At the end of your shift, you will be rewarded for the anomalies you find, while the opposite will happen for any regular signals marked as anomalies."
+
+[node name="Label2" type="Label" parent="BasePage2" unique_id=1984839910]
+z_index = 9
+layout_mode = 0
+offset_left = 104.0
+offset_top = 350.0
+offset_right = 437.0
+offset_bottom = 399.0
+scale = Vector2(1.018287, 1.018287)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_m64f8")
+text = "click to turn the page"
 
 [node name="BasePage3" parent="." unique_id=1414872256 instance=ExtResource("2_rqkq4")]
 offset_left = 681.0
