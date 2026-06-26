@@ -22,7 +22,7 @@ func process_stats():
 		
 		if clip.designated_clip_tag == ClipInsertion.ClipTags.ALIEN:
 			GlobalShiftManager.currently_focused_shift.post_shift_stats.all_accumilated_points += clip.override_points 
-			log += "ANOMALIE FOUND," + "+" + str(clip.override_points)+ " \n"
+			log += "ANOMALY FOUND," + "+" + str(clip.override_points)+ " \n"
 			all_points += clip.override_points
 		elif clip.designated_clip_tag == ClipInsertion.ClipTags.HUMAN:
 			GlobalShiftManager.currently_focused_shift.post_shift_stats.all_accumilated_points += clip.override_points 
