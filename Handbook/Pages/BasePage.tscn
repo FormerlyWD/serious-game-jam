@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://0cpx3b178rt6"]
 
 [ext_resource type="Script" uid="uid://cu3fmuogxyyj3" path="res://Handbook/Pages/pageclass.gd" id="1_au4c3"]
-[ext_resource type="Texture2D" uid="uid://qhej807de15" path="res://Art/Placeholder/images (1).png" id="2_agh5e"]
+[ext_resource type="Texture2D" uid="uid://ci1c7m44h4exl" path="res://Art/paper.png" id="2_au4c3"]
 
 [node name="BasePage" type="Control" unique_id=1294302572 node_paths=PackedStringArray("rich_text_label")]
 custom_minimum_size = Vector2(267, 362)
@@ -19,11 +19,13 @@ rich_text_label = NodePath("RichTextLabel")
 [node name="Sprite2D" type="TextureRect" parent="." unique_id=456606488]
 z_index = 8
 layout_mode = 1
-offset_right = 193.0
-offset_bottom = 262.0
-scale = Vector2(1.385, 1.385)
+offset_left = -50.0
+offset_top = -34.000004
+offset_right = 1618.0
+offset_bottom = 2354.0
+scale = Vector2(0.21259473, 0.18154614)
 mouse_filter = 2
-texture = ExtResource("2_agh5e")
+texture = ExtResource("2_au4c3")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1951358133]
 z_index = 9

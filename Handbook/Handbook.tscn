@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bidfkxhm7sn61" path="res://Handbook/handbook.gd" id="1_cxkbg"]
 [ext_resource type="PackedScene" uid="uid://htn57ncwlpwg" path="res://Handbook/Pages/PagePreviewerScene/PagePreviewerScene.tscn" id="2_1dcfc"]
-[ext_resource type="Script" path="res://Handbook/page_container.gd" id="2_ukk68"]
+[ext_resource type="Script" uid="uid://6ea8wbyf1dqj" path="res://Handbook/page_container.gd" id="2_ukk68"]
 [ext_resource type="Script" path="res://Handbook/button_2.gd" id="3_pbo3m"]
 
 [sub_resource type="AudioStreamMP3" id="AudioStreamMP3_pbo3m"]
@@ -100,5 +100,6 @@ position = Vector2(0, 916.28)
 
 [node name="NextPage" type="AudioStreamPlayer" parent="." unique_id=1150561005]
 stream = SubResource("AudioStreamRandomizer_nhtp0")
+bus = &"Room"
 
 [connection signal="pressed" from="Button2" to="Button2" method="_on_pressed"]

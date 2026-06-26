@@ -17,6 +17,7 @@ offset_bottom = 601.0
 
 [node name="Sprite2D" parent="BasePage" index="0" unique_id=456606488]
 layout_mode = 0
+offset_left = 0.0
 offset_top = -12.000002
 offset_right = 682.0
 offset_bottom = 951.0
@@ -24,7 +25,15 @@ scale = Vector2(0.43152392, 0.43152392)
 texture = ExtResource("3_na5te")
 
 [node name="RichTextLabel" parent="BasePage" index="1" unique_id=1951358133]
-text = "ff estfges"
+offset_left = 24.0
+offset_top = 74.0
+offset_right = 266.0
+offset_bottom = 449.63882
+theme_override_font_sizes/normal_font_size = 15
+text = "Turn the left dial to change the channel.
+Turn the right dial to fine tune the frequency.
+
+If you hear an anomaly (see other pages), then press the red button on the right of the radio to record it."
 
 [node name="BasePage2" parent="." unique_id=1893597452 instance=ExtResource("2_rqkq4")]
 offset_left = 310.0
@@ -35,6 +44,7 @@ offset_bottom = 566.0
 [node name="Sprite2D" parent="BasePage2" index="0" unique_id=456606488]
 z_as_relative = false
 layout_mode = 0
+offset_left = 0.0
 offset_top = -12.000002
 offset_right = 682.0
 offset_bottom = 951.0
@@ -42,7 +52,14 @@ scale = Vector2(0.43152392, 0.43152392)
 texture = ExtResource("3_na5te")
 
 [node name="RichTextLabel" parent="BasePage2" index="1" unique_id=1951358133]
-text = "ff 1000"
+offset_left = 24.0
+offset_top = 83.0
+offset_right = 258.0
+offset_bottom = 414.0
+theme_override_font_sizes/normal_font_size = 15
+text = "Your shift will go until 3:00 AM.
+
+At the end of your shift, you will be rewarded for the anomalies you find, while the opposite will happen for any regular signals marked as anomalies."
 
 [node name="BasePage3" parent="." unique_id=1414872256 instance=ExtResource("2_rqkq4")]
 offset_left = 681.0
@@ -52,6 +69,7 @@ offset_bottom = 586.0
 
 [node name="Sprite2D" parent="BasePage3" index="0" unique_id=456606488]
 layout_mode = 0
+offset_left = 0.0
 offset_top = -12.000002
 offset_right = 682.0
 offset_bottom = 951.0
@@ -59,7 +77,17 @@ scale = Vector2(0.43152392, 0.43152392)
 texture = ExtResource("3_na5te")
 
 [node name="RichTextLabel" parent="BasePage3" index="1" unique_id=1951358133]
-text = "ff 23532451235"
+offset_left = 23.0
+offset_top = 43.0
+offset_right = 257.0
+offset_bottom = 374.0
+text = "Channel 1:
+- Music should have interference.
+
+Channel 2:
+- Human radio communication,should have  a beep before and after.
+
+"
 
 [node name="BasePage4" parent="." unique_id=829628226 instance=ExtResource("2_rqkq4")]
 offset_left = 1018.0
@@ -69,12 +97,28 @@ offset_bottom = 499.0
 
 [node name="Sprite2D" parent="BasePage4" index="0" unique_id=456606488]
 layout_mode = 0
+offset_left = 0.0
 offset_top = -12.000002
 offset_right = 682.0
 offset_bottom = 951.0
 scale = Vector2(0.43152392, 0.43152392)
 texture = ExtResource("3_na5te")
 flip_h = true
+
+[node name="RichTextLabel" parent="BasePage4" index="1" unique_id=1951358133]
+offset_left = 27.0
+offset_top = 36.0
+offset_right = 261.0
+offset_bottom = 367.0
+theme_override_font_sizes/normal_font_size = 13
+text = "Channel 3:
+- The sound of wind, only in the upper frequencies of this channel.
+- Chaotic beeping noises can be heard on this channel.
+- Human radio communication,should have  a beep before but not after.
+
+Channel 4:
+- High pitched repetitive whirring sounds can be heard at the middle frequencies of this channel (sound: whirr)
+- The sound of wind can be heard at the low frequencies of this channel"
 
 [editable path="BasePage"]
 [editable path="BasePage2"]
