@@ -50,7 +50,7 @@ func _on_button_button_down() -> void:
 				$"../Label".text += str(clip.id)
 				confirmed_track_clips.append(clip)
 				if clip.designated_clip_tag == ClipInsertion.ClipTags.ALIEN:
-					$indicator.play("lights_flicker")
+					%flicker.play("flicker")
 				break
 	
 	clear_queue()
