@@ -9,7 +9,7 @@ extends Node2D
 var cur_tween:Tween
 
 func _ready() -> void:
-	$Button.disabled = true
+	$GoToShift.disabled = true
 	scene_fade_silhouette.fade_out()
 	await scene_fade_silhouette.fade_finished
 	if cur_tween:
@@ -19,10 +19,12 @@ func _ready() -> void:
 	$sfx.play()
 	cur_tween = create_tween()
 	cur_tween.tween_property(intro_page,"position:y",41,duration).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUINT)
-	$Button.disabled = false
+	await cur_tween.finished
+	$GoToShift.button_fade_in()
+	
 
 func _on_button_pressed() -> void:
-	
+	$GoToShift.button_fade_out()
 	if cur_tween:
 		cur_tween.stop()
 		cur_tween = null

@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cqv2bmkeboqmk" path="res://Art/white arrow.png" id="3_smhiu"]
 [ext_resource type="FontFile" uid="uid://cs61rul1cwbb6" path="res://FontsAndTheme/circ_handwriting/circhand.ttf" id="4_20thw"]
 [ext_resource type="Texture2D" uid="uid://28jbk1me5ade" path="res://Art/Handbook/backbutton.png" id="4_su6hs"]
+[ext_resource type="Script" uid="uid://bv272yqb0basg" path="res://Scenes/IntroPageScene/go_to_shift.gd" id="5_p6up0"]
 [ext_resource type="AudioStream" uid="uid://c0hhhmvvk7vsp" path="res://Audio/handbookpickup1.mp3" id="7_su6hs"]
 [ext_resource type="AudioStream" uid="uid://c3li7ax4wvdad" path="res://Audio/handbookpickup2.mp3" id="8_3luoa"]
 
@@ -30,7 +31,8 @@ offset_bottom = 658.0
 color = Color(0, 0, 0, 1)
 metadata/_edit_lock_ = true
 
-[node name="Button" type="TextureButton" parent="." unique_id=1054858229]
+[node name="GoToShift" type="TextureButton" parent="." unique_id=1054858229]
+modulate = Color(1, 1, 1, 0)
 offset_left = 1010.00006
 offset_top = 560.0
 offset_right = 1671.0001
@@ -39,15 +41,7 @@ scale = Vector2(0.17960371, 0.16509312)
 texture_normal = ExtResource("3_smhiu")
 texture_pressed = ExtResource("3_smhiu")
 texture_hover = ExtResource("4_su6hs")
-
-[node name="buttonold" type="Button" parent="." unique_id=1714621661]
-visible = false
-z_index = -1
-offset_left = 971.0
-offset_top = 590.0
-offset_right = 1134.0
-offset_bottom = 626.0
-text = "start shift->"
+script = ExtResource("5_p6up0")
 
 [node name="IntroPage" type="Node2D" parent="." unique_id=762973415]
 position = Vector2(59.000004, 700)
@@ -110,5 +104,4 @@ stream = ExtResource("8_3luoa")
 volume_db = 3.649
 pitch_scale = 0.72
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="buttonold" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="GoToShift" to="." method="_on_button_pressed"]

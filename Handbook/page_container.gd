@@ -11,9 +11,9 @@ func on_click():
 	print("123456")
 	if page_up:
 		
-		handbook.page_up()
-		next_page.play()
+		if handbook.page_up():
+			next_page.play()
 	else:
-		handbook.page_down()
-		next_page.play()
+		if handbook.page_down():
+			next_page.play()
 	

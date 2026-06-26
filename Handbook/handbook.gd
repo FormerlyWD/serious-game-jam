@@ -16,16 +16,25 @@ func apply_handbook_data(shift_data:Shift):
 		page_previewer_scene.page_include = shift_data.page_previewer_inclusion
 	else:
 		page_previewer_scene.page_include = default_page_previewer_inclusion
-func page_up():
-	page_pointer = clamp(page_pointer+2,0,page_previewer_scene.all_fetched_pages.size() -2)
-	update_book_faces()
-	apply_pointer()
-
-func page_down():
+func page_up() -> bool:
+	var initial_page_pointer := page_pointer
 	
-	page_pointer = clamp(page_pointer-2,0,page_previewer_scene.all_fetched_pages.size()-2 )
+	page_pointer = clamp(page_pointer+2,0,page_previewer_scene.all_fetched_pages.size() -2)
+	
+	var moved = page_pointer != initial_page_pointer
+		
 	update_book_faces()
 	apply_pointer()
+	return moved
+
+func page_down() -> bool:
+	var initial_page_pointer := page_pointer
+	page_pointer = clamp(page_pointer-2,0,page_previewer_scene.all_fetched_pages.size()-2 )
+	var moved = page_pointer != initial_page_pointer
+	update_book_faces()
+	apply_pointer()
+	
+	return moved
 func _input(event: InputEvent) -> void:
 	pass
 func initialize_pages():
@@ -36,8 +45,7 @@ func initialize_pages():
 func update_book_faces():
 	left_pointer = page_pointer
 	right_pointer = left_pointer +1
-func apply_pointer() -> bool:
-	var success_flag:bool = true
+func apply_pointer():
 	for child in left_page_container.get_children():
 		if child is Page:
 			
@@ -52,13 +60,11 @@ func apply_pointer() -> bool:
 		var left_page:Page = page_previewer_scene.all_fetched_pages[left_pointer]
 		left_page.get_node("Sprite2D").flip_h = false
 		add_page_to_container(left_page, left_page_container)
-	
 	if right_pointer < page_previewer_scene.all_fetched_pages.size():
 		var right_page:Page = page_previewer_scene.all_fetched_pages[right_pointer]
 		right_page.get_node("Sprite2D").flip_h = true
 		add_page_to_container(right_page, right_page_container)
-	
-	return success_flag
+
 func add_page_to_container(page:Page, container:Container):
 	if container.get_child_count() > 0:
 		if container.get_child(0) is Page:
