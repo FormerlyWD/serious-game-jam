@@ -16,7 +16,6 @@ metadata/_custom_type_script = "uid://cn5762sv6ibx3"
 [sub_resource type="Resource" id="Resource_wpvob"]
 script = ExtResource("2_ip1fe")
 channel_array = Array[ExtResource("6_255wl")]([SubResource("Resource_ivjl5")])
-hideable_nodes_shown = Array[int]([0])
 metadata/_custom_type_script = "uid://4yh70i0yfekf"
 
 [sub_resource type="Resource" id="Resource_x5htm"]
