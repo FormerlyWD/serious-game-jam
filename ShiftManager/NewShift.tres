@@ -10,6 +10,8 @@
 [ext_resource type="Resource" uid="uid://b76e88o03tg1p" path="res://Clips/ch1_eas.tres" id="7_vxlrt"]
 [ext_resource type="Resource" uid="uid://dk8gh80vr03v0" path="res://Clips/anomaly_ch1_eas.tres" id="8_f74ss"]
 [ext_resource type="Resource" uid="uid://d1qsullr1y3xu" path="res://Clips/anomaly_ch0_eas.tres" id="9_m21ru"]
+[ext_resource type="Resource" uid="uid://hxabcxo0jwt8" path="res://Clips/ch1_comms.tres" id="10_f74ss"]
+[ext_resource type="Resource" uid="uid://captqtdbap347" path="res://Clips/anomaly_c1_comms.tres" id="11_m21ru"]
 
 [sub_resource type="Resource" id="Resource_nifm1"]
 script = ExtResource("1_nifm1")
@@ -38,14 +40,12 @@ metadata/_custom_type_script = "uid://do2fo11l1seti"
 
 [sub_resource type="Resource" id="Resource_m8rek"]
 script = ExtResource("5_4sry0")
+clip = ExtResource("10_f74ss")
 metadata/_custom_type_script = "uid://do2fo11l1seti"
 
 [sub_resource type="Resource" id="Resource_weanp"]
 script = ExtResource("5_4sry0")
-metadata/_custom_type_script = "uid://do2fo11l1seti"
-
-[sub_resource type="Resource" id="Resource_qpvt2"]
-script = ExtResource("5_4sry0")
+clip = ExtResource("11_m21ru")
 metadata/_custom_type_script = "uid://do2fo11l1seti"
 
 [resource]
@@ -55,5 +55,5 @@ channel_array = Array[ExtResource("4_feej3")]([ExtResource("5_vxlrt"), ExtResour
 all_blanks = Array[ExtResource("1_nifm1")]([SubResource("Resource_nifm1")])
 is_clip_insertion_scatter_enabled = true
 clip_insertion_scatter_count = 10
-clip_insertion_scatter_pool = Array[ExtResource("5_4sry0")]([SubResource("Resource_fydmp"), SubResource("Resource_xvhc4"), SubResource("Resource_qd5o2"), SubResource("Resource_fv3hh"), SubResource("Resource_m8rek"), SubResource("Resource_weanp"), SubResource("Resource_qpvt2")])
+clip_insertion_scatter_pool = Array[ExtResource("5_4sry0")]([SubResource("Resource_fydmp"), SubResource("Resource_xvhc4"), SubResource("Resource_qd5o2"), SubResource("Resource_fv3hh"), SubResource("Resource_m8rek"), SubResource("Resource_weanp")])
 metadata/_custom_type_script = "uid://4yh70i0yfekf"
