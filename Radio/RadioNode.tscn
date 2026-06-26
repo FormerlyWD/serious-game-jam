@@ -293,11 +293,11 @@ all_disables = [NodePath("../KnobChannel"), NodePath("../KnobFrequency"), NodePa
 
 [node name="RadioInfo" type="Label" parent="." unique_id=1793153064 node_paths=PackedStringArray("central_and_static_noise_channels", "knob_slider")]
 layout_mode = 0
-offset_left = 34.0
+offset_left = 19.0
 offset_top = 23.0
-offset_right = 121.403595
+offset_right = 108.0
 offset_bottom = 63.0
-text = "0.00"
+text = " 0.00"
 label_settings = SubResource("LabelSettings_2b2hv")
 script = ExtResource("25_me8kd")
 central_and_static_noise_channels = NodePath("../CentralAndStaticNoiseChannels")
