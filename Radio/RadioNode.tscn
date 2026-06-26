@@ -79,7 +79,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("19_e7ng2")
 }],
-"loop": false,
+"loop": 0,
 "name": &"press",
 "speed": 15.0
 }]
@@ -96,7 +96,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("2_h2ysq")
 }],
-"loop": false,
+"loop": 0,
 "name": &"lights_flicker",
 "speed": 5.0
 }]
@@ -298,6 +298,7 @@ maximum_value = 0.0
 central_static_noise = NodePath("../../CentralAndStaticNoiseChannels")
 clip_manager_audio_stream = NodePath("../../ClipManagerAudioStream")
 radio_info = NodePath("../../RadioInfo")
+is_clip_mute_outside_curve = false
 
 [node name="indicator" type="Sprite2D" parent="KnobFrequency/knob slider" unique_id=1117832813]
 visible = false
