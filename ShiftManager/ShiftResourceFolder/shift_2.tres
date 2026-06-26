@@ -185,5 +185,5 @@ all_blanks = Array[ExtResource("1_1gjcm")]([SubResource("Resource_6rgqv")])
 is_clip_insertion_scatter_enabled = true
 clip_insertion_scatter_count = 45
 clip_insertion_scatter_pool = Array[ExtResource("4_po7ur")]([SubResource("Resource_nvg1w"), SubResource("Resource_cxyb1"), SubResource("Resource_8l0sj"), SubResource("Resource_d73xf"), SubResource("Resource_lb2nj"), SubResource("Resource_bm7km"), SubResource("Resource_k4uhr"), SubResource("Resource_hiwxj"), SubResource("Resource_le0w8"), SubResource("Resource_f1gvw"), SubResource("Resource_glyo4"), SubResource("Resource_vwert"), SubResource("Resource_gipnv"), SubResource("Resource_uqh55"), SubResource("Resource_8t1k0")])
-hideable_nodes_shown = Array[int]([2])
+hideable_nodes_shown = Array[int]([1])
 metadata/_custom_type_script = "uid://4yh70i0yfekf"

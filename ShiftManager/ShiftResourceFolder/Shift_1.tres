@@ -15,7 +15,11 @@
 [ext_resource type="Resource" uid="uid://captqtdbap347" path="res://Clips/anomaly_c1_comms.tres" id="11_uvo54"]
 [ext_resource type="Script" uid="uid://cc6bi80v2lkjr" path="res://Handbook/Pages/PagePreviewerScene/PagePreviewerIncludeResource/page_previewer_include.gd" id="12_jxpi8"]
 [ext_resource type="Script" uid="uid://4yh70i0yfekf" path="res://ShiftManager/ShiftClass/shift_class.gd" id="13_uinoi"]
+[ext_resource type="Resource" uid="uid://dhq1qsvsfx2sv" path="res://Clips/anomaly_higher_music.tres" id="15_joebt"]
 [ext_resource type="AudioStream" uid="uid://cdn0imxv0mpfa" path="res://Audio/Signals/anomaly_beep.wav" id="15_vi4ou"]
+[ext_resource type="Resource" uid="uid://dbrd85qvu6fei" path="res://Clips/anomaly_lower_music.tres" id="16_jghyt"]
+[ext_resource type="Resource" uid="uid://lw2tcjm3eypg" path="res://Clips/higher_music.tres" id="17_vi4ou"]
+[ext_resource type="Resource" uid="uid://so671q3aqayr" path="res://Clips/lower_music.tres" id="18_uvo54"]
 
 [sub_resource type="Resource" id="Resource_nifm1"]
 script = ExtResource("1_flygq")
@@ -113,6 +117,54 @@ blank = SubResource("Resource_vjwir")
 chance_weight = 1.0
 metadata/_custom_type_script = "uid://do2fo11l1seti"
 
+[sub_resource type="Resource" id="Resource_xrx21"]
+script = ExtResource("8_jghyt")
+final_random_addition_time = 5.0
+metadata/_custom_type_script = "uid://brqusmgsknvfn"
+
+[sub_resource type="Resource" id="Resource_uinoi"]
+script = ExtResource("5_5v5be")
+clip = ExtResource("15_joebt")
+blank = SubResource("Resource_xrx21")
+chance_weight = 0.25
+metadata/_custom_type_script = "uid://do2fo11l1seti"
+
+[sub_resource type="Resource" id="Resource_c0kww"]
+script = ExtResource("8_jghyt")
+final_random_addition_time = 5.0
+metadata/_custom_type_script = "uid://brqusmgsknvfn"
+
+[sub_resource type="Resource" id="Resource_23c6i"]
+script = ExtResource("5_5v5be")
+clip = ExtResource("16_jghyt")
+blank = SubResource("Resource_c0kww")
+chance_weight = 0.25
+metadata/_custom_type_script = "uid://do2fo11l1seti"
+
+[sub_resource type="Resource" id="Resource_umq2p"]
+script = ExtResource("8_jghyt")
+final_random_addition_time = 5.0
+metadata/_custom_type_script = "uid://brqusmgsknvfn"
+
+[sub_resource type="Resource" id="Resource_g1q0g"]
+script = ExtResource("5_5v5be")
+clip = ExtResource("17_vi4ou")
+blank = SubResource("Resource_umq2p")
+chance_weight = 0.25
+metadata/_custom_type_script = "uid://do2fo11l1seti"
+
+[sub_resource type="Resource" id="Resource_pj72d"]
+script = ExtResource("8_jghyt")
+final_random_addition_time = 5.0
+metadata/_custom_type_script = "uid://brqusmgsknvfn"
+
+[sub_resource type="Resource" id="Resource_jpvbw"]
+script = ExtResource("5_5v5be")
+clip = ExtResource("18_uvo54")
+blank = SubResource("Resource_pj72d")
+chance_weight = 0.25
+metadata/_custom_type_script = "uid://do2fo11l1seti"
+
 [sub_resource type="Resource" id="Resource_qpvt2"]
 script = ExtResource("12_jxpi8")
 include_all = true
@@ -127,6 +179,6 @@ page_previewer_inclusion = SubResource("Resource_qpvt2")
 all_blanks = Array[ExtResource("1_flygq")]([SubResource("Resource_nifm1")])
 is_clip_insertion_scatter_enabled = true
 clip_insertion_scatter_count = 35
-clip_insertion_scatter_pool = Array[ExtResource("5_5v5be")]([SubResource("Resource_f1kwu"), SubResource("Resource_08f4l"), SubResource("Resource_3v5c4"), SubResource("Resource_qft2w"), SubResource("Resource_5elca"), SubResource("Resource_ksk1u"), SubResource("Resource_pgmoo")])
+clip_insertion_scatter_pool = Array[ExtResource("5_5v5be")]([SubResource("Resource_f1kwu"), SubResource("Resource_08f4l"), SubResource("Resource_3v5c4"), SubResource("Resource_qft2w"), SubResource("Resource_5elca"), SubResource("Resource_ksk1u"), SubResource("Resource_pgmoo"), SubResource("Resource_uinoi"), SubResource("Resource_23c6i"), SubResource("Resource_g1q0g"), SubResource("Resource_jpvbw")])
 hideable_nodes_shown = Array[int]([0])
 metadata/_custom_type_script = "uid://4yh70i0yfekf"

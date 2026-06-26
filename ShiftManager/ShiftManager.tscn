@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://cecr46qa4ca78" path="res://Radio/ClipInsertion/PointLog/point_log.gd" id="4_kidut"]
 [ext_resource type="Script" uid="uid://cdwotjgvtyhjm" path="res://Radio/ClipInsertion/clip_insertion.gd" id="4_nvnst"]
 [ext_resource type="Script" uid="uid://dbk3av0f1ghn7" path="res://ShiftManager/PostShiftStats/shift_stats.gd" id="5_kidut"]
+[ext_resource type="Resource" uid="uid://cya7ts0c3anox" path="res://ShiftManager/ShiftResourceFolder/shift_3.tres" id="5_x5htm"]
 
 [sub_resource type="Resource" id="Resource_x5htm"]
 script = ExtResource("4_kidut")
@@ -21,7 +22,7 @@ metadata/_custom_type_script = "uid://dbk3av0f1ghn7"
 
 [node name="ShiftManager" type="Node" unique_id=848978670]
 script = ExtResource("1_38p0g")
-all_shifts = Array[ExtResource("2_ip1fe")]([ExtResource("4_jwglg"), ExtResource("3_bo2tm"), null])
+all_shifts = Array[ExtResource("2_ip1fe")]([ExtResource("5_x5htm"), ExtResource("3_bo2tm"), ExtResource("4_jwglg")])
 point_log = SubResource("Resource_x5htm")
 default_post_shift_stats = SubResource("Resource_jwglg")
 metadata/_custom_type_script = "uid://dp2bjpv2ue7q7"
