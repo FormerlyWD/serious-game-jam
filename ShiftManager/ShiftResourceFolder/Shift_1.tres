@@ -3,50 +3,121 @@
 [ext_resource type="Script" uid="uid://dkftuq0swcdld" path="res://ShiftManager/ShiftBlanks/shift_blank.gd" id="1_flygq"]
 [ext_resource type="Script" uid="uid://cdwotjgvtyhjm" path="res://Radio/ClipInsertion/clip_insertion.gd" id="2_m6xiv"]
 [ext_resource type="Script" uid="uid://cn5762sv6ibx3" path="res://Radio/CentralAndStaticNoiseChannels/ChannelClass/channel_class.gd" id="3_3ougu"]
+[ext_resource type="AudioStream" uid="uid://nhjukobh861" path="res://Audio/BgMusic/The_Deep.wav" id="3_7p6rd"]
 [ext_resource type="Resource" uid="uid://caeu0uab0mc42" path="res://Radio/CentralAndStaticNoiseChannels/ChannelClass/default_channel.tres" id="4_qsl7j"]
 [ext_resource type="Script" uid="uid://do2fo11l1seti" path="res://Radio/ClipInsertion/ClipScatterContainer/clip_scatter_container.gd" id="5_5v5be"]
 [ext_resource type="Resource" uid="uid://lkekyn0hhy44" path="res://Clips/ch0_eas.tres" id="6_7p6rd"]
+[ext_resource type="AudioStream" uid="uid://c5peylgeub21j" path="res://Audio/radio noise.mp3" id="6_avfd1"]
 [ext_resource type="Resource" uid="uid://b76e88o03tg1p" path="res://Clips/ch1_eas.tres" id="7_avfd1"]
+[ext_resource type="Script" uid="uid://brqusmgsknvfn" path="res://ShiftManager/ShiftBlanks/ClipBlanks/clip_blank.gd" id="8_jghyt"]
 [ext_resource type="Resource" uid="uid://dk8gh80vr03v0" path="res://Clips/anomaly_ch1_eas.tres" id="8_joebt"]
 [ext_resource type="Resource" uid="uid://d1qsullr1y3xu" path="res://Clips/anomaly_ch0_eas.tres" id="9_jghyt"]
 [ext_resource type="Resource" uid="uid://hxabcxo0jwt8" path="res://Clips/ch1_comms.tres" id="10_vi4ou"]
 [ext_resource type="Resource" uid="uid://captqtdbap347" path="res://Clips/anomaly_c1_comms.tres" id="11_uvo54"]
 [ext_resource type="Script" uid="uid://cc6bi80v2lkjr" path="res://Handbook/Pages/PagePreviewerScene/PagePreviewerIncludeResource/page_previewer_include.gd" id="12_jxpi8"]
 [ext_resource type="Script" uid="uid://4yh70i0yfekf" path="res://ShiftManager/ShiftClass/shift_class.gd" id="13_uinoi"]
+[ext_resource type="AudioStream" uid="uid://cdn0imxv0mpfa" path="res://Audio/Signals/anomaly_beep.wav" id="15_vi4ou"]
+[ext_resource type="AudioStream" uid="uid://d3ue3fvddvk8i" path="res://Audio/BgMusic/Projection.wav" id="17_uvo54"]
 
 [sub_resource type="Resource" id="Resource_nifm1"]
 script = ExtResource("1_flygq")
 end_time = 5.0
 metadata/_custom_type_script = "uid://dkftuq0swcdld"
 
-[sub_resource type="Resource" id="Resource_fydmp"]
+[sub_resource type="Resource" id="Resource_jxpi8"]
+script = ExtResource("3_3ougu")
+radio_noise = ExtResource("6_avfd1")
+metadata/_custom_type_script = "uid://cn5762sv6ibx3"
+
+[sub_resource type="Resource" id="Resource_uinoi"]
+script = ExtResource("3_3ougu")
+lowest_frequency_point = 20.0
+radio_noise = ExtResource("6_avfd1")
+metadata/_custom_type_script = "uid://cn5762sv6ibx3"
+
+[sub_resource type="Resource" id="Resource_vjwir"]
+script = ExtResource("8_jghyt")
+final_random_addition_time = 5.0
+metadata/_custom_type_script = "uid://brqusmgsknvfn"
+
+[sub_resource type="Resource" id="Resource_f1kwu"]
 script = ExtResource("5_5v5be")
 clip = ExtResource("6_7p6rd")
+blank = SubResource("Resource_vjwir")
+chance_weight = 0.25
 metadata/_custom_type_script = "uid://do2fo11l1seti"
 
-[sub_resource type="Resource" id="Resource_xvhc4"]
+[sub_resource type="Resource" id="Resource_qutqn"]
+script = ExtResource("8_jghyt")
+final_random_addition_time = 5.0
+metadata/_custom_type_script = "uid://brqusmgsknvfn"
+
+[sub_resource type="Resource" id="Resource_08f4l"]
 script = ExtResource("5_5v5be")
 clip = ExtResource("7_avfd1")
+blank = SubResource("Resource_qutqn")
+chance_weight = 0.25
 metadata/_custom_type_script = "uid://do2fo11l1seti"
 
-[sub_resource type="Resource" id="Resource_qd5o2"]
+[sub_resource type="Resource" id="Resource_fmlu0"]
+script = ExtResource("8_jghyt")
+final_random_addition_time = 5.0
+metadata/_custom_type_script = "uid://brqusmgsknvfn"
+
+[sub_resource type="Resource" id="Resource_3v5c4"]
 script = ExtResource("5_5v5be")
 clip = ExtResource("8_joebt")
+blank = SubResource("Resource_fmlu0")
+chance_weight = 0.25
 metadata/_custom_type_script = "uid://do2fo11l1seti"
 
-[sub_resource type="Resource" id="Resource_fv3hh"]
+[sub_resource type="Resource" id="Resource_u5b35"]
+script = ExtResource("8_jghyt")
+final_random_addition_time = 5.0
+metadata/_custom_type_script = "uid://brqusmgsknvfn"
+
+[sub_resource type="Resource" id="Resource_qft2w"]
 script = ExtResource("5_5v5be")
 clip = ExtResource("9_jghyt")
+blank = SubResource("Resource_u5b35")
+chance_weight = 0.25
 metadata/_custom_type_script = "uid://do2fo11l1seti"
 
-[sub_resource type="Resource" id="Resource_m8rek"]
+[sub_resource type="Resource" id="Resource_esxpd"]
+script = ExtResource("8_jghyt")
+final_random_addition_time = 5.0
+metadata/_custom_type_script = "uid://brqusmgsknvfn"
+
+[sub_resource type="Resource" id="Resource_5elca"]
 script = ExtResource("5_5v5be")
 clip = ExtResource("10_vi4ou")
+blank = SubResource("Resource_esxpd")
+chance_weight = 0.5
 metadata/_custom_type_script = "uid://do2fo11l1seti"
 
-[sub_resource type="Resource" id="Resource_weanp"]
+[sub_resource type="Resource" id="Resource_je6cy"]
+script = ExtResource("8_jghyt")
+final_random_addition_time = 5.0
+metadata/_custom_type_script = "uid://brqusmgsknvfn"
+
+[sub_resource type="Resource" id="Resource_ksk1u"]
 script = ExtResource("5_5v5be")
 clip = ExtResource("11_uvo54")
+blank = SubResource("Resource_je6cy")
+chance_weight = 0.5
+metadata/_custom_type_script = "uid://do2fo11l1seti"
+
+[sub_resource type="Resource" id="Resource_3ukyl"]
+script = ExtResource("2_m6xiv")
+audio_clip = ExtResource("15_vi4ou")
+designated_clip_tag = 1
+metadata/_custom_type_script = "uid://cdwotjgvtyhjm"
+
+[sub_resource type="Resource" id="Resource_pgmoo"]
+script = ExtResource("5_5v5be")
+clip = SubResource("Resource_3ukyl")
+blank = SubResource("Resource_vjwir")
+chance_weight = 1.0
 metadata/_custom_type_script = "uid://do2fo11l1seti"
 
 [sub_resource type="Resource" id="Resource_qpvt2"]
@@ -58,12 +129,14 @@ metadata/_custom_type_script = "uid://cc6bi80v2lkjr"
 [resource]
 script = ExtResource("13_uinoi")
 duration = 480.0
-channel_array = Array[ExtResource("3_3ougu")]([ExtResource("4_qsl7j"), ExtResource("4_qsl7j"), ExtResource("4_qsl7j"), ExtResource("4_qsl7j")])
+channel_array = Array[ExtResource("3_3ougu")]([ExtResource("4_qsl7j"), SubResource("Resource_jxpi8"), SubResource("Resource_uinoi"), ExtResource("4_qsl7j")])
 page_previewer_inclusion = SubResource("Resource_qpvt2")
 all_blanks = Array[ExtResource("1_flygq")]([SubResource("Resource_nifm1")])
 is_clip_insertion_scatter_enabled = true
-clip_insertion_scatter_count = 20
-clip_insertion_scatter_pool = Array[ExtResource("5_5v5be")]([SubResource("Resource_fydmp"), SubResource("Resource_xvhc4"), SubResource("Resource_qd5o2"), SubResource("Resource_fv3hh"), SubResource("Resource_m8rek"), SubResource("Resource_weanp")])
+clip_insertion_scatter_count = 35
+clip_insertion_scatter_pool = Array[ExtResource("5_5v5be")]([SubResource("Resource_f1kwu"), SubResource("Resource_08f4l"), SubResource("Resource_3v5c4"), SubResource("Resource_qft2w"), SubResource("Resource_5elca"), SubResource("Resource_ksk1u"), SubResource("Resource_pgmoo")])
 current_random_picking_mode = 1
+bg_music = ExtResource("3_7p6rd")
+post_shift_bg_music = ExtResource("17_uvo54")
 hideable_nodes_shown = Array[int]([0])
 metadata/_custom_type_script = "uid://4yh70i0yfekf"

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://fw1wbftau2x"]
 
 [ext_resource type="Script" uid="uid://curlyinpq7g3l" path="res://Scenes/PostShiftScene/post_shift_scene.gd" id="1_e8f65"]
-[ext_resource type="AudioStream" uid="uid://nhjukobh861" path="res://Audio/BgMusic/The_Deep.wav" id="2_1qxvw"]
+[ext_resource type="AudioStream" uid="uid://d3ue3fvddvk8i" path="res://Audio/BgMusic/Projection.wav" id="2_1ee6u"]
 [ext_resource type="PackedScene" uid="uid://c81m42ovpxs68" path="res://Audio/BgMusic/BgMusic.tscn" id="2_m8q0t"]
 [ext_resource type="FontFile" uid="uid://cra8h2lbb2upv" path="res://FontsAndTheme/alarm_clock/alarm clock.ttf" id="3_mykou"]
 [ext_resource type="Script" uid="uid://cwi0melgglivi" path="res://Scenes/PostShiftScene/post_shift_message_label.gd" id="3_oqm8l"]
@@ -11,7 +11,7 @@
 
 [node name="PostShiftScene" type="Node2D" unique_id=1419339163 node_paths=PackedStringArray("bg_music", "post_shift_message_label", "scene_fade_silhouette")]
 script = ExtResource("1_e8f65")
-default_bg_music = ExtResource("2_1qxvw")
+default_bg_music = ExtResource("2_1ee6u")
 bg_music = NodePath("BgMusic")
 post_shift_message_label = NodePath("PostShiftMessageLabel")
 scene_fade_silhouette = NodePath("SceneFadeSilhouette")
