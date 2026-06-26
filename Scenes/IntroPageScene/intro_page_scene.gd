@@ -16,8 +16,9 @@ func _ready() -> void:
 		cur_tween.stop()
 		cur_tween = null
 	intro_page.position.y = 700
+	$sfx.play()
 	cur_tween = create_tween()
-	cur_tween.tween_property(intro_page,"position:y",41,duration).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_EXPO)
+	cur_tween.tween_property(intro_page,"position:y",41,duration).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUINT)
 	$Button.disabled = false
 
 func _on_button_pressed() -> void:
@@ -25,7 +26,8 @@ func _on_button_pressed() -> void:
 	if cur_tween:
 		cur_tween.stop()
 		cur_tween = null
+	$sfx2.play()
 	cur_tween = create_tween()
-	cur_tween.tween_property(intro_page,"position:y",700,duration).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_EXPO)
+	cur_tween.tween_property(intro_page,"position:y",700,duration).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUINT)
 	await cur_tween.finished
 	GlobalShiftManager.next_shift()
