@@ -15,13 +15,14 @@ func _ready() -> void:
 	clip_manager.new_clip_inserted.connect(check_if_frequency_and_clip_valid)
 	%CentralAndStaticNoiseChannels.new_channel_switched.connect(clear_queue)
 func check_if_frequency_and_clip_valid():
-	print("test1")
 	if knob_slider.is_frequency_cleared and clip_manager.current_play_state == clip_manager.PlayState.BUSY:
+		
+		if not clip_manager.clip_history_registry.has(clip_manager.current_clip_parsed.id):
+			return
 		var registered_clip = clip_manager.clip_history_registry[clip_manager.current_clip_parsed.id]
 		
 		if queue_track_clips.has(registered_clip):
 			return
-		print("123")
 		queue_track_clips.append(clip_manager.clip_history_registry[clip_manager.current_clip_parsed.id])
 		
 		

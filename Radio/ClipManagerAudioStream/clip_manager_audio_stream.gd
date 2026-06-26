@@ -35,7 +35,6 @@ func check_clip_state():
 		PlayState.NONREADY:
 			pass
 		PlayState.FREE:
-			print("is trying to add")
 			var reparse_condition:bool = true
 			while reparse_condition:
 				
@@ -48,7 +47,7 @@ func check_clip_state():
 				elif  the_first_clip.start_time <= timer_node.current_timer :
 					if the_first_clip.end_time < timer_node.current_timer:
 						all_clips_insertions_sorted[central_noise_audio_stream.currently_chosen_channel].pop_front()
-						print("pop_front")
+
 						continue
 					elif the_first_clip.end_time >= timer_node.current_timer:
 
@@ -57,9 +56,10 @@ func check_clip_state():
 		PlayState.BUSY:
 			if current_clip_parsed.end_time <= timer_node.current_timer:
 				all_clips_insertions_sorted[central_noise_audio_stream.currently_chosen_channel].pop_front()
-				print("removed")
+
 				discard_clip_from_play()
 func discard_clip_from_play(from_channel_switch:bool = false):
+	print("removed")
 	var saved_clip_id:int
 	if current_clip_parsed:
 		saved_clip_id = current_clip_parsed.id
@@ -164,7 +164,6 @@ func fill_end_time(clip:ClipInsertion, duration_only:bool = false	) -> void:
 		if not clip.start_time == -1.0:
 			if clip.duration == -1.0:
 				clip.duration = clip.audio_clip.get_length()
-				print("clip.audio_clip.get_length()" + str(clip.audio_clip.get_length()))
 	clip.end_time = clip.start_time+ clip.duration
 func fill_end_time_for_shift(shift_data:Shift):
 	for predetermined_clip in shift_data.all_clip_insertions:

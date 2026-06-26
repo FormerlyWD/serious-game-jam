@@ -8,7 +8,7 @@ func _ready() -> void:
 	button.pressed.connect(on_click)
 
 func on_click():
-	print("123456")
+
 	if page_up:
 		
 		if handbook.page_up():

@@ -14,7 +14,7 @@ func fade_in():
 	silhouette.modulate.a = 0.0
 	current_tween = get_tree().create_tween()
 	current_tween.tween_property(silhouette,"modulate:a",1.0,duration).set_trans(transition_type)
-	print("Tween created:", current_tween)
+
 	current_tween.finished.connect(func(): print("Tween finished signal fired"))
 	await  current_tween.finished
 	fade_finished.emit()

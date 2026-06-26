@@ -23,6 +23,7 @@
 [ext_resource type="Resource" uid="uid://b8wsdxx0hbprf" path="res://Clips/anomaly_higher_whirr.tres" id="20_xiy8y"]
 [ext_resource type="Resource" uid="uid://beeifcti60am7" path="res://Clips/anomaly_lower_whirr.tres" id="21_7ua63"]
 [ext_resource type="Resource" uid="uid://c1bdk3irf8y5l" path="res://Clips/whirr.tres" id="22_6igdk"]
+[ext_resource type="Script" uid="uid://cc6bi80v2lkjr" path="res://Handbook/Pages/PagePreviewerScene/PagePreviewerIncludeResource/page_previewer_include.gd" id="23_tsstf"]
 
 [sub_resource type="Resource" id="Resource_6rgqv"]
 script = ExtResource("1_1gjcm")
@@ -169,12 +170,20 @@ blank = SubResource("Resource_pj72d")
 chance_weight = 0.25
 metadata/_custom_type_script = "uid://do2fo11l1seti"
 
+[sub_resource type="Resource" id="Resource_2w6jb"]
+script = ExtResource("23_tsstf")
+include_all = true
+exclude_array = Array[int]([5, 4])
+metadata/_custom_type_script = "uid://cc6bi80v2lkjr"
+
 [resource]
 script = ExtResource("5_h802x")
 duration = 480.0
 channel_array = Array[ExtResource("3_8qid5")]([ExtResource("4_ot6tv"), SubResource("Resource_jxpi8"), ExtResource("4_ot6tv"), ExtResource("4_ot6tv")])
+page_previewer_inclusion = SubResource("Resource_2w6jb")
 all_blanks = Array[ExtResource("1_1gjcm")]([SubResource("Resource_6rgqv")])
 is_clip_insertion_scatter_enabled = true
 clip_insertion_scatter_count = 45
 clip_insertion_scatter_pool = Array[ExtResource("4_po7ur")]([SubResource("Resource_nvg1w"), SubResource("Resource_cxyb1"), SubResource("Resource_8l0sj"), SubResource("Resource_d73xf"), SubResource("Resource_lb2nj"), SubResource("Resource_bm7km"), SubResource("Resource_k4uhr"), SubResource("Resource_hiwxj"), SubResource("Resource_le0w8"), SubResource("Resource_f1gvw"), SubResource("Resource_glyo4"), SubResource("Resource_vwert"), SubResource("Resource_gipnv"), SubResource("Resource_uqh55"), SubResource("Resource_8t1k0")])
+hideable_nodes_shown = Array[int]([2])
 metadata/_custom_type_script = "uid://4yh70i0yfekf"

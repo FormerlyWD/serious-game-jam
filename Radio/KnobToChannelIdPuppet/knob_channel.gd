@@ -9,4 +9,3 @@ func on_rotation_change(angle_rad:float):
 		last_channel = channel
 		central_and_static_noise_channels.switch_channel(channel)
 		
-		print("channel_switch_pending...")

@@ -50,7 +50,6 @@ func change_time(seconds:float):
 	
 	elapsed += seconds
 	var clamped_lerp_weight = clamp(elapsed/transition_duration,0.0,1.0)
-	print("not weorking")
 	total_minutes = lerp(starting_time_minutes, target_real_time, clamped_lerp_weight)
 	format_time()
 
