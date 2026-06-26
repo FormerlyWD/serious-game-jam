@@ -86,10 +86,10 @@ text = "If you hear a sound on a channel that is not listed under the channel na
 
 
 
-Channel 1:
+Channel 0:
 - This channel has music. You should also hear some level of interference with the music.
 
-Channel 2:
+Channel 1:
 - This channel is for radio communication. Human radio communication should have a beep before and after.
 
 "
@@ -116,12 +116,12 @@ offset_top = 36.0
 offset_right = 261.0
 offset_bottom = 367.0
 theme_override_font_sizes/normal_font_size = 13
-text = "Channel 3:
+text = "Channel 2:
 - The sound of wind, only in the upper frequencies of this channel.
 - Chaotic beeping noises can be heard on this channel.
 - Human radio communication should have a beep before but not after.
 
-Channel 4:
+Channel 3:
 - High pitched repetitive whirring sounds can be heard at the middle frequencies of this channel 
 - The sound of wind can be heard at the low frequencies of this channel"
 
