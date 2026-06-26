@@ -40,7 +40,8 @@ func scatter_clips(shift_data:Shift) -> void:
 	if not shift_data.is_clip_insertion_scatter_enabled:
 		return
 	var clip_packed_array:Array[ClipInsertion]
-	get_scatter_queue(shift_data)
+	if current_random_type == RandomMode.WEIGHTED:
+		get_scatter_queue(shift_data)
 	
 	
 	
