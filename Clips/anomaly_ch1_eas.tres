@@ -8,4 +8,5 @@ script = ExtResource("2_684se")
 audio_clip = ExtResource("1_0ot20")
 designated_clip_tag = 1
 designated_channel = 1
+override_points = 2
 metadata/_custom_type_script = "uid://cdwotjgvtyhjm"

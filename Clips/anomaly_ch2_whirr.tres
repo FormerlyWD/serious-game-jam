@@ -8,6 +8,7 @@ script = ExtResource("2_jst1y")
 audio_clip = ExtResource("1_32ylw")
 designated_clip_tag = 1
 designated_channel = 2
+override_points = 2
 is_designated_target_degree_enabled = true
 initial_degree = 120.0
 final_degree = 240.0

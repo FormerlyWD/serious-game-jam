@@ -19,7 +19,7 @@ enum WrapState {NONE,THREESIXTY }
 @export var central_static_noise:CentralAndStaticNoiseChannels
 @export var clip_manager_audio_stream: ClipManagerAudioStream
 @export var radio_info: RadioInfo
-
+@export var is_clip_mute_outside_curve:bool = true
 var is_frequency_cleared:bool
 
 
@@ -54,8 +54,12 @@ func _on_value_changed(cur_value:float) -> void:
 				if is_frequency_cleared:
 					get_child(0).visible = false
 					clip_manager_audio_stream.volume_db =lerp(clip_volume_outside_curve,clip_volume_inside_curve,exponential_increase_ratio)
-
+					
 					is_frequency_cleared = false
+				if not is_frequency_cleared:
+					clip_manager_audio_stream.volume_db = clip_volume_outside_curve
+					if is_clip_mute_outside_curve:
+						clip_manager_audio_stream.volume_db = -1000
 			central_static_noise.volume_db = (maximum_value*exponential_increase_ratio)+noise_default_volume
 	radio_info.text_change()
 	

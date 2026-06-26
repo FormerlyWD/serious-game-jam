@@ -1,0 +1,180 @@
+[gd_resource type="Resource" script_class="Shift" format=3 uid="uid://c1h52t3h4l41h"]
+
+[ext_resource type="Script" uid="uid://dkftuq0swcdld" path="res://ShiftManager/ShiftBlanks/shift_blank.gd" id="1_1gjcm"]
+[ext_resource type="Script" uid="uid://cdwotjgvtyhjm" path="res://Radio/ClipInsertion/clip_insertion.gd" id="2_t5my0"]
+[ext_resource type="Script" uid="uid://cn5762sv6ibx3" path="res://Radio/CentralAndStaticNoiseChannels/ChannelClass/channel_class.gd" id="3_8qid5"]
+[ext_resource type="Resource" uid="uid://caeu0uab0mc42" path="res://Radio/CentralAndStaticNoiseChannels/ChannelClass/default_channel.tres" id="4_ot6tv"]
+[ext_resource type="Script" uid="uid://do2fo11l1seti" path="res://Radio/ClipInsertion/ClipScatterContainer/clip_scatter_container.gd" id="4_po7ur"]
+[ext_resource type="Script" uid="uid://4yh70i0yfekf" path="res://ShiftManager/ShiftClass/shift_class.gd" id="5_h802x"]
+[ext_resource type="AudioStream" uid="uid://c5peylgeub21j" path="res://Audio/radio noise.mp3" id="5_tsstf"]
+[ext_resource type="Script" uid="uid://brqusmgsknvfn" path="res://ShiftManager/ShiftBlanks/ClipBlanks/clip_blank.gd" id="7_2w6jb"]
+[ext_resource type="Resource" uid="uid://hxabcxo0jwt8" path="res://Clips/ch1_comms.tres" id="8_b00ee"]
+[ext_resource type="Resource" uid="uid://captqtdbap347" path="res://Clips/anomaly_c1_comms.tres" id="9_qmujd"]
+[ext_resource type="Resource" uid="uid://dhq1qsvsfx2sv" path="res://Clips/anomaly_higher_music.tres" id="10_qr0l5"]
+[ext_resource type="Resource" uid="uid://dbrd85qvu6fei" path="res://Clips/anomaly_lower_music.tres" id="11_it63i"]
+[ext_resource type="Resource" uid="uid://lw2tcjm3eypg" path="res://Clips/higher_music.tres" id="12_mexne"]
+[ext_resource type="Resource" uid="uid://so671q3aqayr" path="res://Clips/lower_music.tres" id="13_is4o7"]
+[ext_resource type="Resource" uid="uid://dgcjuy08fho4c" path="res://Clips/anomaly_twister.tres" id="14_p352t"]
+[ext_resource type="Resource" uid="uid://cw42p6gbe3fun" path="res://Clips/anomaly_voices.tres" id="15_sa78h"]
+[ext_resource type="Resource" uid="uid://d2nnt1inrg1aa" path="res://Clips/anomaly_bleeps.tres" id="16_0d5ai"]
+[ext_resource type="Resource" uid="uid://ibv25j4vinu0" path="res://Clips/bleeps.tres" id="17_0sxom"]
+[ext_resource type="Resource" uid="uid://bxsuochayp82k" path="res://Clips/anomaly_trumpets.tres" id="18_rb53d"]
+[ext_resource type="Resource" uid="uid://bmdhfqj0uv2jx" path="res://Clips/anomaly_ch2_whirr.tres" id="19_b8rmw"]
+[ext_resource type="Resource" uid="uid://b8wsdxx0hbprf" path="res://Clips/anomaly_higher_whirr.tres" id="20_xiy8y"]
+[ext_resource type="Resource" uid="uid://beeifcti60am7" path="res://Clips/anomaly_lower_whirr.tres" id="21_7ua63"]
+[ext_resource type="Resource" uid="uid://c1bdk3irf8y5l" path="res://Clips/whirr.tres" id="22_6igdk"]
+
+[sub_resource type="Resource" id="Resource_6rgqv"]
+script = ExtResource("1_1gjcm")
+end_time = 3.0
+metadata/_custom_type_script = "uid://dkftuq0swcdld"
+
+[sub_resource type="Resource" id="Resource_jxpi8"]
+script = ExtResource("3_8qid5")
+radio_noise = ExtResource("5_tsstf")
+metadata/_custom_type_script = "uid://cn5762sv6ibx3"
+
+[sub_resource type="Resource" id="Resource_esxpd"]
+script = ExtResource("7_2w6jb")
+final_random_addition_time = 5.0
+metadata/_custom_type_script = "uid://brqusmgsknvfn"
+
+[sub_resource type="Resource" id="Resource_nvg1w"]
+script = ExtResource("4_po7ur")
+clip = ExtResource("8_b00ee")
+blank = SubResource("Resource_esxpd")
+chance_weight = 0.5
+metadata/_custom_type_script = "uid://do2fo11l1seti"
+
+[sub_resource type="Resource" id="Resource_je6cy"]
+script = ExtResource("7_2w6jb")
+final_random_addition_time = 5.0
+metadata/_custom_type_script = "uid://brqusmgsknvfn"
+
+[sub_resource type="Resource" id="Resource_cxyb1"]
+script = ExtResource("4_po7ur")
+clip = ExtResource("9_qmujd")
+blank = SubResource("Resource_je6cy")
+chance_weight = 0.5
+metadata/_custom_type_script = "uid://do2fo11l1seti"
+
+[sub_resource type="Resource" id="Resource_xrx21"]
+script = ExtResource("7_2w6jb")
+final_random_addition_time = 5.0
+metadata/_custom_type_script = "uid://brqusmgsknvfn"
+
+[sub_resource type="Resource" id="Resource_8l0sj"]
+script = ExtResource("4_po7ur")
+clip = ExtResource("10_qr0l5")
+blank = SubResource("Resource_xrx21")
+chance_weight = 0.25
+metadata/_custom_type_script = "uid://do2fo11l1seti"
+
+[sub_resource type="Resource" id="Resource_c0kww"]
+script = ExtResource("7_2w6jb")
+final_random_addition_time = 5.0
+metadata/_custom_type_script = "uid://brqusmgsknvfn"
+
+[sub_resource type="Resource" id="Resource_d73xf"]
+script = ExtResource("4_po7ur")
+clip = ExtResource("11_it63i")
+blank = SubResource("Resource_c0kww")
+chance_weight = 0.25
+metadata/_custom_type_script = "uid://do2fo11l1seti"
+
+[sub_resource type="Resource" id="Resource_umq2p"]
+script = ExtResource("7_2w6jb")
+final_random_addition_time = 5.0
+metadata/_custom_type_script = "uid://brqusmgsknvfn"
+
+[sub_resource type="Resource" id="Resource_lb2nj"]
+script = ExtResource("4_po7ur")
+clip = ExtResource("12_mexne")
+blank = SubResource("Resource_umq2p")
+chance_weight = 0.25
+metadata/_custom_type_script = "uid://do2fo11l1seti"
+
+[sub_resource type="Resource" id="Resource_pj72d"]
+script = ExtResource("7_2w6jb")
+final_random_addition_time = 5.0
+metadata/_custom_type_script = "uid://brqusmgsknvfn"
+
+[sub_resource type="Resource" id="Resource_bm7km"]
+script = ExtResource("4_po7ur")
+clip = ExtResource("13_is4o7")
+blank = SubResource("Resource_pj72d")
+chance_weight = 0.25
+metadata/_custom_type_script = "uid://do2fo11l1seti"
+
+[sub_resource type="Resource" id="Resource_k4uhr"]
+script = ExtResource("4_po7ur")
+clip = ExtResource("14_p352t")
+blank = SubResource("Resource_pj72d")
+chance_weight = 1.0
+metadata/_custom_type_script = "uid://do2fo11l1seti"
+
+[sub_resource type="Resource" id="Resource_hiwxj"]
+script = ExtResource("4_po7ur")
+clip = ExtResource("15_sa78h")
+blank = SubResource("Resource_pj72d")
+chance_weight = 0.5
+metadata/_custom_type_script = "uid://do2fo11l1seti"
+
+[sub_resource type="Resource" id="Resource_le0w8"]
+script = ExtResource("4_po7ur")
+clip = ExtResource("16_0d5ai")
+blank = SubResource("Resource_pj72d")
+chance_weight = 0.5
+metadata/_custom_type_script = "uid://do2fo11l1seti"
+
+[sub_resource type="Resource" id="Resource_f1gvw"]
+script = ExtResource("4_po7ur")
+clip = ExtResource("17_0sxom")
+blank = SubResource("Resource_pj72d")
+chance_weight = 0.5
+metadata/_custom_type_script = "uid://do2fo11l1seti"
+
+[sub_resource type="Resource" id="Resource_glyo4"]
+script = ExtResource("4_po7ur")
+clip = ExtResource("18_rb53d")
+blank = SubResource("Resource_pj72d")
+chance_weight = 0.5
+metadata/_custom_type_script = "uid://do2fo11l1seti"
+
+[sub_resource type="Resource" id="Resource_vwert"]
+script = ExtResource("4_po7ur")
+clip = ExtResource("19_b8rmw")
+blank = SubResource("Resource_pj72d")
+chance_weight = 0.075
+metadata/_custom_type_script = "uid://do2fo11l1seti"
+
+[sub_resource type="Resource" id="Resource_gipnv"]
+script = ExtResource("4_po7ur")
+clip = ExtResource("20_xiy8y")
+blank = SubResource("Resource_pj72d")
+chance_weight = 0.075
+metadata/_custom_type_script = "uid://do2fo11l1seti"
+
+[sub_resource type="Resource" id="Resource_uqh55"]
+script = ExtResource("4_po7ur")
+clip = ExtResource("21_7ua63")
+blank = SubResource("Resource_pj72d")
+chance_weight = 0.075
+metadata/_custom_type_script = "uid://do2fo11l1seti"
+
+[sub_resource type="Resource" id="Resource_8t1k0"]
+script = ExtResource("4_po7ur")
+clip = ExtResource("22_6igdk")
+blank = SubResource("Resource_pj72d")
+chance_weight = 0.25
+metadata/_custom_type_script = "uid://do2fo11l1seti"
+
+[resource]
+script = ExtResource("5_h802x")
+duration = 480.0
+channel_array = Array[ExtResource("3_8qid5")]([ExtResource("4_ot6tv"), SubResource("Resource_jxpi8"), ExtResource("4_ot6tv"), ExtResource("4_ot6tv")])
+all_blanks = Array[ExtResource("1_1gjcm")]([SubResource("Resource_6rgqv")])
+is_clip_insertion_scatter_enabled = true
+clip_insertion_scatter_count = 45
+clip_insertion_scatter_pool = Array[ExtResource("4_po7ur")]([SubResource("Resource_nvg1w"), SubResource("Resource_cxyb1"), SubResource("Resource_8l0sj"), SubResource("Resource_d73xf"), SubResource("Resource_lb2nj"), SubResource("Resource_bm7km"), SubResource("Resource_k4uhr"), SubResource("Resource_hiwxj"), SubResource("Resource_le0w8"), SubResource("Resource_f1gvw"), SubResource("Resource_glyo4"), SubResource("Resource_vwert"), SubResource("Resource_gipnv"), SubResource("Resource_uqh55"), SubResource("Resource_8t1k0")])
+metadata/_custom_type_script = "uid://4yh70i0yfekf"

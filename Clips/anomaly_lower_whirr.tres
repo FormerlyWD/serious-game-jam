@@ -8,6 +8,7 @@ script = ExtResource("2_q1eae")
 audio_clip = ExtResource("1_vf2ww")
 designated_clip_tag = 1
 designated_channel = 3
+override_points = 2
 is_designated_target_degree_enabled = true
 final_degree = 70.0
 metadata/_custom_type_script = "uid://cdwotjgvtyhjm"
