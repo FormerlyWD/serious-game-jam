@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dp2bjpv2ue7q7" path="res://ShiftManager/shift_manager.gd" id="1_38p0g"]
 [ext_resource type="Script" uid="uid://4yh70i0yfekf" path="res://ShiftManager/ShiftClass/shift_class.gd" id="2_ip1fe"]
-[ext_resource type="Resource" uid="uid://d10ynls4fdc32" path="res://ShiftManager/NewShift.tres" id="3_bo2tm"]
+[ext_resource type="Resource" uid="uid://d10ynls4fdc32" path="res://ShiftManager/ShiftResourceFolder/Shift_1.tres" id="3_bo2tm"]
 [ext_resource type="Script" uid="uid://cecr46qa4ca78" path="res://Radio/ClipInsertion/PointLog/point_log.gd" id="4_kidut"]
 [ext_resource type="Script" uid="uid://cdwotjgvtyhjm" path="res://Radio/ClipInsertion/clip_insertion.gd" id="4_nvnst"]
 [ext_resource type="Script" uid="uid://dbk3av0f1ghn7" path="res://ShiftManager/PostShiftStats/shift_stats.gd" id="5_kidut"]
