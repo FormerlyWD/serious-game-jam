@@ -16,21 +16,27 @@ func _ready() -> void:
 	process_stats()
 
 func process_stats():
-	post_shift_message_label.visible = false
-	post_shift_message_label.text = str("TOTAL:")
-	post_shift_message_label.text
-	post_shift_message_label.text +=str ( int(GlobalShiftManager.currently_focused_shift.post_shift_stats.all_accumilated_points)) + "/"
-	post_shift_message_label.text +=str ( int(GlobalShiftManager.currently_focused_shift.accumilatable_points)) +  " \n"
-	post_shift_message_label.text += "LOGS:"+ " \n"
-	
+	var all_points:float
+	var log:String
 	for clip in GlobalShiftManager.currently_focused_shift.post_shift_stats.all_tracked_clips:
 		
 		if clip.designated_clip_tag == ClipInsertion.ClipTags.ALIEN:
 			GlobalShiftManager.currently_focused_shift.post_shift_stats.all_accumilated_points += clip.override_points 
-			post_shift_message_label.text += "ANOMALIE FOUND," + "+" + str(clip.override_points)+ " \n"
+			log += "ANOMALIE FOUND," + "+" + str(clip.override_points)+ " \n"
+			all_points += clip.override_points
 		elif clip.designated_clip_tag == ClipInsertion.ClipTags.HUMAN:
 			GlobalShiftManager.currently_focused_shift.post_shift_stats.all_accumilated_points += clip.override_points 
-			post_shift_message_label.text += "MISREPORT," + "-" + str(abs(clip.override_points))+ " \n"
+			log += "MISREPORT," + "-" + str(abs(clip.override_points))+ " \n"
+			all_points -= clip.override_points
+	
+	post_shift_message_label.visible = false
+	post_shift_message_label.text = str("TOTAL:")
+	post_shift_message_label.text
+	post_shift_message_label.text +=str ( all_points) + "/"
+	post_shift_message_label.text +=str ( int(GlobalShiftManager.currently_focused_shift.accumilatable_points)) +  " \n"
+	post_shift_message_label.text += "LOGS:"+ " \n"
+	post_shift_message_label.text += log
+
 			
 	post_shift_message_label.start_visible_character_animation()
 
