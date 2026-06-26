@@ -4,7 +4,7 @@
 [ext_resource type="AudioStream" uid="uid://nhjukobh861" path="res://Audio/BgMusic/The_Deep.wav" id="2_1qxvw"]
 [ext_resource type="PackedScene" uid="uid://c81m42ovpxs68" path="res://Audio/BgMusic/BgMusic.tscn" id="2_m8q0t"]
 [ext_resource type="FontFile" uid="uid://cra8h2lbb2upv" path="res://FontsAndTheme/alarm_clock/alarm clock.ttf" id="3_mykou"]
-[ext_resource type="Script" uid="uid://cwi0melgglivi" path="res://Scenes/PostShiftScene/post_shift_message_label.gd" id="3_oqm8l"]
+[ext_resource type="Script" path="res://Scenes/PostShiftScene/post_shift_message_label.gd" id="3_oqm8l"]
 [ext_resource type="PackedScene" uid="uid://cmbg4vxyvsjpy" path="res://Scenes/SceneFadeSilhouette/SceneFadeSilhouette.tscn" id="5_whkx1"]
 [ext_resource type="Texture2D" uid="uid://cqv2bmkeboqmk" path="res://Art/white arrow.png" id="7_1ee6u"]
 [ext_resource type="Texture2D" uid="uid://28jbk1me5ade" path="res://Art/Handbook/backbutton.png" id="8_ymr2j"]
@@ -24,10 +24,10 @@ offset_right = 663.0
 offset_bottom = 347.0
 
 [node name="PostShiftMessageLabel" type="Label" parent="." unique_id=1007806526 node_paths=PackedStringArray("post_shift_message_label")]
-offset_left = 72.42
-offset_top = -293.0
-offset_right = 457.41998
-offset_bottom = 107.0
+offset_left = -561.0
+offset_top = -312.0
+offset_right = -176.0
+offset_bottom = 88.0
 theme_override_colors/font_color = Color(0.012499988, 0.75, 0, 1)
 theme_override_fonts/font = ExtResource("3_mykou")
 theme_override_font_sizes/font_size = 32
@@ -63,10 +63,10 @@ offset_right = 752.42
 offset_bottom = 373.0
 
 [node name="Next" type="TextureButton" parent="." unique_id=741175555]
-offset_left = 362.0
-offset_top = 104.0
-offset_right = 1023.0
-offset_bottom = 600.0
+offset_left = 467.0
+offset_top = 238.0
+offset_right = 1128.0
+offset_bottom = 734.0
 scale = Vector2(0.109446086, 0.109446086)
 texture_normal = ExtResource("7_1ee6u")
 texture_pressed = ExtResource("7_1ee6u")

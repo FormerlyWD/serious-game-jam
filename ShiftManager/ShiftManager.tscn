@@ -20,7 +20,6 @@ script = ExtResource("2_ip1fe")
 duration = 55.0
 channel_array = Array[ExtResource("6_255wl")]([ExtResource("6_ivjl5"), ExtResource("6_ivjl5"), ExtResource("6_ivjl5"), ExtResource("6_ivjl5")])
 all_blanks = Array[ExtResource("4_x5htm")]([SubResource("Resource_nifm1")])
-is_clip_insertion_scatter_enabled = true
 clip_insertion_scatter_count = 5
 metadata/_custom_type_script = "uid://4yh70i0yfekf"
 
