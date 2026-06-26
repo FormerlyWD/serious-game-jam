@@ -202,6 +202,7 @@ pitch_scale = 0.9
 bus = &"Room"
 
 [node name="Label" type="Label" parent="." unique_id=135424010]
+visible = false
 layout_mode = 0
 offset_left = 331.0
 offset_top = 26.0
