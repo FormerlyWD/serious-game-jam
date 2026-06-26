@@ -17,11 +17,14 @@ func _process(delta: float) -> void:
 	match current_timer_state:
 		TimerState.RUNNING:
 			current_timer +=delta
-			radio_node.visual_timer.change_time(current_timer)
-			if current_timer >= maximum_radio_time:
+			if radio_node.visual_timer.change_time(delta):
+				radio_finished.emit()
+				current_timer_state = TimerState.LOCKED
+			elif current_timer >= maximum_radio_time:
 				radio_finished.emit()
 				current_timer_state = TimerState.LOCKED
 		TimerState.LOCKED:
 			pass
 func reset_timer():
 	current_timer = 0
+	radio_node.visual_timer.transition_duration = maximum_radio_time

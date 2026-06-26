@@ -50,7 +50,7 @@ metadata/_custom_type_script = "uid://do2fo11l1seti"
 
 [resource]
 script = ExtResource("7_m21ru")
-duration = 55.0
+duration = 20.0
 channel_array = Array[ExtResource("4_feej3")]([ExtResource("5_vxlrt"), ExtResource("5_vxlrt")])
 all_blanks = Array[ExtResource("1_nifm1")]([SubResource("Resource_nifm1")])
 is_clip_insertion_scatter_enabled = true

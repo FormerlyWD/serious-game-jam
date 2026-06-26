@@ -381,6 +381,7 @@ position = Vector2(-587, -345)
 metadata/_edit_lock_ = true
 
 [node name="VisualTimer" parent="." unique_id=1183476949 instance=ExtResource("14_2g3f4")]
+unique_name_in_owner = true
 z_index = -1
 z_as_relative = false
 offset_left = 67.0
