@@ -16,7 +16,8 @@ func _ready() -> void:
 	%CentralAndStaticNoiseChannels.new_channel_switched.connect(clear_queue)
 func check_if_frequency_and_clip_valid():
 	if knob_slider.is_frequency_cleared and clip_manager.current_play_state == clip_manager.PlayState.BUSY:
-		
+		if not clip_manager.current_clip_parsed:
+			return
 		if not clip_manager.clip_history_registry.has(clip_manager.current_clip_parsed.id):
 			return
 		var registered_clip = clip_manager.clip_history_registry[clip_manager.current_clip_parsed.id]
