@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://cqv2bmkeboqmk" path="res://Art/white arrow.png" id="3_smhiu"]
 [ext_resource type="FontFile" uid="uid://cs61rul1cwbb6" path="res://FontsAndTheme/circ_handwriting/circhand.ttf" id="4_20thw"]
 [ext_resource type="Texture2D" uid="uid://28jbk1me5ade" path="res://Art/Handbook/backbutton.png" id="4_su6hs"]
+[ext_resource type="AudioStream" uid="uid://c0hhhmvvk7vsp" path="res://Audio/handbookpickup1.mp3" id="7_su6hs"]
+[ext_resource type="AudioStream" uid="uid://c3li7ax4wvdad" path="res://Audio/handbookpickup2.mp3" id="8_3luoa"]
 
 [sub_resource type="FontVariation" id="FontVariation_20thw"]
 base_font = ExtResource("4_20thw")
@@ -97,6 +99,16 @@ I'm trying my best for you, kiddo.
 "
 scroll_active = false
 metadata/_edit_lock_ = true
+
+[node name="sfx" type="AudioStreamPlayer" parent="." unique_id=1816416031]
+stream = ExtResource("7_su6hs")
+volume_db = 3.649
+pitch_scale = 0.72
+
+[node name="sfx2" type="AudioStreamPlayer" parent="." unique_id=133554812]
+stream = ExtResource("8_3luoa")
+volume_db = 3.649
+pitch_scale = 0.72
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="buttonold" to="." method="_on_button_pressed"]
