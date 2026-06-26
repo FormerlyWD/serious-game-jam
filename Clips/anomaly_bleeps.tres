@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ClipInsertion" format=3 uid="uid://d2nnt1inrg1aa"]
+
+[ext_resource type="AudioStream" uid="uid://caove1qk3yce" path="res://Audio/Signals/bleeps.wav" id="1_0a7tv"]
+[ext_resource type="Script" uid="uid://cdwotjgvtyhjm" path="res://Radio/ClipInsertion/clip_insertion.gd" id="2_aoogg"]
+
+[resource]
+script = ExtResource("2_aoogg")
+audio_clip = ExtResource("1_0a7tv")
+designated_clip_tag = 1
+designated_channel = 3
+metadata/_custom_type_script = "uid://cdwotjgvtyhjm"

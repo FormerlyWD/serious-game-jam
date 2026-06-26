@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ClipInsertion" format=3 uid="uid://b8wsdxx0hbprf"]
+
+[ext_resource type="AudioStream" uid="uid://nm7rb01aexgi" path="res://Audio/Signals/whirr.wav" id="1_rs06u"]
+[ext_resource type="Script" uid="uid://cdwotjgvtyhjm" path="res://Radio/ClipInsertion/clip_insertion.gd" id="2_hkqvy"]
+
+[resource]
+script = ExtResource("2_hkqvy")
+audio_clip = ExtResource("1_rs06u")
+designated_clip_tag = 1
+designated_channel = 3
+is_designated_target_degree_enabled = true
+initial_degree = 290.0
+final_degree = 360.0
+metadata/_custom_type_script = "uid://cdwotjgvtyhjm"

@@ -77,20 +77,21 @@ scale = Vector2(0.43152392, 0.43152392)
 texture = ExtResource("3_na5te")
 
 [node name="RichTextLabel" parent="BasePage3" index="1" unique_id=1951358133]
-offset_left = 23.0
-offset_top = 41.0
-offset_right = 257.0
-offset_bottom = 382.0
-theme_override_font_sizes/normal_font_size = 12
+offset_left = 22.0
+offset_top = 34.0
+offset_right = 256.0
+offset_bottom = 408.0
+theme_override_font_sizes/normal_font_size = 11
 text = "If you hear a sound on a channel that is not listed under the channel name on this page, then it is an anomaly.
 
-
-
 Channel 0:
-- This channel has music. You should also hear some level of interference with the music.
+- This channel has music. You should also hear some level of interference with the music if its in the lower frequencies, but not the higher ones.
+- Guitar music should not have any other sounds playing at the same time.
+-If you hear an emergency alert, it should not have voices with it.
 
 Channel 1:
 - This channel is for radio communication. Human radio communication should have a beep before and after.
+- If you hear an emergency alert, it should have voices with it.
 
 "
 

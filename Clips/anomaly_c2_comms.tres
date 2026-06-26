@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ClipInsertion" format=3 uid="uid://ctig0b7gd0hqh"]
+
+[ext_resource type="AudioStream" uid="uid://ynr2we0dekdg" path="res://Audio/Signals/comms.wav" id="1_ovgo5"]
+[ext_resource type="Script" uid="uid://cdwotjgvtyhjm" path="res://Radio/ClipInsertion/clip_insertion.gd" id="2_6vcna"]
+
+[resource]
+script = ExtResource("2_6vcna")
+audio_clip = ExtResource("1_ovgo5")
+designated_clip_tag = 1
+designated_channel = 2
+metadata/_custom_type_script = "uid://cdwotjgvtyhjm"

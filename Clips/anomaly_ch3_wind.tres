@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ClipInsertion" format=3 uid="uid://c7dv1h0m47aws"]
+
+[ext_resource type="AudioStream" uid="uid://dbux45gafg0j0" path="res://Audio/Signals/wind.wav" id="1_otpaq"]
+[ext_resource type="Script" uid="uid://cdwotjgvtyhjm" path="res://Radio/ClipInsertion/clip_insertion.gd" id="2_i6h6b"]
+
+[resource]
+script = ExtResource("2_i6h6b")
+audio_clip = ExtResource("1_otpaq")
+designated_clip_tag = 1
+designated_channel = 3
+is_designated_target_degree_enabled = true
+initial_degree = 200.0
+final_degree = 360.0
+metadata/_custom_type_script = "uid://cdwotjgvtyhjm"

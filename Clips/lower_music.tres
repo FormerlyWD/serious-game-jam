@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="ClipInsertion" format=3 uid="uid://so671q3aqayr"]
+
+[ext_resource type="AudioStream" uid="uid://chygirqa1jofa" path="res://Audio/Signals/bossa.wav" id="1_7u40d"]
+[ext_resource type="AudioStream" uid="uid://b8x4pkrflbel8" path="res://Audio/Signals/piano.wav" id="2_fx3iw"]
+[ext_resource type="AudioStream" uid="uid://cyy1vewgl6khg" path="res://Audio/Signals/guitar.wav" id="3_usls4"]
+[ext_resource type="Script" uid="uid://cdwotjgvtyhjm" path="res://Radio/ClipInsertion/clip_insertion.gd" id="4_g08f2"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_jw7iq"]
+streams_count = 3
+stream_0/stream = ExtResource("1_7u40d")
+stream_1/stream = ExtResource("2_fx3iw")
+stream_2/stream = ExtResource("3_usls4")
+
+[resource]
+script = ExtResource("4_g08f2")
+audio_clip = SubResource("AudioStreamRandomizer_jw7iq")
+is_designated_target_degree_enabled = true
+final_degree = 160.0
+metadata/_custom_type_script = "uid://cdwotjgvtyhjm"

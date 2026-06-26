@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ClipInsertion" format=3 uid="uid://captqtdbap347"]
+
+[ext_resource type="AudioStream" uid="uid://trfopqvk0dq6" path="res://Audio/Signals/anomaly_comms.wav" id="1_68esx"]
+[ext_resource type="Script" uid="uid://cdwotjgvtyhjm" path="res://Radio/ClipInsertion/clip_insertion.gd" id="2_h0y6c"]
+
+[resource]
+script = ExtResource("2_h0y6c")
+audio_clip = ExtResource("1_68esx")
+designated_clip_tag = 1
+designated_channel = 1
+metadata/_custom_type_script = "uid://cdwotjgvtyhjm"
