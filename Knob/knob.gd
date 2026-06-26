@@ -7,9 +7,17 @@ var past_angle:float = -1
 var past_angle_degrees:float 
 @export var knob_limit_at_360:bool = true
 @export var knob_puppet:KnobPuppet
+var is_disabled:bool = false
 
 @export var knob_slice_count:int
+
+func disable_functionality():
+	is_disabled = true
+func enable_functionality():
+	is_disabled = false
 func _gui_input(event: InputEvent) -> void:
+	
+	
 	if Input.is_action_just_pressed("click"):
 		if is_hovered:
 			is_following = true
@@ -45,9 +53,10 @@ func _physics_process(delta: float) -> void:
 
 		
 		past_angle = angle
-		if knob_puppet:
-			
-			knob_puppet.on_rotation_change(angle)
+		if not is_disabled:
+			if knob_puppet:
+				
+				knob_puppet.on_rotation_change(angle)
 		
 func _on_mouse_entered() -> void:
 	is_hovered = true

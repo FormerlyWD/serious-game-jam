@@ -13,6 +13,8 @@ signal request_top
 
 func _ready() -> void:
 	timer.radio_finished.connect(radio_finished)
+func idle_radio():
+	central_and_static_noise_channels.idle_channel_spawn()
 func radio_finished():
 	
 	GlobalShiftManager.currently_focused_shift.post_shift_stats.all_tracked_clips = clip_track_button.confirmed_track_clips 
@@ -24,6 +26,7 @@ func radio_finished():
 
 func reset_radio():
 	pass
+	radio_disabler.enable_functionality()
 	timer.reset_timer()
 	knob_slider.reset()
 	central_and_static_noise_channels.update_stream_count()

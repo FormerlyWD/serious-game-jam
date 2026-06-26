@@ -14,7 +14,6 @@
 [ext_resource type="Script" uid="uid://cn5762sv6ibx3" path="res://Radio/CentralAndStaticNoiseChannels/ChannelClass/channel_class.gd" id="10_atd8r"]
 [ext_resource type="AudioStream" uid="uid://edf4l8nlh2i" path="res://Audio/freesound_community-static-radio-noise-and-searching-for-stations-48537.mp3" id="11_5gbna"]
 [ext_resource type="PackedScene" uid="uid://o2fsnkbaqlsv" path="res://Radio/ClipTrackButton/ClipTrackButton.tscn" id="12_1y8mp"]
-[ext_resource type="AudioStream" uid="uid://gnmo84rj1yws" path="res://Audio/freesound_community-crispy-static-56963.mp3" id="13_rxmdp"]
 [ext_resource type="PackedScene" uid="uid://dnp2iabu36s75" path="res://ShiftManager/ShiftClipScatterProcessing/ShiftClipScatterProcessing.tscn" id="14_kcuwd"]
 [ext_resource type="Texture2D" uid="uid://cff855uplo2uv" path="res://Art/Radio/Button/Button_Press-1.png" id="16_n2i0h"]
 [ext_resource type="Texture2D" uid="uid://bn3tu7skctliy" path="res://Art/Radio/Button/Button_Press-2.png" id="17_xmpfd"]
@@ -60,7 +59,7 @@ metadata/_custom_type_script = "uid://cn5762sv6ibx3"
 [sub_resource type="Resource" id="Resource_260hf"]
 script = ExtResource("10_atd8r")
 lowest_frequency_point = 360.0
-radio_noise = ExtResource("13_rxmdp")
+radio_noise = ExtResource("11_5gbna")
 channel_locked = true
 metadata/_custom_type_script = "uid://cn5762sv6ibx3"
 
@@ -288,8 +287,9 @@ stream = SubResource("AudioStreamRandomizer_xassm")
 volume_db = -5.778
 bus = &"Room"
 
-[node name="RadioDisabler" parent="." unique_id=1426527273 node_paths=PackedStringArray("all_disables") instance=ExtResource("26_s4qw5")]
+[node name="RadioDisabler" parent="." unique_id=1426527273 node_paths=PackedStringArray("all_disables", "all_disables_functionality") instance=ExtResource("26_s4qw5")]
 all_disables = [NodePath("../KnobChannel"), NodePath("../KnobFrequency"), NodePath("../ClipTrackButton/Button")]
+all_disables_functionality = [NodePath("../KnobFrequency"), NodePath("../KnobChannel"), NodePath("../ClipTrackButton")]
 
 [node name="RadioInfo" type="Label" parent="." unique_id=1793153064 node_paths=PackedStringArray("central_and_static_noise_channels", "knob_slider")]
 layout_mode = 0

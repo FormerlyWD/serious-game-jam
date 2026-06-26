@@ -33,7 +33,8 @@ func process_shift_object():
 		%RadioNode.reset_radio()
 		
 	else:
-		%RadioNode.radio_disabler.disable_clicks()
+		%RadioNode.radio_disabler.disable_functionality()
+		%RadioNode.idle_radio()
 		%RadioNode.timer.current_timer_state = CustomTimer.TimerState.LOCKED
 	%Handbook.apply_handbook_data(current_shift_object)
 	%Handbook.initialize_pages()

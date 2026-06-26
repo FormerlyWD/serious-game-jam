@@ -6,7 +6,7 @@ signal new_channel_switched
 @export var channel_array :Array[Channel]
 @export var frequency_knob:FrequencyKnob
 @export var clip_manager:ClipManagerAudioStream
-@export var currently_chosen_channel:int = 0
+@export var currently_chosen_channel:int = -1
 @export var timer_node:CustomTimer
 @export var idle_channel:Channel
 @export var is_idle_enabled:bool
@@ -50,6 +50,11 @@ func switch_start(new_channel:int):
 	switch_process(new_channel)
 
 @warning_ignore("redundant_await")
+func idle_channel_spawn():
+	stream = idle_channel.radio_noise
+	stream.loop = true
+	play()
+	
 func switch_process(new_channel:int):
 	clip_manager.lock_clips()
 	stop()
