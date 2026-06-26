@@ -72,20 +72,21 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 0.41568628)
 theme_override_constants/outline_size = 2
 theme_override_fonts/normal_font = SubResource("FontVariation_20thw")
-theme_override_font_sizes/normal_font_size = 25
-text = "“You're young and dumb. I know this isn't the type of job you'd expect from nepotism.. 
+theme_override_font_sizes/normal_font_size = 21
+text = "“You're young and dumb. I know this isn't the type of job you'd expected. 
+
 But it's the one I was able to land you. 
 
 Your father told me you would sit in your room all day and listen to music. 
 So here's my proposition; you do just that. 
 
-You're gonna be listening closely to things and track if they sound.. off. 
+You're gonna be listening closely to things and track if they sound off. 
 There's a handbook to help you gauge what \"off\" sounds like. 
 
 Easy enough? 
 The only thing is you are not to talk about this whatsoever. 
-The nepotism, the work here, etc.. 
-I know that's off-putting, but don't let it stop you from doing this..
+The environment, the work here, etc...
+I know that's off-putting, but don't let it stop you from doing this.
 
 Just for tonight, I’d focus on channels 0 and 1, as we’ve noticed we’ve been getting anomalies more and more on those two channels as of recent.
 

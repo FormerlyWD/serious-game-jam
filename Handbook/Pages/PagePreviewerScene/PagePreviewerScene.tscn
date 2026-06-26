@@ -33,7 +33,7 @@ theme_override_font_sizes/normal_font_size = 15
 text = "Turn the left dial to change the channel.
 Turn the right dial to fine tune the frequency.
 
-If you hear an anomaly (see other pages), then press the red button on the right of the radio to record it."
+If you hear an anomaly (see other pages), then press the red button on the right of the radio to report it."
 
 [node name="BasePage2" parent="." unique_id=1893597452 instance=ExtResource("2_rqkq4")]
 offset_left = 310.0
@@ -57,7 +57,7 @@ offset_top = 83.0
 offset_right = 258.0
 offset_bottom = 414.0
 theme_override_font_sizes/normal_font_size = 15
-text = "Your shift will go until 3:00 AM.
+text = "Your shift will go until 6:00 AM.
 
 At the end of your shift, you will be rewarded for the anomalies you find, while the opposite will happen for any regular signals marked as anomalies."
 
@@ -78,14 +78,19 @@ texture = ExtResource("3_na5te")
 
 [node name="RichTextLabel" parent="BasePage3" index="1" unique_id=1951358133]
 offset_left = 23.0
-offset_top = 43.0
+offset_top = 41.0
 offset_right = 257.0
-offset_bottom = 374.0
-text = "Channel 1:
-- Music should have interference.
+offset_bottom = 382.0
+theme_override_font_sizes/normal_font_size = 12
+text = "If you hear a sound on a channel that is not listed under the channel name on this page, then it is an anomaly.
+
+
+
+Channel 1:
+- This channel has music. You should also hear some level of interference with the music.
 
 Channel 2:
-- Human radio communication,should have  a beep before and after.
+- This channel is for radio communication. Human radio communication should have a beep before and after.
 
 "
 
@@ -114,10 +119,10 @@ theme_override_font_sizes/normal_font_size = 13
 text = "Channel 3:
 - The sound of wind, only in the upper frequencies of this channel.
 - Chaotic beeping noises can be heard on this channel.
-- Human radio communication,should have  a beep before but not after.
+- Human radio communication should have a beep before but not after.
 
 Channel 4:
-- High pitched repetitive whirring sounds can be heard at the middle frequencies of this channel (sound: whirr)
+- High pitched repetitive whirring sounds can be heard at the middle frequencies of this channel 
 - The sound of wind can be heard at the low frequencies of this channel"
 
 [editable path="BasePage"]
