@@ -247,9 +247,11 @@ offset_right = 435.0
 offset_bottom = 164.0
 
 [node name="ShiftClipScatterProcessing" parent="." unique_id=1051648214 node_paths=PackedStringArray("clip_manager_audio_stream", "central_and_static_noise_channels") instance=ExtResource("14_kcuwd")]
+current_random_type = null
 scatter_mode = 1
 clip_manager_audio_stream = NodePath("../ClipManagerAudioStream")
 central_and_static_noise_channels = NodePath("../CentralAndStaticNoiseChannels")
+max_overlap_attempts = null
 
 [node name="Lights" type="Sprite2D" parent="." unique_id=1080992565]
 modulate = Color(1, 1, 1, 0)
