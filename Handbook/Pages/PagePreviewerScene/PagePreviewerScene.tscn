@@ -206,10 +206,15 @@ flip_h = true
 [node name="RichTextLabel" parent="BasePage6" index="1" unique_id=1951358133]
 offset_left = 27.0
 offset_top = 36.0
-offset_right = 261.0
-offset_bottom = 367.0
+offset_right = 269.615
+offset_bottom = 381.0
 theme_override_font_sizes/normal_font_size = 13
-text = "sdfgshfhdf"
+text = ""
+
+[node name="Label" type="Label" parent="BasePage6" unique_id=1278410476]
+layout_mode = 0
+offset_right = 300.615
+offset_bottom = 1921.0
 
 [editable path="BasePage"]
 [editable path="BasePage2"]
