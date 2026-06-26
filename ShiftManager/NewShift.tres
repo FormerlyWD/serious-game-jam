@@ -7,6 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://gr80g8xt4e8y" path="res://Audio/Signals/anomaly_bossa.wav" id="6_mboxh"]
 [ext_resource type="AudioStream" uid="uid://chygirqa1jofa" path="res://Audio/Signals/bossa.wav" id="7_c1sqy"]
 [ext_resource type="Script" uid="uid://4yh70i0yfekf" path="res://ShiftManager/ShiftClass/shift_class.gd" id="7_m21ru"]
+[ext_resource type="Script" uid="uid://cecr46qa4ca78" path="res://Radio/ClipInsertion/PointLog/point_log.gd" id="7_mboxh"]
 
 [sub_resource type="Resource" id="Resource_nifm1"]
 script = ExtResource("1_nifm1")
@@ -23,10 +24,15 @@ initial_degree = 50.0
 final_degree = 60.0
 metadata/_custom_type_script = "uid://cdwotjgvtyhjm"
 
+[sub_resource type="Resource" id="Resource_c1sqy"]
+script = ExtResource("7_mboxh")
+metadata/_custom_type_script = "uid://cecr46qa4ca78"
+
 [sub_resource type="Resource" id="Resource_feej3"]
 script = ExtResource("2_mboxh")
 audio_clip = ExtResource("7_c1sqy")
 designated_channel = 1
+special_points_addition = SubResource("Resource_c1sqy")
 is_designated_target_degree_enabled = true
 initial_degree = 50.0
 final_degree = 60.0
