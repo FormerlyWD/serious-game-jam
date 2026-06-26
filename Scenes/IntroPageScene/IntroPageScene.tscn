@@ -48,7 +48,8 @@ offset_bottom = 626.0
 text = "start shift->"
 
 [node name="IntroPage" type="Node2D" parent="." unique_id=762973415]
-position = Vector2(0, 700)
+position = Vector2(59.000004, 700)
+scale = Vector2(0.8338223, 0.8338223)
 
 [node name="Sprite2D" type="TextureRect" parent="IntroPage" unique_id=1809424038]
 z_index = 8
@@ -73,7 +74,7 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 0.41568628)
 theme_override_constants/outline_size = 2
 theme_override_fonts/normal_font = SubResource("FontVariation_20thw")
 theme_override_font_sizes/normal_font_size = 21
-text = "“You're young and dumb. I know this isn't the type of job you'd expected. 
+text = "You're young and dumb. I know this isn't the type of job you'd expected. 
 
 But it's the one I was able to land you. 
 
