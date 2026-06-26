@@ -35,11 +35,13 @@ func scatter_clips(shift_data:Shift) -> void:
 				end_time_intervals.append(blank.end_time)
 				
 			for clip_loop in range(shift_data.clip_insertion_scatter_count):
-				var clip:ClipInsertion= shift_data.clip_insertion_scatter_pool.pick_random().duplicate()
+				var picked_scatter_container:ClipScatterContainer
+				var additional_time:float = 0.0
+				var clip:ClipInsertion= shift_data.clip_insertion_scatter_pool.pick_random().clip.duplicate()
 				
 				var interval =generate_non_overlapping_duration(
 					clip.duration,
-					shift_data.duration,
+					shift_data.duration+additional_time,
 					start_time_intervals,
 					end_time_intervals
 					)
@@ -80,7 +82,15 @@ func scatter_clips(shift_data:Shift) -> void:
 				end_time_intervals[clip.designated_channel].append(clip.end_time)
 			
 			for clip_loop in range(shift_data.clip_insertion_scatter_count):
-				var clip:ClipInsertion= shift_data.clip_insertion_scatter_pool.pick_random().duplicate()
+				var picked_scatter_container:ClipScatterContainer = shift_data.clip_insertion_scatter_pool.pick_random().duplicate()
+				var additional_time:float = 0.0
+				var clip:ClipInsertion= picked_scatter_container.clip
+				if picked_scatter_container.blank:
+					var clip_blank:ClipBlank = picked_scatter_container.blank
+					additional_time = randf_range(clip_blank.initial_random_addition_time, clip_blank.final_random_addition_time)
+					
+					
+				
 				if clip.designated_channel == -1:
 					clip.designated_channel =  randi_range(0,central_and_static_noise_channels.amount_of_streams-1)
 				var cur_start_time_intervals:Array[float] = []
@@ -91,7 +101,7 @@ func scatter_clips(shift_data:Shift) -> void:
 				cur_end_time_intervals.append_array(persistent_end_time_intervals)
 				var interval = generate_non_overlapping_duration(
 					clip.duration,
-					shift_data.duration,
+					shift_data.duration+additional_time,
 					cur_start_time_intervals ,
 					cur_end_time_intervals 
 					)

@@ -122,10 +122,10 @@ func evaluate_special_points(shift_data:Shift):
 			if not compare_points(clip.special_points_requirement.all_points_log, GlobalShiftManager.point_log.all_points_log):
 				shift_data.all_clips_insertions.erase(clip)
 func evaluate_special_points_for_scatter_pool(shift_data:Shift):
-	for clip in shift_data.clip_insertion_scatter_pool:
-		if clip.special_points_requirement:
-			if not compare_points(clip.special_points_requirement.all_points_log, GlobalShiftManager.point_log.all_points_log):
-				shift_data.clip_insertion_scatter_pool.erase(clip)
+	for scatter_clip in shift_data.clip_insertion_scatter_pool:
+		if scatter_clip.clip.special_points_requirement:
+			if not compare_points(scatter_clip.clip.special_points_requirement.all_points_log, GlobalShiftManager.point_log.all_points_log):
+				shift_data.clip_insertion_scatter_pool.erase(scatter_clip.clip)
 			
 func randomize_target_point_for_clips(shift_data:Shift):
 	for clip in all_clips_insertions:
@@ -170,4 +170,4 @@ func fill_end_time_for_shift(shift_data:Shift):
 	for predetermined_clip in shift_data.all_clip_insertions:
 		fill_end_time(predetermined_clip)
 	for scatter_clip in shift_data.clip_insertion_scatter_pool:
-		fill_end_time(scatter_clip,true)
+		fill_end_time(scatter_clip.clip,true)

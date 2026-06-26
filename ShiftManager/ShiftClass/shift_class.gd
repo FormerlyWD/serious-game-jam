@@ -11,7 +11,7 @@ class_name Shift
 @export_category("CLIP SCATTER")
 @export var is_clip_insertion_scatter_enabled:bool
 @export var clip_insertion_scatter_count:int = 0
-@export var clip_insertion_scatter_pool:Array[ClipInsertion]
+@export var clip_insertion_scatter_pool:Array[ClipScatterContainer]
 
 @export_category("POINTS")
 var accumilatable_points:float
