@@ -17,7 +17,7 @@ func _ready() -> void:
 		cur_tween = null
 	intro_page.position.y = 700
 	cur_tween = create_tween()
-	cur_tween.tween_property(intro_page,"position:y",0,duration).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_EXPO)
+	cur_tween.tween_property(intro_page,"position:y",41,duration).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_EXPO)
 	$Button.disabled = false
 
 func _on_button_pressed() -> void:
