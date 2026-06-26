@@ -5,6 +5,6 @@
 
 [resource]
 script = ExtResource("1_k4s58")
-lowest_frequency_point = 2.0
+lowest_frequency_point = 90.0
 radio_noise = ExtResource("1_78u6e")
 metadata/_custom_type_script = "uid://cn5762sv6ibx3"

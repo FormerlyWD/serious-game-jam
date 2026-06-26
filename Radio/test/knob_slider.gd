@@ -35,7 +35,7 @@ func _on_value_changed(cur_value:float) -> void:
 	var distance:float
 	match current_wrap_state:
 		WrapState.NONE:
-			distance = cur_value
+			distance =  abs(cur_value-chosen_target_deg)
 		WrapState.THREESIXTY:
 			distance = find_dist(cur_value)
 	var distance_ratio:float = distance/180

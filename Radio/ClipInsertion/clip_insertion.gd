@@ -17,6 +17,12 @@ enum ClipTags {
 @export var special_points_requirement:PointLog
 @export var override_points:int
 @export var special_points_addition:PointLog
+
+@export var is_designated_target_degree_enabled:bool
+@export var initial_degree:float
+@export var final_degree:float
+var current_degree:float
+@export var is_retained_random:bool
 var id
 
 func create_id():

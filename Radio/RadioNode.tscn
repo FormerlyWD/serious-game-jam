@@ -129,12 +129,13 @@ timer = NodePath("CustomTimer")
 radio_disabler = NodePath("RadioDisabler")
 clip_track_button = NodePath("ClipTrackButton")
 
-[node name="ClipManagerAudioStream" parent="." unique_id=1715325066 node_paths=PackedStringArray("button_tracker", "central_noise_audio_stream", "timer_node") instance=ExtResource("3_s7opi")]
+[node name="ClipManagerAudioStream" parent="." unique_id=1715325066 node_paths=PackedStringArray("button_tracker", "central_noise_audio_stream", "timer_node", "knob_slider") instance=ExtResource("3_s7opi")]
 bus = &"Room"
 all_clips_insertions = Array[ExtResource("4_ilola")]([ExtResource("5_aw04w"), SubResource("Resource_kcuwd")])
 button_tracker = NodePath("../ClipTrackButton")
 central_noise_audio_stream = NodePath("../CentralAndStaticNoiseChannels")
 timer_node = NodePath("../CustomTimer")
+knob_slider = NodePath("../KnobFrequency/knob slider")
 
 [node name="CustomTimer" type="Node" parent="." unique_id=945941770 node_paths=PackedStringArray("radio_node")]
 script = ExtResource("6_aw04w")

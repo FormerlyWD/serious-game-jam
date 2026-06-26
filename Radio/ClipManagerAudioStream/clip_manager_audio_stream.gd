@@ -16,6 +16,8 @@ var all_clips_insertions_sorted:Array[Array]
 @export var button_tracker:ClipTrackButton
 @export var central_noise_audio_stream:CentralAndStaticNoiseChannels
 @export var timer_node:CustomTimer
+@export var knob_slider: FrequencyKnob
+
 var current_clip_parsed:ClipInsertion
 
 var clip_history_registry:Dictionary
@@ -61,6 +63,10 @@ func discard_clip_from_play(from_channel_switch:bool = false):
 	var saved_clip_id:int
 	if current_clip_parsed:
 		saved_clip_id = current_clip_parsed.id
+		if current_clip_parsed.is_designated_target_degree_enabled:
+			knob_slider.chosen_target_deg = central_noise_audio_stream.channel_array[central_noise_audio_stream.currently_chosen_channel].lowest_frequency_point 
+			
+			knob_slider._on_value_changed(knob_slider.value)
 	current_play_state = PlayState.FREE
 	stop()
 	stream = null
@@ -80,6 +86,10 @@ func add_clip_to_play(clip:ClipInsertion):
 	current_play_state = PlayState.BUSY
 	
 	var play_at:float = max(timer_node.current_timer-clip.start_time,0)
+	if clip.is_designated_target_degree_enabled:
+		knob_slider.chosen_target_deg = clip.current_degree 
+		knob_slider._on_value_changed(knob_slider.value)
+		
 	current_clip_parsed= clip
 	if clip.audio_clip:
 		stream = clip.audio_clip
@@ -117,6 +127,11 @@ func evaluate_special_points_for_scatter_pool(shift_data:Shift):
 			if not compare_points(clip.special_points_requirement.all_points_log, GlobalShiftManager.point_log.all_points_log):
 				shift_data.clip_insertion_scatter_pool.erase(clip)
 			
+func randomize_target_point_for_clips(shift_data:Shift):
+	for clip in all_clips_insertions:
+		if clip.is_designated_target_degree_enabled:
+			clip.current_degree = randf_range(clip.initial_degree,clip.final_degree)
+
 
 func compare_points(base_dict: Dictionary, compared_dict: Dictionary) -> bool:
 	for key in compared_dict:
