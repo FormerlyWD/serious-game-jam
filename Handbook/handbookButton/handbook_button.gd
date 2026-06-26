@@ -55,6 +55,7 @@ func _on_handbook_pressed() -> void:
 			%RadioNode.radio_disabler.enable_clicks()
 			if GlobalShiftManager.current_shift_parse ==0 and is_tutorial_shift_enabled:
 				is_tutorial_shift_enabled = false
+				
 				%RadioNode.apply_shift_radio_data(GlobalShiftManager.currently_focused_shift)
 				%RadioNode.reset_radio()
 				%RadioNode.timer.current_timer_state = CustomTimer.TimerState.RUNNING

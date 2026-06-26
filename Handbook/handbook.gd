@@ -36,7 +36,8 @@ func initialize_pages():
 func update_book_faces():
 	left_pointer = page_pointer
 	right_pointer = left_pointer +1
-func apply_pointer():
+func apply_pointer() -> bool:
+	var success_flag:bool = true
 	for child in left_page_container.get_children():
 		if child is Page:
 			
@@ -51,10 +52,13 @@ func apply_pointer():
 		var left_page:Page = page_previewer_scene.all_fetched_pages[left_pointer]
 		left_page.get_node("Sprite2D").flip_h = false
 		add_page_to_container(left_page, left_page_container)
+	
 	if right_pointer < page_previewer_scene.all_fetched_pages.size():
 		var right_page:Page = page_previewer_scene.all_fetched_pages[right_pointer]
 		right_page.get_node("Sprite2D").flip_h = true
 		add_page_to_container(right_page, right_page_container)
+	
+	return success_flag
 func add_page_to_container(page:Page, container:Container):
 	if container.get_child_count() > 0:
 		if container.get_child(0) is Page:
