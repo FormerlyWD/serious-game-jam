@@ -9,7 +9,7 @@
 [ext_resource type="Script" uid="uid://cc6bi80v2lkjr" path="res://Handbook/Pages/PagePreviewerScene/PagePreviewerIncludeResource/page_previewer_include.gd" id="4_c73jo"]
 [ext_resource type="Script" uid="uid://cn5762sv6ibx3" path="res://Radio/CentralAndStaticNoiseChannels/ChannelClass/channel_class.gd" id="4_u5pif"]
 [ext_resource type="Resource" uid="uid://caeu0uab0mc42" path="res://Radio/CentralAndStaticNoiseChannels/ChannelClass/default_channel.tres" id="5_jm33l"]
-[ext_resource type="Texture2D" uid="uid://da5dga4fekgmb" path="res://Art/Desk/desk.PNG" id="6_4jb1o"]
+[ext_resource type="Texture2D" uid="uid://da5dga4fekgmb" path="res://Art/Desk/desk.png" id="6_4jb1o"]
 [ext_resource type="Script" uid="uid://do2fo11l1seti" path="res://Radio/ClipInsertion/ClipScatterContainer/clip_scatter_container.gd" id="6_g3ohe"]
 [ext_resource type="Texture2D" uid="uid://d0kxe30sjawi0" path="res://Art/Desk/Dark overlay.png" id="7_0njgj"]
 [ext_resource type="Script" uid="uid://4yh70i0yfekf" path="res://ShiftManager/ShiftClass/shift_class.gd" id="7_8lx1y"]
@@ -399,12 +399,12 @@ metadata/_edit_use_anchors_ = true
 script = ExtResource("21_rq3cl")
 
 [node name="sticky_note1" type="Sprite2D" parent="HideableNodes" unique_id=1834319945]
-position = Vector2(-53.785, 11.78)
+position = Vector2(-100.2, -25.41)
 scale = Vector2(0.26, 0.26)
 texture = ExtResource("29_lufwb")
 
 [node name="sticky_note2" type="Sprite2D" parent="HideableNodes" unique_id=1545126155]
-position = Vector2(-53.785, 11.78)
+position = Vector2(-100.2, -25.41)
 scale = Vector2(0.26, 0.26)
 texture = ExtResource("30_u5pif")
 
