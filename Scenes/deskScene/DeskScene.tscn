@@ -308,6 +308,7 @@ metadata/_edit_lock_ = true
 [node name="AnimationPlayer" type="AnimationPlayer" parent="dark overlays/dark overlay" unique_id=1411389438]
 libraries/ = SubResource("AnimationLibrary_csl3a")
 autoplay = &"light flicker"
+speed_scale = 0.25
 
 [node name="dark overlay2" type="Sprite2D" parent="dark overlays" unique_id=647191763]
 modulate = Color(0, 0, 0, 1)
@@ -321,6 +322,7 @@ metadata/_edit_lock_ = true
 [node name="AnimationPlayer" type="AnimationPlayer" parent="dark overlays/dark overlay2" unique_id=473402350]
 libraries/ = SubResource("AnimationLibrary_csl3a")
 autoplay = &"light flicker"
+speed_scale = 0.25
 
 [node name="dark overlay3" type="Sprite2D" parent="dark overlays" unique_id=1571851827]
 modulate = Color(0, 0, 0, 1)
@@ -334,6 +336,7 @@ metadata/_edit_lock_ = true
 [node name="AnimationPlayer" type="AnimationPlayer" parent="dark overlays/dark overlay3" unique_id=383622938]
 libraries/ = SubResource("AnimationLibrary_csl3a")
 autoplay = &"light flicker"
+speed_scale = 0.25
 
 [node name="dark overlay4" type="Sprite2D" parent="dark overlays" unique_id=1472238245]
 modulate = Color(0, 0, 0, 1)
@@ -347,6 +350,7 @@ metadata/_edit_lock_ = true
 [node name="AnimationPlayer" type="AnimationPlayer" parent="dark overlays/dark overlay4" unique_id=2124340254]
 libraries/ = SubResource("AnimationLibrary_csl3a")
 autoplay = &"light flicker"
+speed_scale = 0.25
 
 [node name="handbookButton" type="Node2D" parent="." unique_id=1775280228 node_paths=PackedStringArray("handbook", "back_button")]
 position = Vector2(161.855, 0)
