@@ -10,6 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://5slmbou07nuf" path="res://Art/Title screen/Titlebg.png" id="6_a7etm"]
 [ext_resource type="Texture2D" uid="uid://bujxxj8oxi1mj" path="res://Art/Title screen/staticglow-3.png" id="7_m8h8m"]
 [ext_resource type="Texture2D" uid="uid://85ur166twe7h" path="res://Art/Title screen/play button.png" id="7_mxhv7"]
+[ext_resource type="Texture2D" uid="uid://bmqsyiwavu3bw" path="res://Art/headphone.png" id="11_m8h8m"]
+[ext_resource type="FontFile" uid="uid://cs61rul1cwbb6" path="res://FontsAndTheme/circ_handwriting/circhand.ttf" id="12_dwvsp"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_dwvsp"]
 blend_mode = 1
@@ -116,6 +118,11 @@ _data = {
 &"press": SubResource("Animation_5bi8p")
 }
 
+[sub_resource type="FontVariation" id="FontVariation_1yqj0"]
+base_font = ExtResource("12_dwvsp")
+variation_embolden = 0.43
+spacing_glyph = 4
+
 [node name="MainMenuScene" type="Node2D" unique_id=73558169 node_paths=PackedStringArray("scene_fade_silhouette")]
 script = ExtResource("1_56leo")
 scene_fade_silhouette = NodePath("SceneFadeSilhouette")
@@ -171,6 +178,20 @@ z_index = -5
 position = Vector2(566, 324.00003)
 scale = Vector2(0.389, 0.389)
 texture = ExtResource("6_a7etm")
+
+[node name="Headphone" type="Sprite2D" parent="." unique_id=534427787]
+position = Vector2(28.999992, 621)
+scale = Vector2(0.2786915, 0.2786915)
+texture = ExtResource("11_m8h8m")
+
+[node name="Label" type="Label" parent="Headphone" unique_id=46786633]
+offset_left = 100.46955
+offset_top = -39.47017
+offset_right = 724.46954
+offset_bottom = 56.52983
+theme_override_fonts/font = SubResource("FontVariation_1yqj0")
+theme_override_font_sizes/font_size = 95
+text = "headphones recomended"
 
 [connection signal="mouse_entered" from="SwitchToGame" to="SwitchToGame" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="SwitchToGame" to="SwitchToGame" method="_on_mouse_exited"]
