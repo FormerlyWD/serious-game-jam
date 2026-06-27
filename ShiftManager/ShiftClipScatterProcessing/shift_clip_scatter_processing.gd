@@ -22,9 +22,9 @@ func get_scatter_queue(shift_data:Shift):
 	all_scatter_clips_queue.clear()
 	var total_weight:float = 0.0
 	for scatter_clip in shift_data.clip_insertion_scatter_pool:
-		if not shift_data.on_non_human_anamoly_weight_increase == 0.0:
+		if not shift_data.on_human_anamoly_weight_increase == 0.0:
 			if scatter_clip.clip.designated_clip_tag == ClipInsertion.ClipTags.HUMAN:
-				scatter_clip.chance_weight += shift_data.on_non_human_anamoly_weight_increase
+				scatter_clip.chance_weight += shift_data.on_human_anamoly_weight_increase
 		total_weight += scatter_clip.chance_weight
 	
 	for clip_loop in shift_data.clip_insertion_scatter_count:

@@ -180,5 +180,6 @@ all_blanks = Array[ExtResource("1_flygq")]([SubResource("Resource_nifm1")])
 is_clip_insertion_scatter_enabled = true
 clip_insertion_scatter_count = 35
 clip_insertion_scatter_pool = Array[ExtResource("5_5v5be")]([SubResource("Resource_f1kwu"), SubResource("Resource_08f4l"), SubResource("Resource_3v5c4"), SubResource("Resource_qft2w"), SubResource("Resource_5elca"), SubResource("Resource_ksk1u"), SubResource("Resource_pgmoo"), SubResource("Resource_uinoi"), SubResource("Resource_23c6i"), SubResource("Resource_g1q0g"), SubResource("Resource_jpvbw")])
+on_human_anamoly_weight_increase = 0.5
 hideable_nodes_shown = Array[int]([0])
 metadata/_custom_type_script = "uid://4yh70i0yfekf"
