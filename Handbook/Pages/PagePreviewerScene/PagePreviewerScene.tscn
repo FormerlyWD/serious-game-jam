@@ -127,6 +127,8 @@ text = "Channel 0:
 - This channel has music. You should also hear some level of interference with the music if its in the lower frequencies, but not the higher ones.
 - Guitar music should not have any other sounds playing at the same time.
 -If you hear an emergency alert, it should not have voices with it.
+
+
 Channel 1:
 - This channel is for radio communication. Human radio communication should have a beep before and after.
 - If you hear an emergency alert, it should have voices with it.
@@ -160,6 +162,8 @@ text = "Channel 2:
 - The sound of wind, only in the upper frequencies of this channel.
 - Chaotic beeping noises can be heard on this channel.
 - Human radio communication should have a beep before but not after.
+
+
 Channel 3:
 - High pitched repetitive whirring sounds can be heard at the middle frequencies of this channel 
 - The sound of wind can be heard at the low frequencies of this channel"
