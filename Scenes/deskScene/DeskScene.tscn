@@ -9,7 +9,7 @@
 [ext_resource type="Script" uid="uid://cc6bi80v2lkjr" path="res://Handbook/Pages/PagePreviewerScene/PagePreviewerIncludeResource/page_previewer_include.gd" id="4_c73jo"]
 [ext_resource type="Script" uid="uid://cn5762sv6ibx3" path="res://Radio/CentralAndStaticNoiseChannels/ChannelClass/channel_class.gd" id="4_u5pif"]
 [ext_resource type="Resource" uid="uid://caeu0uab0mc42" path="res://Radio/CentralAndStaticNoiseChannels/ChannelClass/default_channel.tres" id="5_jm33l"]
-[ext_resource type="Texture2D" uid="uid://da5dga4fekgmb" path="res://Art/Desk/desk.png" id="6_4jb1o"]
+[ext_resource type="Texture2D" uid="uid://da5dga4fekgmb" path="res://Art/Desk/desk.PNG" id="6_4jb1o"]
 [ext_resource type="Script" uid="uid://do2fo11l1seti" path="res://Radio/ClipInsertion/ClipScatterContainer/clip_scatter_container.gd" id="6_g3ohe"]
 [ext_resource type="Texture2D" uid="uid://d0kxe30sjawi0" path="res://Art/Desk/Dark overlay.png" id="7_0njgj"]
 [ext_resource type="Script" uid="uid://4yh70i0yfekf" path="res://ShiftManager/ShiftClass/shift_class.gd" id="7_8lx1y"]
@@ -33,7 +33,7 @@
 [ext_resource type="Texture2D" uid="uid://ctvqg8gejtok3" path="res://Art/Radio/shift3note.png" id="30_g3ohe"]
 [ext_resource type="Texture2D" uid="uid://cprablhtkqpyl" path="res://Art/Radio/shift2note.png" id="30_u5pif"]
 [ext_resource type="AudioStream" uid="uid://d0cy10pe06pjd" path="res://Audio/stickynote.mp3" id="32_jm33l"]
-[ext_resource type="Script" path="res://Scenes/deskScene/mute.gd" id="34_8lx1y"]
+[ext_resource type="Script" uid="uid://c101g5tikf36b" path="res://Scenes/deskScene/mute.gd" id="34_8lx1y"]
 [ext_resource type="Texture2D" uid="uid://csuu6ckll2r80" path="res://Art/toggle music.png" id="35_4l7in"]
 
 [sub_resource type="Resource" id="Resource_nifm1"]
@@ -294,7 +294,9 @@ scale = Vector2(0.38877037, 0.3887704)
 texture = ExtResource("6_4jb1o")
 metadata/_edit_lock_ = true
 
-[node name="dark overlay" type="Sprite2D" parent="." unique_id=1724065007]
+[node name="dark overlays" type="Node2D" parent="." unique_id=1082165432]
+
+[node name="dark overlay" type="Sprite2D" parent="dark overlays" unique_id=1724065007]
 modulate = Color(0, 0, 0, 1)
 z_index = 1
 z_as_relative = false
@@ -303,7 +305,46 @@ scale = Vector2(0.38877037, 0.3887704)
 texture = ExtResource("7_0njgj")
 metadata/_edit_lock_ = true
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="dark overlay" unique_id=1411389438]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="dark overlays/dark overlay" unique_id=1411389438]
+libraries/ = SubResource("AnimationLibrary_csl3a")
+autoplay = &"light flicker"
+
+[node name="dark overlay2" type="Sprite2D" parent="dark overlays" unique_id=647191763]
+modulate = Color(0, 0, 0, 1)
+z_index = 1
+z_as_relative = false
+position = Vector2(11, 0.23451233)
+scale = Vector2(0.38877037, 0.3887704)
+texture = ExtResource("7_0njgj")
+metadata/_edit_lock_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="dark overlays/dark overlay2" unique_id=473402350]
+libraries/ = SubResource("AnimationLibrary_csl3a")
+autoplay = &"light flicker"
+
+[node name="dark overlay3" type="Sprite2D" parent="dark overlays" unique_id=1571851827]
+modulate = Color(0, 0, 0, 1)
+z_index = 1
+z_as_relative = false
+position = Vector2(11, 0.23451233)
+scale = Vector2(0.38877037, 0.3887704)
+texture = ExtResource("7_0njgj")
+metadata/_edit_lock_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="dark overlays/dark overlay3" unique_id=383622938]
+libraries/ = SubResource("AnimationLibrary_csl3a")
+autoplay = &"light flicker"
+
+[node name="dark overlay4" type="Sprite2D" parent="dark overlays" unique_id=1472238245]
+modulate = Color(0, 0, 0, 1)
+z_index = 1
+z_as_relative = false
+position = Vector2(11, 0.23451233)
+scale = Vector2(0.38877037, 0.3887704)
+texture = ExtResource("7_0njgj")
+metadata/_edit_lock_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="dark overlays/dark overlay4" unique_id=2124340254]
 libraries/ = SubResource("AnimationLibrary_csl3a")
 autoplay = &"light flicker"
 
