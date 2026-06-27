@@ -33,6 +33,7 @@
 [ext_resource type="Texture2D" uid="uid://ctvqg8gejtok3" path="res://Art/Radio/shift3note.png" id="30_g3ohe"]
 [ext_resource type="Texture2D" uid="uid://cprablhtkqpyl" path="res://Art/Radio/shift2note.png" id="30_u5pif"]
 [ext_resource type="AudioStream" uid="uid://d0cy10pe06pjd" path="res://Audio/stickynote.mp3" id="32_jm33l"]
+[ext_resource type="Script" uid="uid://c101g5tikf36b" path="res://Scenes/deskScene/mute.gd" id="34_8lx1y"]
 
 [sub_resource type="Resource" id="Resource_nifm1"]
 script = ExtResource("2_p4ikf")
@@ -468,9 +469,17 @@ texture = ExtResource("17_7p32j")
 unique_name_in_owner = true
 stream = ExtResource("32_jm33l")
 
+[node name="mute" type="Button" parent="." unique_id=390811128]
+offset_left = -526.0
+offset_top = 250.0
+offset_right = -440.0
+offset_bottom = 292.0
+script = ExtResource("34_8lx1y")
+
 [connection signal="pressed" from="handbookButton/handbook" to="handbookButton" method="_on_handbook_pressed"]
 [connection signal="pressed" from="handbookButton/BackButton" to="handbookButton" method="_on_button_pressed"]
 [connection signal="pressed" from="handbookButton/backbuttonold" to="handbookButton" method="_on_button_pressed"]
 [connection signal="finished" from="BgMusic" to="BgMusic" method="_on_finished"]
+[connection signal="pressed" from="mute" to="mute" method="_on_pressed"]
 
 [editable path="Handbook"]

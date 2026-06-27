@@ -21,7 +21,18 @@ func replace_music(audio_stream:AudioStream):
 	play()
 	
 	current_tween.tween_property(self, "volume_db", max_DB, duration).set_trans(transition_type)
+func stop_stream():
+	volume_db = initial_DB
+	if current_tween:
+		current_tween.stop()
+		current_tween = null
+	current_tween= create_tween()
+	current_tween.tween_property(self, "volume_db", initial_DB, duration).set_trans(transition_type)
+	await current_tween.finished
+	stop()
 
+func continue_stream():
+	replace_music(stream)
 func _on_finished() -> void:
 	if current_tween:
 		current_tween.stop()

@@ -49,6 +49,7 @@ func apply_shift_radio_data(shift_data:Shift):
 		$ShiftClipScatterProcessing.scatter_clips(shift_data)
 		clip_manager_audio_stream.all_clips_insertions = shift_data.all_clip_insertions
 		clip_manager_audio_stream.get_max_points(shift_data)
+		
 		clip_manager_audio_stream.randomize_target_point_for_clips(shift_data)
 	
 	visual_timer.start_transition_to_6am()

@@ -22,6 +22,7 @@ enum Scene {
 var all_attainable_points:int
 var attained_points:int
 @export var current_shift_parse:int = -1
+@export var disable_bg_music_for_shifts:bool = false
 func switch_scene(scene_enum:Scene):
 	get_tree().change_scene_to_file(all_scene_paths[scene_enum])
 func next_shift():
