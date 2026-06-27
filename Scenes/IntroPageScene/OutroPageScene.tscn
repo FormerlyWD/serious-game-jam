@@ -13,6 +13,7 @@
 
 [sub_resource type="LabelSettings" id="LabelSettings_xcybj"]
 font = ExtResource("7_0m0ky")
+font_size = 18
 
 [sub_resource type="FontVariation" id="FontVariation_20thw"]
 base_font = ExtResource("7_0m0ky")
@@ -51,7 +52,10 @@ offset_left = 381.0
 offset_top = 218.0
 offset_right = 693.0
 offset_bottom = 412.0
-text = "Reload the website to replay the game."
+text = "Credit;
+Waleed aldawoud - Programmer
+Elliot Key - Sound Design & Art
+Willow Caven - Music & Story"
 label_settings = SubResource("LabelSettings_xcybj")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -83,29 +87,14 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 0.41568628)
 theme_override_constants/outline_size = 2
 theme_override_fonts/normal_font = SubResource("FontVariation_20thw")
-theme_override_font_sizes/normal_font_size = 21
-text = "You're young and dumb. I know this isn't the type of job you'd expected. 
-
-But it's the one I was able to land you. 
-
-Your father told me you would sit in your room all day and listen to music. 
-So here's my proposition; you do just that. 
-
-You're gonna be listening closely to things and track if they sound off. 
-There's a handbook to help you gauge what \"off\" sounds like. 
-
-Easy enough? 
-The only thing is you are not to talk about this whatsoever. 
-The environment, the work here, etc...
-I know that's off-putting, but don't let it stop you from doing this.
-
-Just for tonight, I’d focus on channels 0 and 1, as we’ve noticed we’ve been getting anomalies more and more on those two channels as of recent.
-
-I’ll give you any updates I can before your next shift tomorrow night.
+theme_override_font_sizes/normal_font_size = 36
+text = "
 
 I'm trying my best for you, kiddo.
 "
 scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
 metadata/_edit_lock_ = true
 
 [node name="sfx" type="AudioStreamPlayer" parent="." unique_id=1816416031]
