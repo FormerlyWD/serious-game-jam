@@ -103,4 +103,7 @@ func get_random_channel_num() -> int:
 
 
 func _on_finished() -> void:
-	pass # Replace with function body.
+	stop()
+	stream = channel_array[currently_chosen_channel].radio_noise
+	stream.loop = true
+	play(timer_node.current_timer)
