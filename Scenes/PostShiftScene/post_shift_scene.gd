@@ -24,10 +24,13 @@ func process_stats():
 			GlobalShiftManager.currently_focused_shift.post_shift_stats.all_accumilated_points += clip.override_points 
 			log += "ANOMALY FOUND," + "+" + str(clip.override_points)+ " \n"
 			all_points += clip.override_points
+			
 		elif clip.designated_clip_tag == ClipInsertion.ClipTags.HUMAN:
 			GlobalShiftManager.currently_focused_shift.post_shift_stats.all_accumilated_points += clip.override_points 
 			log += "MISREPORT," + "-" + str(abs(clip.override_points))+ " \n"
 			all_points -= clip.override_points
+	GlobalShiftManager.attained_points += all_points
+	GlobalShiftManager.all_attainable_points += GlobalShiftManager.currently_focused_shift.accumilatable_points
 	
 	post_shift_message_label.visible = false
 	post_shift_message_label.text = str("TOTAL:")

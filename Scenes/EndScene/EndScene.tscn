@@ -8,7 +8,9 @@ font_size = 175
 [node name="Camera2D" type="Camera2D" parent="." unique_id=732396202]
 
 [node name="Label" type="Label" parent="." unique_id=431366982]
-offset_right = 194.0
-offset_bottom = 90.0
+offset_left = -211.0
+offset_top = -197.0
+offset_right = 320.0
+offset_bottom = 43.0
 text = "dfsadf"
 label_settings = SubResource("LabelSettings_ei1ow")

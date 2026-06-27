@@ -15,10 +15,12 @@ enum Scene {
 	Scene.DESK:"res://Scenes/deskScene/DeskScene.tscn",
 	Scene.POST_SHIFT:"res://Scenes/PostShiftScene/PostShiftScene.tscn",
 	Scene.PAPER_SCENE:"res://Scenes/IntroPageScene/IntroPageScene.tscn",
-	Scene.END:"res://Scenes/EndScene/EndScene.tscn"
+	Scene.END:"res://Scenes/IntroPageScene/OutroPageScene.tscn"
 }
 @export var default_post_shift_stats:PostShiftStats
 @export var currently_focused_shift:Shift
+var all_attainable_points:int
+var attained_points:int
 @export var current_shift_parse:int = -1
 func switch_scene(scene_enum:Scene):
 	get_tree().change_scene_to_file(all_scene_paths[scene_enum])
