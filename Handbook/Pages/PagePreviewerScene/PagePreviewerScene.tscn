@@ -32,26 +32,27 @@ scale = Vector2(0.43152392, 0.43152392)
 texture = ExtResource("3_na5te")
 
 [node name="RichTextLabel" parent="BasePage" index="1" unique_id=1951358133]
-offset_left = 24.0
-offset_top = 53.0
-offset_right = 266.0
-offset_bottom = 428.63882
+offset_left = 23.0
+offset_top = 32.0
+offset_right = 265.0
+offset_bottom = 399.0
 theme_override_constants/line_separation = 2
 theme_override_font_sizes/normal_font_size = 15
 text = "Turn the left dial to change the channel.
 Turn the right dial to fine tune the frequency.
 
+You must search between different frequencies and different channels in order to find an anamoly, precisely.
 If you hear an anomaly (see other pages), then press the red button on the right of the radio to report it.
 
-If you do this successfully, the lights on the top of the radio will flicker."
+If you do this successfully, the lights on the top of the radio will flicker. "
 
 [node name="Label" type="Label" parent="BasePage" unique_id=1753565860]
 z_index = 9
 layout_mode = 0
-offset_left = 23.0
-offset_top = 357.0
-offset_right = 311.0
-offset_bottom = 406.0
+offset_left = 34.0
+offset_top = 361.0
+offset_right = 322.0
+offset_bottom = 410.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_m64f8")
 theme_override_font_sizes/font_size = 11
@@ -75,26 +76,29 @@ scale = Vector2(0.43152392, 0.43152392)
 texture = ExtResource("3_na5te")
 
 [node name="RichTextLabel" parent="BasePage2" index="1" unique_id=1951358133]
-offset_left = 34.0
-offset_top = 83.0
-offset_right = 268.0
-offset_bottom = 414.0
+offset_left = 26.0
+offset_top = 39.0
+offset_right = 260.0
+offset_bottom = 370.0
 theme_override_font_sizes/normal_font_size = 15
 text = "Your shift will go until 6:00 AM.
 
-At the end of your shift, you will be rewarded for the anomalies you find, while the opposite will happen for any regular signals marked as anomalies."
+At the end of your shift, you will be rewarded for the anomalies you find, while the opposite will happen for any regular signals marked as anomalies.
+
+If you hear a sound on a channel that is not listed under the channel name on the NEXT pages of th, then it is an anomaly.
+--------"
 
 [node name="Label2" type="Label" parent="BasePage2" unique_id=1984839910]
 z_index = 9
 layout_mode = 0
-offset_left = 110.0
-offset_top = 354.0
-offset_right = 443.0
-offset_bottom = 403.0
+offset_left = 98.0
+offset_top = 362.0
+offset_right = 431.0
+offset_bottom = 411.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = SubResource("FontVariation_m64f8")
 theme_override_font_sizes/font_size = 16
-text = "click to turn the page"
+text = "click to turn the page ->"
 
 [node name="BasePage3" parent="." unique_id=1414872256 instance=ExtResource("2_rqkq4")]
 offset_left = 681.0
@@ -112,55 +116,21 @@ scale = Vector2(0.43152392, 0.43152392)
 texture = ExtResource("3_na5te")
 
 [node name="RichTextLabel" parent="BasePage3" index="1" unique_id=1951358133]
-offset_left = 22.0
-offset_top = 34.0
-offset_right = 256.0
-offset_bottom = 408.0
+offset_left = 27.0
+offset_top = 29.0
+offset_right = 261.0
+offset_bottom = 403.0
 theme_override_constants/line_separation = 2
 theme_override_constants/outline_size = 0
-text = "If you hear a sound on a channel that is not listed under the channel name on this page, then it is an anomaly.
-
-Channel 0:
+text = "Channel 0:
 - This channel has music. You should also hear some level of interference with the music if its in the lower frequencies, but not the higher ones.
 - Guitar music should not have any other sounds playing at the same time.
 -If you hear an emergency alert, it should not have voices with it.
-
 Channel 1:
 - This channel is for radio communication. Human radio communication should have a beep before and after.
 - If you hear an emergency alert, it should have voices with it.
 
 "
-
-[node name="BasePage4" parent="." unique_id=829628226 instance=ExtResource("2_rqkq4")]
-offset_left = 1018.0
-offset_top = 136.0
-offset_right = 1286.0
-offset_bottom = 499.0
-metadata/_edit_lock_ = true
-
-[node name="Sprite2D" parent="BasePage4" index="0" unique_id=456606488]
-layout_mode = 0
-offset_left = 0.0
-offset_top = -12.000002
-offset_right = 682.0
-offset_bottom = 951.0
-scale = Vector2(0.43152392, 0.43152392)
-texture = ExtResource("3_na5te")
-flip_h = true
-
-[node name="RichTextLabel" parent="BasePage4" index="1" unique_id=1951358133]
-offset_left = 27.0
-offset_top = 36.0
-offset_right = 261.0
-offset_bottom = 367.0
-text = "Channel 2:
-- The sound of wind, only in the upper frequencies of this channel.
-- Chaotic beeping noises can be heard on this channel.
-- Human radio communication should have a beep before but not after.
-
-Channel 3:
-- High pitched repetitive whirring sounds can be heard at the middle frequencies of this channel 
-- The sound of wind can be heard at the low frequencies of this channel"
 
 [node name="BasePage5" parent="." unique_id=1153972871 instance=ExtResource("2_rqkq4")]
 offset_left = 1315.385
@@ -185,9 +155,13 @@ offset_top = 36.0
 offset_right = 261.0
 offset_bottom = 367.0
 theme_override_font_sizes/normal_font_size = 13
-text = "asfasfsfa
-
-rt"
+text = "Channel 2:
+- The sound of wind, only in the upper frequencies of this channel.
+- Chaotic beeping noises can be heard on this channel.
+- Human radio communication should have a beep before but not after.
+Channel 3:
+- High pitched repetitive whirring sounds can be heard at the middle frequencies of this channel 
+- The sound of wind can be heard at the low frequencies of this channel"
 
 [node name="BasePage6" parent="." unique_id=1059941714 instance=ExtResource("2_rqkq4")]
 offset_left = 1615.385
@@ -212,16 +186,17 @@ offset_top = 36.0
 offset_right = 269.615
 offset_bottom = 381.0
 theme_override_font_sizes/normal_font_size = 13
-text = ""
+text = "Channel 3:
+- High pitched repetitive whirring sounds can be heard at the middle frequencies of this channel 
+- The sound of wind can be heard at the low frequencies of this channel"
 
 [node name="Label" type="Label" parent="BasePage6" unique_id=1278410476]
 layout_mode = 0
 offset_right = 300.615
-offset_bottom = 1921.0
+offset_bottom = 403.0
 
 [editable path="BasePage"]
 [editable path="BasePage2"]
 [editable path="BasePage3"]
-[editable path="BasePage4"]
 [editable path="BasePage5"]
 [editable path="BasePage6"]

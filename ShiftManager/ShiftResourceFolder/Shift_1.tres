@@ -13,7 +13,6 @@
 [ext_resource type="Resource" uid="uid://d1qsullr1y3xu" path="res://Clips/anomaly_ch0_eas.tres" id="9_jghyt"]
 [ext_resource type="Resource" uid="uid://hxabcxo0jwt8" path="res://Clips/ch1_comms.tres" id="10_vi4ou"]
 [ext_resource type="Resource" uid="uid://captqtdbap347" path="res://Clips/anomaly_c1_comms.tres" id="11_uvo54"]
-[ext_resource type="Script" uid="uid://cc6bi80v2lkjr" path="res://Handbook/Pages/PagePreviewerScene/PagePreviewerIncludeResource/page_previewer_include.gd" id="12_jxpi8"]
 [ext_resource type="Script" uid="uid://4yh70i0yfekf" path="res://ShiftManager/ShiftClass/shift_class.gd" id="13_uinoi"]
 [ext_resource type="Resource" uid="uid://dhq1qsvsfx2sv" path="res://Clips/anomaly_higher_music.tres" id="15_joebt"]
 [ext_resource type="AudioStream" uid="uid://cdn0imxv0mpfa" path="res://Audio/Signals/anomaly_beep.wav" id="15_vi4ou"]
@@ -159,17 +158,10 @@ blank = SubResource("Resource_r1hwy")
 chance_weight = 0.25
 metadata/_custom_type_script = "uid://do2fo11l1seti"
 
-[sub_resource type="Resource" id="Resource_qpvt2"]
-script = ExtResource("12_jxpi8")
-include_all = true
-exclude_array = Array[int]([5, 4])
-metadata/_custom_type_script = "uid://cc6bi80v2lkjr"
-
 [resource]
 script = ExtResource("13_uinoi")
 duration = 480.0
 channel_array = Array[ExtResource("3_3ougu")]([ExtResource("4_qsl7j"), SubResource("Resource_jxpi8"), ExtResource("4_qsl7j"), ExtResource("4_qsl7j")])
-page_previewer_inclusion = SubResource("Resource_qpvt2")
 all_blanks = Array[ExtResource("1_flygq")]([SubResource("Resource_nifm1")])
 is_clip_insertion_scatter_enabled = true
 clip_insertion_scatter_count = 35

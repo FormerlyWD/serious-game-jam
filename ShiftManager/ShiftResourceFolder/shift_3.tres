@@ -24,7 +24,6 @@
 [ext_resource type="Resource" uid="uid://b8wsdxx0hbprf" path="res://Clips/anomaly_higher_whirr.tres" id="21_i4p0g"]
 [ext_resource type="Resource" uid="uid://beeifcti60am7" path="res://Clips/anomaly_lower_whirr.tres" id="22_dlb4n"]
 [ext_resource type="Resource" uid="uid://c1bdk3irf8y5l" path="res://Clips/whirr.tres" id="23_4tm0m"]
-[ext_resource type="Script" uid="uid://cc6bi80v2lkjr" path="res://Handbook/Pages/PagePreviewerScene/PagePreviewerIncludeResource/page_previewer_include.gd" id="24_e1eu4"]
 [ext_resource type="Resource" uid="uid://lkekyn0hhy44" path="res://Clips/ch0_eas.tres" id="24_juu5x"]
 [ext_resource type="Resource" uid="uid://b76e88o03tg1p" path="res://Clips/ch1_eas.tres" id="25_vdwv0"]
 [ext_resource type="Resource" uid="uid://dk8gh80vr03v0" path="res://Clips/anomaly_ch1_eas.tres" id="26_atjkh"]
@@ -231,17 +230,11 @@ blank = SubResource("Resource_oow3d")
 chance_weight = 1.0
 metadata/_custom_type_script = "uid://do2fo11l1seti"
 
-[sub_resource type="Resource" id="Resource_fodk1"]
-script = ExtResource("24_e1eu4")
-include_all = true
-metadata/_custom_type_script = "uid://cc6bi80v2lkjr"
-
 [resource]
 script = ExtResource("5_uy8ff")
 duration = 480.0
 all_clip_insertions = Array[ExtResource("2_lnqep")]([ExtResource("3_lnqep")])
 channel_array = Array[ExtResource("3_ya56n")]([ExtResource("5_kbrwu"), SubResource("Resource_jxpi8"), ExtResource("5_kbrwu"), ExtResource("5_kbrwu")])
-page_previewer_inclusion = SubResource("Resource_fodk1")
 all_blanks = Array[ExtResource("1_1bgur")]([SubResource("Resource_nifm1")])
 is_clip_insertion_scatter_enabled = true
 clip_insertion_scatter_count = 90
