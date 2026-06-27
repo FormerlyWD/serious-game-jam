@@ -86,7 +86,7 @@ text = "Your shift will go until 6:00 AM.
 
 At the end of your shift, you will be rewarded for the anomalies you find, while the opposite will happen for any regular signals marked as anomalies.
 
-If you hear a sound on a channel that is not listed under the channel name on the NEXT pages of th, then it is an anomaly."
+If you hear a sound on a channel that is not listed under the channel name on the NEXT pages, then it is an anomaly."
 scroll_active = false
 
 [node name="Label2" type="Label" parent="BasePage2" unique_id=1984839910]
@@ -125,7 +125,7 @@ theme_override_constants/line_separation = 2
 theme_override_constants/outline_size = 0
 text = "Channel 0:
 - This channel has music. You should also hear some level of interference with the music if its in the lower frequencies, but not the higher ones.
-- Guitar music should not have any other sounds playing at the same time.
+- Acoustic guitar music should not have any other sounds playing at the same time.
 -If you hear an emergency alert, it should not have voices with it.
 
 
