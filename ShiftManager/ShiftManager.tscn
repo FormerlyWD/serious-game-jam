@@ -22,7 +22,7 @@ metadata/_custom_type_script = "uid://dbk3av0f1ghn7"
 
 [node name="ShiftManager" type="Node" unique_id=848978670]
 script = ExtResource("1_38p0g")
-all_shifts = Array[ExtResource("2_ip1fe")]([ExtResource("3_bo2tm"), ExtResource("4_jwglg"), ExtResource("5_x5htm")])
+all_shifts = Array[ExtResource("2_ip1fe")]([ExtResource("5_x5htm"), ExtResource("3_bo2tm"), ExtResource("4_jwglg")])
 point_log = SubResource("Resource_x5htm")
 default_post_shift_stats = SubResource("Resource_jwglg")
 metadata/_custom_type_script = "uid://dp2bjpv2ue7q7"
