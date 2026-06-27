@@ -35,133 +35,163 @@ script = ExtResource("3_8qid5")
 radio_noise = ExtResource("5_tsstf")
 metadata/_custom_type_script = "uid://cn5762sv6ibx3"
 
-[sub_resource type="Resource" id="Resource_esxpd"]
+[sub_resource type="Resource" id="Resource_tsstf"]
 script = ExtResource("7_2w6jb")
-final_random_addition_time = 5.0
 metadata/_custom_type_script = "uid://brqusmgsknvfn"
 
 [sub_resource type="Resource" id="Resource_nvg1w"]
 script = ExtResource("4_po7ur")
 clip = ExtResource("8_b00ee")
-blank = SubResource("Resource_esxpd")
+blank = SubResource("Resource_tsstf")
 chance_weight = 0.5
 metadata/_custom_type_script = "uid://do2fo11l1seti"
 
-[sub_resource type="Resource" id="Resource_je6cy"]
+[sub_resource type="Resource" id="Resource_b00ee"]
 script = ExtResource("7_2w6jb")
-final_random_addition_time = 5.0
 metadata/_custom_type_script = "uid://brqusmgsknvfn"
 
 [sub_resource type="Resource" id="Resource_cxyb1"]
 script = ExtResource("4_po7ur")
 clip = ExtResource("9_qmujd")
-blank = SubResource("Resource_je6cy")
+blank = SubResource("Resource_b00ee")
 chance_weight = 0.5
 metadata/_custom_type_script = "uid://do2fo11l1seti"
 
-[sub_resource type="Resource" id="Resource_xrx21"]
+[sub_resource type="Resource" id="Resource_qmujd"]
 script = ExtResource("7_2w6jb")
-final_random_addition_time = 5.0
 metadata/_custom_type_script = "uid://brqusmgsknvfn"
 
 [sub_resource type="Resource" id="Resource_8l0sj"]
 script = ExtResource("4_po7ur")
 clip = ExtResource("10_qr0l5")
-blank = SubResource("Resource_xrx21")
+blank = SubResource("Resource_qmujd")
 chance_weight = 0.25
 metadata/_custom_type_script = "uid://do2fo11l1seti"
 
-[sub_resource type="Resource" id="Resource_c0kww"]
+[sub_resource type="Resource" id="Resource_qr0l5"]
 script = ExtResource("7_2w6jb")
-final_random_addition_time = 5.0
 metadata/_custom_type_script = "uid://brqusmgsknvfn"
 
 [sub_resource type="Resource" id="Resource_d73xf"]
 script = ExtResource("4_po7ur")
 clip = ExtResource("11_it63i")
-blank = SubResource("Resource_c0kww")
+blank = SubResource("Resource_qr0l5")
 chance_weight = 0.25
 metadata/_custom_type_script = "uid://do2fo11l1seti"
 
-[sub_resource type="Resource" id="Resource_umq2p"]
+[sub_resource type="Resource" id="Resource_it63i"]
 script = ExtResource("7_2w6jb")
-final_random_addition_time = 5.0
 metadata/_custom_type_script = "uid://brqusmgsknvfn"
 
 [sub_resource type="Resource" id="Resource_lb2nj"]
 script = ExtResource("4_po7ur")
 clip = ExtResource("12_mexne")
-blank = SubResource("Resource_umq2p")
+blank = SubResource("Resource_it63i")
 chance_weight = 0.25
 metadata/_custom_type_script = "uid://do2fo11l1seti"
 
-[sub_resource type="Resource" id="Resource_pj72d"]
+[sub_resource type="Resource" id="Resource_mexne"]
 script = ExtResource("7_2w6jb")
-final_random_addition_time = 5.0
 metadata/_custom_type_script = "uid://brqusmgsknvfn"
 
 [sub_resource type="Resource" id="Resource_bm7km"]
 script = ExtResource("4_po7ur")
 clip = ExtResource("13_is4o7")
-blank = SubResource("Resource_pj72d")
+blank = SubResource("Resource_mexne")
 chance_weight = 0.25
 metadata/_custom_type_script = "uid://do2fo11l1seti"
+
+[sub_resource type="Resource" id="Resource_is4o7"]
+script = ExtResource("7_2w6jb")
+metadata/_custom_type_script = "uid://brqusmgsknvfn"
 
 [sub_resource type="Resource" id="Resource_k4uhr"]
 script = ExtResource("4_po7ur")
 clip = ExtResource("14_p352t")
-blank = SubResource("Resource_pj72d")
+blank = SubResource("Resource_is4o7")
 chance_weight = 1.0
 metadata/_custom_type_script = "uid://do2fo11l1seti"
+
+[sub_resource type="Resource" id="Resource_p352t"]
+script = ExtResource("7_2w6jb")
+metadata/_custom_type_script = "uid://brqusmgsknvfn"
 
 [sub_resource type="Resource" id="Resource_hiwxj"]
 script = ExtResource("4_po7ur")
 clip = ExtResource("15_sa78h")
-blank = SubResource("Resource_pj72d")
+blank = SubResource("Resource_p352t")
 chance_weight = 0.5
 metadata/_custom_type_script = "uid://do2fo11l1seti"
+
+[sub_resource type="Resource" id="Resource_sa78h"]
+script = ExtResource("7_2w6jb")
+metadata/_custom_type_script = "uid://brqusmgsknvfn"
 
 [sub_resource type="Resource" id="Resource_le0w8"]
 script = ExtResource("4_po7ur")
 clip = ExtResource("16_0d5ai")
-blank = SubResource("Resource_pj72d")
+blank = SubResource("Resource_sa78h")
 chance_weight = 0.5
 metadata/_custom_type_script = "uid://do2fo11l1seti"
+
+[sub_resource type="Resource" id="Resource_0d5ai"]
+script = ExtResource("7_2w6jb")
+metadata/_custom_type_script = "uid://brqusmgsknvfn"
 
 [sub_resource type="Resource" id="Resource_f1gvw"]
 script = ExtResource("4_po7ur")
 clip = ExtResource("17_0sxom")
-blank = SubResource("Resource_pj72d")
+blank = SubResource("Resource_0d5ai")
 chance_weight = 0.5
 metadata/_custom_type_script = "uid://do2fo11l1seti"
+
+[sub_resource type="Resource" id="Resource_0sxom"]
+script = ExtResource("7_2w6jb")
+metadata/_custom_type_script = "uid://brqusmgsknvfn"
 
 [sub_resource type="Resource" id="Resource_glyo4"]
 script = ExtResource("4_po7ur")
 clip = ExtResource("18_rb53d")
-blank = SubResource("Resource_pj72d")
+blank = SubResource("Resource_0sxom")
 chance_weight = 0.5
 metadata/_custom_type_script = "uid://do2fo11l1seti"
+
+[sub_resource type="Resource" id="Resource_rb53d"]
+script = ExtResource("7_2w6jb")
+metadata/_custom_type_script = "uid://brqusmgsknvfn"
 
 [sub_resource type="Resource" id="Resource_vwert"]
 script = ExtResource("4_po7ur")
 clip = ExtResource("19_b8rmw")
-blank = SubResource("Resource_pj72d")
+blank = SubResource("Resource_rb53d")
 chance_weight = 0.075
 metadata/_custom_type_script = "uid://do2fo11l1seti"
+
+[sub_resource type="Resource" id="Resource_b8rmw"]
+script = ExtResource("7_2w6jb")
+metadata/_custom_type_script = "uid://brqusmgsknvfn"
 
 [sub_resource type="Resource" id="Resource_gipnv"]
 script = ExtResource("4_po7ur")
 clip = ExtResource("20_xiy8y")
-blank = SubResource("Resource_pj72d")
+blank = SubResource("Resource_b8rmw")
 chance_weight = 0.075
 metadata/_custom_type_script = "uid://do2fo11l1seti"
+
+[sub_resource type="Resource" id="Resource_xiy8y"]
+script = ExtResource("7_2w6jb")
+metadata/_custom_type_script = "uid://brqusmgsknvfn"
 
 [sub_resource type="Resource" id="Resource_uqh55"]
 script = ExtResource("4_po7ur")
 clip = ExtResource("21_7ua63")
-blank = SubResource("Resource_pj72d")
+blank = SubResource("Resource_xiy8y")
 chance_weight = 0.075
 metadata/_custom_type_script = "uid://do2fo11l1seti"
+
+[sub_resource type="Resource" id="Resource_pj72d"]
+script = ExtResource("7_2w6jb")
+metadata/_custom_type_script = "uid://brqusmgsknvfn"
 
 [sub_resource type="Resource" id="Resource_8t1k0"]
 script = ExtResource("4_po7ur")

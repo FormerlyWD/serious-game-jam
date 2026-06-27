@@ -42,7 +42,6 @@ metadata/_custom_type_script = "uid://cn5762sv6ibx3"
 
 [sub_resource type="Resource" id="Resource_esxpd"]
 script = ExtResource("8_juu5x")
-final_random_addition_time = 5.0
 metadata/_custom_type_script = "uid://brqusmgsknvfn"
 
 [sub_resource type="Resource" id="Resource_nvg1w"]
@@ -54,7 +53,6 @@ metadata/_custom_type_script = "uid://do2fo11l1seti"
 
 [sub_resource type="Resource" id="Resource_je6cy"]
 script = ExtResource("8_juu5x")
-final_random_addition_time = 5.0
 metadata/_custom_type_script = "uid://brqusmgsknvfn"
 
 [sub_resource type="Resource" id="Resource_cxyb1"]
@@ -66,7 +64,6 @@ metadata/_custom_type_script = "uid://do2fo11l1seti"
 
 [sub_resource type="Resource" id="Resource_xrx21"]
 script = ExtResource("8_juu5x")
-final_random_addition_time = 5.0
 metadata/_custom_type_script = "uid://brqusmgsknvfn"
 
 [sub_resource type="Resource" id="Resource_8l0sj"]
@@ -78,7 +75,6 @@ metadata/_custom_type_script = "uid://do2fo11l1seti"
 
 [sub_resource type="Resource" id="Resource_c0kww"]
 script = ExtResource("8_juu5x")
-final_random_addition_time = 5.0
 metadata/_custom_type_script = "uid://brqusmgsknvfn"
 
 [sub_resource type="Resource" id="Resource_d73xf"]
@@ -90,7 +86,6 @@ metadata/_custom_type_script = "uid://do2fo11l1seti"
 
 [sub_resource type="Resource" id="Resource_umq2p"]
 script = ExtResource("8_juu5x")
-final_random_addition_time = 5.0
 metadata/_custom_type_script = "uid://brqusmgsknvfn"
 
 [sub_resource type="Resource" id="Resource_lb2nj"]
@@ -102,7 +97,6 @@ metadata/_custom_type_script = "uid://do2fo11l1seti"
 
 [sub_resource type="Resource" id="Resource_pj72d"]
 script = ExtResource("8_juu5x")
-final_random_addition_time = 5.0
 metadata/_custom_type_script = "uid://brqusmgsknvfn"
 
 [sub_resource type="Resource" id="Resource_bm7km"]
@@ -177,7 +171,6 @@ metadata/_custom_type_script = "uid://do2fo11l1seti"
 
 [sub_resource type="Resource" id="Resource_vjwir"]
 script = ExtResource("8_juu5x")
-final_random_addition_time = 5.0
 metadata/_custom_type_script = "uid://brqusmgsknvfn"
 
 [sub_resource type="Resource" id="Resource_atjkh"]
@@ -189,7 +182,6 @@ metadata/_custom_type_script = "uid://do2fo11l1seti"
 
 [sub_resource type="Resource" id="Resource_qutqn"]
 script = ExtResource("8_juu5x")
-final_random_addition_time = 5.0
 metadata/_custom_type_script = "uid://brqusmgsknvfn"
 
 [sub_resource type="Resource" id="Resource_wdj50"]
@@ -201,7 +193,6 @@ metadata/_custom_type_script = "uid://do2fo11l1seti"
 
 [sub_resource type="Resource" id="Resource_fmlu0"]
 script = ExtResource("8_juu5x")
-final_random_addition_time = 5.0
 metadata/_custom_type_script = "uid://brqusmgsknvfn"
 
 [sub_resource type="Resource" id="Resource_1ylb8"]
@@ -213,7 +204,6 @@ metadata/_custom_type_script = "uid://do2fo11l1seti"
 
 [sub_resource type="Resource" id="Resource_bm5pc"]
 script = ExtResource("8_juu5x")
-final_random_addition_time = 5.0
 metadata/_custom_type_script = "uid://brqusmgsknvfn"
 
 [sub_resource type="Resource" id="Resource_6jjyu"]
@@ -222,6 +212,10 @@ clip = ExtResource("9_vdwv0")
 blank = SubResource("Resource_bm5pc")
 chance_weight = 0.5
 metadata/_custom_type_script = "uid://do2fo11l1seti"
+
+[sub_resource type="Resource" id="Resource_oow3d"]
+script = ExtResource("8_juu5x")
+metadata/_custom_type_script = "uid://brqusmgsknvfn"
 
 [sub_resource type="Resource" id="Resource_3ukyl"]
 script = ExtResource("2_lnqep")
@@ -233,7 +227,7 @@ metadata/_custom_type_script = "uid://cdwotjgvtyhjm"
 [sub_resource type="Resource" id="Resource_cuq0i"]
 script = ExtResource("4_iwk5x")
 clip = SubResource("Resource_3ukyl")
-blank = SubResource("Resource_vjwir")
+blank = SubResource("Resource_oow3d")
 chance_weight = 1.0
 metadata/_custom_type_script = "uid://do2fo11l1seti"
 
