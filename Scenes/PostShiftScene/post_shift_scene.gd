@@ -21,6 +21,8 @@ func process_stats():
 	for clip in GlobalShiftManager.currently_focused_shift.post_shift_stats.all_tracked_clips:
 		
 		if clip.designated_clip_tag == ClipInsertion.ClipTags.ALIEN:
+			if clip.override_points == 0:
+				clip.override_points = 2
 			GlobalShiftManager.currently_focused_shift.post_shift_stats.all_accumilated_points += clip.override_points 
 			log += "ANOMALY FOUND," + "+" + str(clip.override_points)+ " \n"
 			all_points += clip.override_points
