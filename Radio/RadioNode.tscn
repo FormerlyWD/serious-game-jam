@@ -186,7 +186,7 @@ offset_left = 221.0
 offset_top = 106.0
 offset_right = 220.536
 offset_bottom = 106.0
-delay_intervals = 20.0
+delay_intervals = 10.0
 knob_slider = NodePath("../KnobFrequency/knob slider")
 clip_manager = NodePath("../ClipManagerAudioStream")
 
