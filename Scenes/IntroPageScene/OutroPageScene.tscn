@@ -15,7 +15,7 @@
 
 [sub_resource type="LabelSettings" id="LabelSettings_xcybj"]
 font = ExtResource("7_0m0ky")
-font_size = 18
+font_size = 36
 
 [sub_resource type="FontVariation" id="FontVariation_20thw"]
 base_font = ExtResource("7_0m0ky")
@@ -51,10 +51,10 @@ script = ExtResource("5_ppaax")
 
 [node name="Label" type="Label" parent="." unique_id=1902189486]
 visible = false
-offset_left = 381.0
-offset_top = 218.0
-offset_right = 693.0
-offset_bottom = 412.0
+offset_left = 342.0
+offset_top = 200.0
+offset_right = 738.0
+offset_bottom = 436.0
 text = "Credit;
 Waleed aldawoud - Programmer
 Elliot Key - Sound Design & Art
