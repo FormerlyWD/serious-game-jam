@@ -30,6 +30,7 @@
 [ext_resource type="Script" uid="uid://jpxwpwygdbbx" path="res://Scenes/deskScene/HideableNodes/hideable_nodes.gd" id="21_rq3cl"]
 [ext_resource type="Script" uid="uid://bmryi0yivbnef" path="res://Scenes/deskScene/sticky_note/sticky_note.gd" id="28_u5pif"]
 [ext_resource type="Texture2D" uid="uid://lpsntvgop84g" path="res://Art/Radio/shift1note.png" id="29_lufwb"]
+[ext_resource type="Texture2D" uid="uid://ctvqg8gejtok3" path="res://Art/Radio/shift3note.png" id="30_g3ohe"]
 [ext_resource type="Texture2D" uid="uid://cprablhtkqpyl" path="res://Art/Radio/shift2note.png" id="30_u5pif"]
 [ext_resource type="AudioStream" uid="uid://d0cy10pe06pjd" path="res://Audio/stickynote.mp3" id="32_jm33l"]
 
@@ -427,7 +428,7 @@ offset_right = 231.34
 offset_bottom = 295.175
 scale = Vector2(0.26, 0.26)
 mouse_filter = 0
-texture = ExtResource("30_u5pif")
+texture = ExtResource("30_g3ohe")
 script = ExtResource("28_u5pif")
 
 [node name="SceneClarifier" parent="." unique_id=430433529 instance=ExtResource("16_o3bos")]
