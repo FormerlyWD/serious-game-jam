@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dlrev2alkg8xb" path="res://Handbook/Pages/PagePreviewerScene/page_previewer_scene.gd" id="1_cs3o7"]
 [ext_resource type="PackedScene" uid="uid://0cpx3b178rt6" path="res://Handbook/Pages/BasePage.tscn" id="2_rqkq4"]
 [ext_resource type="Texture2D" uid="uid://jk64e83gc87n" path="res://Art/Handbook/Left page.png" id="3_na5te"]
+[ext_resource type="FontFile" uid="uid://cjtpoo2uf6flo" path="res://FontsAndTheme/anitypewriter/AniTypewriter.ttf" id="4_m64f8"]
 [ext_resource type="FontFile" uid="uid://cs61rul1cwbb6" path="res://FontsAndTheme/circ_handwriting/circhand.ttf" id="4_na5te"]
 
 [sub_resource type="FontVariation" id="FontVariation_m64f8"]
@@ -35,6 +36,7 @@ offset_left = 24.0
 offset_top = 53.0
 offset_right = 266.0
 offset_bottom = 428.63882
+theme_override_constants/line_separation = 2
 theme_override_font_sizes/normal_font_size = 15
 text = "Turn the left dial to change the channel.
 Turn the right dial to fine tune the frequency.
@@ -46,13 +48,13 @@ If you do this successfully, the lights on the top of the radio will flicker."
 [node name="Label" type="Label" parent="BasePage" unique_id=1753565860]
 z_index = 9
 layout_mode = 0
-offset_left = 12.0
+offset_left = 23.0
 offset_top = 357.0
-offset_right = 300.0
+offset_right = 311.0
 offset_bottom = 406.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = SubResource("FontVariation_m64f8")
-theme_override_font_sizes/font_size = 12
+theme_override_fonts/font = ExtResource("4_m64f8")
+theme_override_font_sizes/font_size = 11
 text = "PROPERTY OF THE WAYWARD COMMITTEE
               FOR INTERNAL USE ONLY"
 
@@ -85,9 +87,9 @@ At the end of your shift, you will be rewarded for the anomalies you find, while
 [node name="Label2" type="Label" parent="BasePage2" unique_id=1984839910]
 z_index = 9
 layout_mode = 0
-offset_left = 24.0
+offset_left = 136.0
 offset_top = 360.0
-offset_right = 357.0
+offset_right = 469.0
 offset_bottom = 409.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = SubResource("FontVariation_m64f8")
@@ -114,6 +116,8 @@ offset_left = 22.0
 offset_top = 34.0
 offset_right = 256.0
 offset_bottom = 408.0
+theme_override_constants/line_separation = 2
+theme_override_constants/outline_size = 0
 text = "If you hear a sound on a channel that is not listed under the channel name on this page, then it is an anomaly.
 
 Channel 0:
