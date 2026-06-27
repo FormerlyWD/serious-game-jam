@@ -3,12 +3,14 @@ extends Node2D
 
 @export var intro_page: Node2D
 
+@export var bg_music: BgMusic
 
 @export var duration:float = 1
 @export var trans_type:Tween.TransitionType
 var cur_tween:Tween
 
 func _ready() -> void:
+	bg_music.replace_music(bg_music.stream)
 	intro_page.create_outro_message()
 	$GoToShift.disabled = true
 	scene_fade_silhouette.fade_out()
