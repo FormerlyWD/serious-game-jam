@@ -46,12 +46,13 @@ If you do this successfully, the lights on the top of the radio will flicker."
 [node name="Label" type="Label" parent="BasePage" unique_id=1753565860]
 z_index = 9
 layout_mode = 0
-offset_left = 48.0
-offset_top = 352.0
-offset_right = 381.0
-offset_bottom = 401.0
-scale = Vector2(0.5664344, 0.5664344)
+offset_left = 12.0
+offset_top = 357.0
+offset_right = 300.0
+offset_bottom = 406.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_m64f8")
+theme_override_font_sizes/font_size = 12
 text = "PROPERTY OF THE WAYWARD COMMITTEE
               FOR INTERNAL USE ONLY"
 
@@ -84,13 +85,13 @@ At the end of your shift, you will be rewarded for the anomalies you find, while
 [node name="Label2" type="Label" parent="BasePage2" unique_id=1984839910]
 z_index = 9
 layout_mode = 0
-offset_left = 104.0
-offset_top = 350.0
-offset_right = 437.0
-offset_bottom = 399.0
-scale = Vector2(1.018287, 1.018287)
+offset_left = 24.0
+offset_top = 360.0
+offset_right = 357.0
+offset_bottom = 409.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = SubResource("FontVariation_m64f8")
+theme_override_font_sizes/font_size = 12
 text = "click to turn the page"
 
 [node name="BasePage3" parent="." unique_id=1414872256 instance=ExtResource("2_rqkq4")]
@@ -113,7 +114,6 @@ offset_left = 22.0
 offset_top = 34.0
 offset_right = 256.0
 offset_bottom = 408.0
-theme_override_font_sizes/normal_font_size = 11
 text = "If you hear a sound on a channel that is not listed under the channel name on this page, then it is an anomaly.
 
 Channel 0:
@@ -149,7 +149,6 @@ offset_left = 27.0
 offset_top = 36.0
 offset_right = 261.0
 offset_bottom = 367.0
-theme_override_font_sizes/normal_font_size = 13
 text = "Channel 2:
 - The sound of wind, only in the upper frequencies of this channel.
 - Chaotic beeping noises can be heard on this channel.

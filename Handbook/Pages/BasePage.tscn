@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cu3fmuogxyyj3" path="res://Handbook/Pages/pageclass.gd" id="1_au4c3"]
 [ext_resource type="Texture2D" uid="uid://ci1c7m44h4exl" path="res://Art/paper.png" id="2_au4c3"]
+[ext_resource type="FontFile" uid="uid://cs61rul1cwbb6" path="res://FontsAndTheme/circ_handwriting/circhand.ttf" id="3_agh5e"]
 
 [node name="BasePage" type="Control" unique_id=1294302572 node_paths=PackedStringArray("rich_text_label")]
 custom_minimum_size = Vector2(267, 362)
@@ -36,4 +37,5 @@ offset_right = 249.0
 offset_bottom = 342.0
 mouse_filter = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_agh5e")
 text = "ff "
