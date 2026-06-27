@@ -12,7 +12,9 @@ class_name Shift
 @export var is_clip_insertion_scatter_enabled:bool
 @export var clip_insertion_scatter_count:int = 0
 @export var clip_insertion_scatter_pool:Array[ClipScatterContainer]
+
 @export var current_random_picking_mode:int
+@export var on_non_human_anamoly_weight_increase:float = 0.0
 
 @export_category("POINTS")
 var accumilatable_points:float

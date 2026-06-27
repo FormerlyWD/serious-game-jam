@@ -293,6 +293,7 @@ texture = ExtResource("6_4jb1o")
 metadata/_edit_lock_ = true
 
 [node name="dark overlay" type="Sprite2D" parent="." unique_id=1724065007]
+modulate = Color(0, 0, 0, 1)
 z_index = 1
 z_as_relative = false
 position = Vector2(11, 0.23451233)
