@@ -14,6 +14,7 @@ stream_2/stream = ExtResource("3_usls4")
 [resource]
 script = ExtResource("4_g08f2")
 audio_clip = SubResource("AudioStreamRandomizer_jw7iq")
+duration = 24.0
 override_points = 1
 is_designated_target_degree_enabled = true
 final_degree = 160.0
