@@ -469,6 +469,7 @@ texture = ExtResource("17_7p32j")
 [node name="StickyNoteSound" type="AudioStreamPlayer" parent="." unique_id=281873950]
 unique_name_in_owner = true
 stream = ExtResource("32_jm33l")
+bus = &"Room"
 
 [node name="mute" type="Button" parent="." unique_id=390811128]
 self_modulate = Color(1, 1, 1, 0)
