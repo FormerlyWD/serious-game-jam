@@ -2,11 +2,10 @@
 
 [ext_resource type="Script" uid="uid://cjgyuir1s637l" path="res://Scenes/SceneClarifier/scene_clarifier.gd" id="1_61qki"]
 [ext_resource type="AudioStream" uid="uid://cui5mfepjfyil" path="res://Audio/jingle/jingle.wav" id="2_3h316"]
+[ext_resource type="AudioStream" uid="uid://d01v064um44lk" path="res://Audio/jingle/jangle.wav" id="3_e0ib0"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_61qki"]
 font_size = 145
-
-[sub_resource type="AudioStream" id="AudioStream_61qki"]
 
 [node name="SceneClarifier" type="CenterContainer" unique_id=430433529]
 offset_right = 117.0
@@ -21,4 +20,4 @@ text = "<DAY 1>"
 label_settings = SubResource("LabelSettings_61qki")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=714778544]
-stream = SubResource("AudioStream_61qki")
+stream = ExtResource("3_e0ib0")
