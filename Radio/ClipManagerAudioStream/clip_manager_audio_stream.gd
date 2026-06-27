@@ -157,7 +157,8 @@ func get_max_points(shift_data:Shift):
 
 func fill_end_time(clip:ClipInsertion, duration_only:bool = false	) -> void:
 	if clip.audio_clip:
-		clip.duration = clip.audio_clip.get_length()
+		if clip.duration == -1:
+			clip.duration = clip.audio_clip.get_length()
 		if duration_only:
 			return
 
