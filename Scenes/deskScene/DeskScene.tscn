@@ -288,8 +288,8 @@ tracks/1/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_2n1x5"]
-resource_name = "move"
-length = 1.4666667
+resource_name = "move old"
+length = 2.5333333
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -297,10 +297,10 @@ tracks/0/path = NodePath("Shadowman:position")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.33333334, 1.0333333),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.33333334, 0.93333334, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(-73, 256), Vector2(35.39, 314.415), Vector2(-146.653, 321.181)]
+"values": [Vector2(-73, 256), Vector2(35.39, 314.415), Vector2(35.39, 314.415), Vector2(-146.653, 321.181)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -309,16 +309,45 @@ tracks/1/path = NodePath("Shadowman:rotation")
 tracks/1/interp = 2
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.06666667, 0.43333334, 0.7),
+"times": PackedFloat32Array(0.06666667, 0.43333334, 1.0333333, 1.6666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.22340214425527438, -0.22340214425527438, 0.29845130209103077]
+}
+
+[sub_resource type="Animation" id="Animation_bacnr"]
+resource_name = "new_animation"
+length = 3.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Shadowman:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.9000001, 2.5666666, 3.3999999),
+"transitions": PackedFloat32Array(1, 1, 0.35355344, 1),
+"update": 0,
+"values": [Vector2(-73, 256), Vector2(19.16037, 251.27382), Vector2(26.91, 261.615), Vector2(9.735, 322.11)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Shadowman:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1.4333333, 2.5666666, 3.0666666),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [0.0, -0.22340214425527438, 0.29845130209103077]
+"values": [0.0, 0.07330382858376164, -0.15009831567151274]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_878uo"]
 _data = {
 &"RESET": SubResource("Animation_dbrr2"),
-&"move": SubResource("Animation_2n1x5")
+&"move old": SubResource("Animation_2n1x5"),
+&"new_animation": SubResource("Animation_bacnr")
 }
 
 [node name="DeskScene" type="Node2D" unique_id=522105481 node_paths=PackedStringArray("scene_fade_silhouette", "scene_clarifier", "hideable_nodes")]
@@ -603,9 +632,9 @@ offset_bottom = -70.0
 color = Color(0, 0, 0, 1)
 
 [node name="Shadowman" type="Sprite2D" parent="windowmask" unique_id=1863255839]
-modulate = Color(1, 1, 1, 0.6509804)
+modulate = Color(1, 1, 1, 0.47843137)
 position = Vector2(-73, 256)
-scale = Vector2(0.313, 0.313)
+scale = Vector2(0.058, 0.058)
 texture = ExtResource("36_bacnr")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="windowmask" unique_id=2109724959]

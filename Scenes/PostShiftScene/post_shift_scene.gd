@@ -16,7 +16,7 @@ func _ready() -> void:
 	process_stats()
 
 func process_stats():
-	var all_points:float
+	var all_points:int
 	var log:String
 	for clip in GlobalShiftManager.currently_focused_shift.post_shift_stats.all_tracked_clips:
 		
