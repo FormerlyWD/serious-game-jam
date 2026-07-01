@@ -16,7 +16,9 @@ func _on_handbook_pressed() -> void:
 	
 	match current_book_shown_state:
 		BookShownState.INVISIBLE:
-			
+			if is_animating:
+				return
+			is_animating = true
 			current_book_shown_state = BookShownState.SHOWN
 			
 			%RadioNode.radio_disabler.disable_clicks()
@@ -35,8 +37,11 @@ func _on_handbook_pressed() -> void:
 			current_tween.tween_property(
 				handbook,"position:y",final_y_position,duration).set_trans(transition_type)
 			
-			
+			is_animating = false
 		BookShownState.SHOWN:
+			if is_animating:
+				return
+			is_animating = true
 			back_button.disabled = true
 			current_book_shown_state = BookShownState.INVISIBLE
 			if current_tween:
@@ -59,6 +64,7 @@ func _on_handbook_pressed() -> void:
 				%RadioNode.apply_shift_radio_data(GlobalShiftManager.currently_focused_shift)
 				%RadioNode.reset_radio()
 				%RadioNode.timer.current_timer_state = CustomTimer.TimerState.RUNNING
+			is_animating = false
 
 
 func _on_button_pressed() -> void:
