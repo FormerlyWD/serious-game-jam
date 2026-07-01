@@ -12,6 +12,7 @@ func button_fade_in():
 	await cur_tween.finished
 	disabled = false
 func button_fade_out():
+	disabled = true
 	if cur_tween:
 		cur_tween.stop()
 		cur_tween = null

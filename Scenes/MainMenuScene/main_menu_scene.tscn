@@ -170,6 +170,7 @@ frame_progress = 0.5351791
 libraries/ = SubResource("AnimationLibrary_m8h8m")
 
 [node name="SceneFadeSilhouette" parent="." unique_id=422242111 instance=ExtResource("3_mctld")]
+z_index = 2
 
 [node name="BgMusic" parent="." unique_id=53523705 instance=ExtResource("5_2ojsq")]
 

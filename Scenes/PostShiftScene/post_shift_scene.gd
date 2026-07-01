@@ -37,8 +37,7 @@ func process_stats():
 	post_shift_message_label.visible = false
 	post_shift_message_label.text = str("TOTAL:")
 	post_shift_message_label.text
-	post_shift_message_label.text +=str ( all_points) + "/"
-	post_shift_message_label.text +=str ( int(GlobalShiftManager.currently_focused_shift.accumilatable_points)) +  " \n"
+	post_shift_message_label.text +=str ( all_points) + "\n"
 	post_shift_message_label.text += "LOGS:"+ " \n"
 	post_shift_message_label.text += log
 
