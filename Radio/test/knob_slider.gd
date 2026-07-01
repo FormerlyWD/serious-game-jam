@@ -40,22 +40,31 @@ func _on_value_changed(cur_value:float) -> void:
 			distance = find_dist(cur_value)
 	var distance_ratio:float = distance/180
 	
-	match current_dial_direction:
-		DialDirection.TOMIN:
-			var exponential_increase_ratio:float = 1-(1/pow(exponential_curviture,distance_ratio))
-			if exponential_increase_ratio < signal_clear_flag_requirement:
-				if not is_frequency_cleared:
-					
-					is_frequency_cleared = true
-					clip_manager_audio_stream.volume_db =clip_volume_inside_curve
-					frequency_cleared.emit()
-					get_child(0).visible = true
-			else:
-				if is_frequency_cleared:
-					get_child(0).visible = false
-					clip_manager_audio_stream.volume_db =lerp(clip_volume_outside_curve,clip_volume_inside_curve,exponential_increase_ratio)
-					
-					is_frequency_cleared = false
-			central_static_noise.volume_db = (maximum_value*exponential_increase_ratio)+noise_default_volume
+	#match current_dial_direction:
+		#DialDirection.TOMIN:
+			#var exponential_increase_ratio:float = 1-(1/pow(exponential_curviture,distance_ratio))
+			#if exponential_increase_ratio < signal_clear_flag_requirement:
+				#if not is_frequency_cleared:
+					#
+					#is_frequency_cleared = true
+					#clip_manager_audio_stream.volume_db =clip_volume_inside_curve
+					#frequency_cleared.emit()
+					#get_child(0).visible = true
+			#else:
+				#if is_frequency_cleared:
+					#get_child(0).visible = false
+					#clip_manager_audio_stream.volume_db =lerp(clip_volume_outside_curve,clip_volume_inside_curve,exponential_increase_ratio)
+					#
+					#is_frequency_cleared = false
+			#central_static_noise.volume_db = (maximum_value*exponential_increase_ratio)+noise_default_volume
+			
+	var volume = volume_sech(distance_ratio, 0.1) * 3 - 1
+	print(distance_ratio, ' | ', volume)
+	is_frequency_cleared = volume > 0.1
+	if is_frequency_cleared:
+		clip_manager_audio_stream.volume_linear = volume
+		frequency_cleared.emit()
 	radio_info.text_change()
 	
+func volume_sech(distance, width): #calculates the volume given a distance using the sech function
+	return 1/cosh(distance/width)

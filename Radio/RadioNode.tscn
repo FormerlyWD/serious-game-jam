@@ -271,7 +271,6 @@ maximum_value = 0.0
 central_static_noise = NodePath("../../CentralAndStaticNoiseChannels")
 clip_manager_audio_stream = NodePath("../../ClipManagerAudioStream")
 radio_info = NodePath("../../RadioInfo")
-is_clip_mute_outside_curve = false
 
 [node name="indicator" type="Sprite2D" parent="KnobFrequency/knob slider" unique_id=1117832813]
 visible = false

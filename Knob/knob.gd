@@ -23,7 +23,7 @@ func _gui_input(event: InputEvent) -> void:
 			is_following = true
 	if Input.is_action_just_released("click"):
 		is_following = false
-func _physics_process(delta: float) -> void:
+func _process(delta: float) -> void:
 	if is_following:
 		var angle := get_global_mouse_position().angle_to_point($MiddlePosition.global_position) + PI/2
 		var angle_deg := fposmod(rad_to_deg(angle), 360)
